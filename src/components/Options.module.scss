@@ -1,0 +1,88 @@
+@import "../styles/variables";
+
+.content {
+  width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
+  height: 80vh;
+
+  //   background-color: green;
+  padding: 5%;
+}
+
+.content__box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: blue;
+  align-items: center;
+}
+
+.part {
+  margin-top: -50px;
+  width: 255px;
+  height: 438px;
+  //   background-color: red;
+}
+
+.part2 {
+  margin-top: 40px;
+  width: 202px;
+  height: 538px;
+  //   background-color: red;
+  display: flex;
+  flex-direction: column;
+}
+
+.group {
+  width: 100%;
+  height: 343px;
+  background-color: yellow;
+  position: relative;
+}
+
+.frame {
+  width: 100%;
+  height: 95px;
+}
+
+.frame2 {
+  width: 100%;
+  height: 145px;
+}
+
+.circle__box {
+}
+
+.circle {
+  width: 202px;
+  height: 202px;
+  flex-shrink: 0;
+  border-radius: 100px;
+  background: $color-neon;
+  z-index: 4;
+  cursor: pointer;
+  transition: height 0.3s ease-in-out;
+}
+
+.circle:hover {
+  height: 404px;
+}
+
+.elipse {
+  width: 137px;
+  height: 245px;
+  flex-shrink: 0;
+
+  border-radius: 764.98px 764.98px 764.977px 764.977px;
+  opacity: 0.6;
+  background: #ededed;
+  mix-blend-mode: multiply;
+  box-shadow: -30.599px 0px 32.129px 0px rgba(0, 0, 0, 0.1) inset,
+    -9.18px 0px 27.539px 3.06px rgba(0, 0, 0, 0.41) inset,
+    -15.3px 15.3px 22.949px 0px rgba(0, 0, 0, 0.25),
+    15.3px -15.3px 22.949px 0px #fff;
+  z-index: 5;
+}
