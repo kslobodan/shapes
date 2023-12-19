@@ -1,4 +1,5 @@
 @import "../styles/variables";
+@import "../styles/functions";
 
 .content {
   width: 60%;
@@ -7,7 +8,7 @@
   height: 80vh;
 
   //   background-color: green;
-  padding: 5%;
+  // padding: 5%;
 }
 
 .content__box {
@@ -16,7 +17,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: blue;
+  // background-color: blue;
   align-items: center;
 }
 
@@ -39,7 +40,7 @@
 .group {
   width: 100%;
   height: 343px;
-  background-color: yellow;
+  //   background-color: yellow;
   position: relative;
 }
 
@@ -53,12 +54,11 @@
   height: 145px;
 }
 
-.circle__box {
-}
+$circle-width: 202px;
 
 .circle {
-  width: 202px;
-  height: 202px;
+  width: $circle-width;
+  height: $circle-width;
   flex-shrink: 0;
   border-radius: 100px;
   background: $color-neon;
@@ -71,8 +71,10 @@
   height: 404px;
 }
 
+$elipse-width: 137px;
+
 .elipse {
-  width: 137px;
+  width: $elipse-width;
   height: 245px;
   flex-shrink: 0;
 
@@ -85,4 +87,44 @@
     -15.3px 15.3px 22.949px 0px rgba(0, 0, 0, 0.25),
     15.3px -15.3px 22.949px 0px #fff;
   z-index: 5;
+}
+
+.elipse:hover + .circle {
+  height: 404px;
+}
+
+$distance1: distance-in-elipse($elipse-width, 78.749px);
+
+.svg1 {
+  width: 78.749px;
+  height: 68.905px;
+  flex-shrink: 0;
+  //   background-color: aqua;
+  position: absolute;
+  left: $distance1;
+  top: $distance1 + 5px;
+}
+
+$distance2: distance-in-elipse($circle-width, 78.749px);
+
+.svg2 {
+  width: 78.749px;
+  height: 68.905px;
+  flex-shrink: 0;
+  //   background-color: aqua;
+  position: absolute;
+  left: $distance2;
+  bottom: $distance2 - 20px;
+}
+
+$distance3: distance-in-elipse($elipse-width, 68.847px);
+
+.svg3 {
+  width: 68.847px;
+  height: 68.905px;
+  flex-shrink: 0;
+  //   background-color: aqua;
+  position: absolute;
+  right: $distance3;
+  top: $distance3;
 }
