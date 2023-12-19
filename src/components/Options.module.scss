@@ -1,5 +1,8 @@
 @import "../styles/variables";
 @import "../styles/functions";
+@import "../styles/mixins";
+
+$transition: 0.5s;
 
 .content {
   width: 60%;
@@ -64,11 +67,38 @@ $circle-width: 202px;
   background: $color-neon;
   z-index: 4;
   cursor: pointer;
-  transition: height 0.3s ease-in-out;
+  transition: height $transition ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // z-index: 1;
+
+  &:hover {
+    height: 404px;
+
+    @include move-circle-title;
+  }
 }
 
-.circle:hover {
-  height: 404px;
+.circle__title {
+  width: 60%;
+  color: #fff;
+  text-align: center;
+  font-style: normal;
+  font-weight: 900;
+  transition: margin-top $transition ease;
+}
+
+.circle__title2 {
+  width: 60%;
+  color: #fff;
+  text-align: center;
+  font-style: normal;
+  font-weight: 900;
+  transition: margin-top $transition ease;
+}
+
+.circle__text {
 }
 
 $elipse-width: 137px;
@@ -87,10 +117,12 @@ $elipse-width: 137px;
     -15.3px 15.3px 22.949px 0px rgba(0, 0, 0, 0.25),
     15.3px -15.3px 22.949px 0px #fff;
   z-index: 5;
-}
 
-.elipse:hover + .circle {
-  height: 404px;
+  &:hover + .circle {
+    height: 404px;
+
+    @include move-circle-title;
+  }
 }
 
 $distance1: distance-in-elipse($elipse-width, 78.749px);
@@ -127,4 +159,15 @@ $distance3: distance-in-elipse($elipse-width, 68.847px);
   position: absolute;
   right: $distance3;
   top: $distance3;
+}
+
+.circle__title {
+  // padding-top: $circle-width/2 - 10px;
+  color: #fff;
+  text-align: center;
+  font-style: normal;
+  font-weight: 900;
+}
+
+.circle__text {
 }

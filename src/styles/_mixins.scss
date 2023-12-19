@@ -1,0 +1,9 @@
+@mixin move-circle-title() {
+  .circle__title {
+    margin-top: -110px;
+  }
+
+  .circle__title2 {
+    margin-bottom: -110px;
+  }
+}

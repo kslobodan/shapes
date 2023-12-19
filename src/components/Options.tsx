@@ -39,7 +39,9 @@ const Options = () => {
                   top: "142px",
                   marginLeft: "53px",
                 }}
-              />
+              >
+                <h4 className={styles.circle__title}>Wizard of text</h4>
+              </div>
               <div className={styles.animation} />
             </div>
             <div className={styles.frame}>
@@ -76,7 +78,9 @@ const Options = () => {
                   bottom: "142px",
                   marginRight: "53px",
                 }}
-              />
+              >
+                <h4 className={styles.circle__title2}>Master of code</h4>
+              </div>
 
               <div className={styles.animation} />
             </div>
@@ -109,7 +113,9 @@ const Options = () => {
                   top: "142px",
                   marginRight: "53px",
                 }}
-              />
+              >
+                <h4 className={styles.circle__title}>Builder of design</h4>
+              </div>
               <div className={styles.animation} />
             </div>
             <div className={styles.frame}>
