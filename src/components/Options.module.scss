@@ -2,7 +2,34 @@
 @import "../styles/functions";
 @import "../styles/mixins";
 
-$transition: 0.5s;
+$circle-width: 202px;
+$elipse-width: 137px;
+$svg1-width: 78.749px;
+$distance1: distance-in-elipse($elipse-width, $svg1-width);
+$svg2-width: 78.749px;
+$distance2: distance-in-elipse($circle-width, $svg2-width);
+$svg3-width: 68.847px;
+$distance3: distance-in-elipse($elipse-width, $svg3-width);
+
+%move-circle-title {
+  .circle__title {
+    margin-top: -110px;
+  }
+
+  .circle__title2 {
+    margin-bottom: -110px;
+  }
+}
+
+%move-circle-text {
+  .circle__text__content {
+    bottom: 100px;
+  }
+
+  .circle__text__content2 {
+    top: 100px;
+  }
+}
 
 .content {
   width: 60%;
@@ -10,6 +37,8 @@ $transition: 0.5s;
   margin-right: 20%;
   height: 80vh;
   padding-bottom: 5vh;
+  position: relative;
+  z-index: 1;
 
   //   background-color: green;
   // padding: 5%;
@@ -58,8 +87,6 @@ $transition: 0.5s;
   height: 145px;
 }
 
-$circle-width: 202px;
-
 .circle {
   width: $circle-width;
   height: $circle-width;
@@ -77,7 +104,8 @@ $circle-width: 202px;
   &:hover {
     height: 404px;
 
-    @include move-circle-title;
+    @extend %move-circle-title;
+    @extend %move-circle-text;
   }
 }
 
@@ -99,10 +127,29 @@ $circle-width: 202px;
   transition: margin-top $transition ease;
 }
 
-.circle__text {
+.circle__text__content {
+  position: absolute;
+  bottom: -350px;
+  right: 0;
+  width: $circle-width;
+  // background-color: pink;
+  transition: bottom $transition ease;
 }
 
-$elipse-width: 137px;
+.circle__text__content2 {
+  position: absolute;
+  top: -360px;
+  right: 0;
+  width: $circle-width;
+  // background-color: pink;
+  transition: top $transition ease;
+}
+
+.circle__text {
+  text-align: center;
+  padding-left: 20%;
+  padding-right: 20%;
+}
 
 .elipse {
   width: $elipse-width;
@@ -122,14 +169,13 @@ $elipse-width: 137px;
   &:hover + .circle {
     height: 404px;
 
-    @include move-circle-title;
+    @extend %move-circle-title;
+    @extend %move-circle-text;
   }
 }
 
-$distance1: distance-in-elipse($elipse-width, 78.749px);
-
 .svg1 {
-  width: 78.749px;
+  width: $svg1-width;
   height: 68.905px;
   flex-shrink: 0;
   //   background-color: aqua;
@@ -138,10 +184,8 @@ $distance1: distance-in-elipse($elipse-width, 78.749px);
   top: $distance1 + 5px;
 }
 
-$distance2: distance-in-elipse($circle-width, 78.749px);
-
 .svg2 {
-  width: 78.749px;
+  width: $svg2-width;
   height: 68.905px;
   flex-shrink: 0;
   //   background-color: aqua;
@@ -150,10 +194,8 @@ $distance2: distance-in-elipse($circle-width, 78.749px);
   bottom: $distance2 - 20px;
 }
 
-$distance3: distance-in-elipse($elipse-width, 68.847px);
-
 .svg3 {
-  width: 68.847px;
+  width: $svg3-width;
   height: 68.905px;
   flex-shrink: 0;
   //   background-color: aqua;
@@ -162,13 +204,10 @@ $distance3: distance-in-elipse($elipse-width, 68.847px);
   top: $distance3;
 }
 
-.circle__title {
-  // padding-top: $circle-width/2 - 10px;
-  color: #fff;
-  text-align: center;
-  font-style: normal;
-  font-weight: 900;
+.hide__text__up {
+  @include hide-text(-65px, margin-bottom);
 }
 
-.circle__text {
+.hide__text__down {
+  @include hide-text(-120px, margin-top);
 }

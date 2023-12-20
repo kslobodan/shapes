@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Options.module.scss";
 import TitleWithText from "./TitleWithText";
+import { relative } from "path";
 
 const Options = () => {
   const middleElipseStyle = {
@@ -13,20 +14,22 @@ const Options = () => {
   industry. Lorem Ipsum has been the industry's standard dummy text ever
   since the 1500s, when an unknown printer took a galley of type and
   scrambled it to make a type specimen book. It has survived not only
-  five centuries, but also the leap into electronic typesetting,
-  remaining essentially unchanged. It was popularised in the 1960s with
-  the release of Letraset sheets containing Lorem Ipsum passages, and
-  more recently with desktop publishing software like Aldus PageMaker
-  including versions of Lorem Ipsum.`;
+  five centuries, but also the leap into electronic typesetting`;
 
   return (
-    <section id="options">
-      <TitleWithText
-        title="Be honest with yourself and"
-        underTitle="SELECT YOUR SHAPE"
-        text={text}
-      />
-      <div className={styles.content}>
+    <section id="options" style={{ position: "relative" }}>
+      <div style={{ marginBottom: "-200px" }}>
+        <TitleWithText
+          title="Be honest with yourself and"
+          underTitle="SELECT YOUR SHAPE"
+          text={text}
+        />
+      </div>
+      <div className={styles.hide__text__up} />
+      <div
+        className={styles.content}
+        // style={{ position: "relative", zIndex: "1" }}
+      >
         <div className={styles.content__box}>
           <div className={styles.part}>
             <div className={styles.group}>
@@ -57,6 +60,12 @@ const Options = () => {
                 }}
               >
                 <h4 className={styles.circle__title}>Wizard of text</h4>
+                <div className={styles.circle__text__content}>
+                  <div className={styles.circle__text}>
+                    Porttitor mauris augue enim ultricies. Lectus cras auctor
+                    tellus amet aliquet. Vitae lectus .
+                  </div>
+                </div>
               </div>
               <div className={styles.animation} />
             </div>
@@ -96,6 +105,12 @@ const Options = () => {
                 }}
               >
                 <h4 className={styles.circle__title2}>Master of code</h4>
+                <div className={styles.circle__text__content2}>
+                  <div className={styles.circle__text}>
+                    Porttitor mauris augue enim ultricies. Lectus cras auctor
+                    tellus amet aliquet. Vitae lectus .
+                  </div>
+                </div>
               </div>
 
               <div className={styles.animation} />
@@ -131,6 +146,12 @@ const Options = () => {
                 }}
               >
                 <h4 className={styles.circle__title}>Builder of design</h4>
+                <div className={styles.circle__text__content}>
+                  <div className={styles.circle__text}>
+                    Porttitor mauris augue enim ultricies. Lectus cras auctor
+                    tellus amet aliquet. Vitae lectus .
+                  </div>
+                </div>
               </div>
               <div className={styles.animation} />
             </div>
@@ -141,6 +162,7 @@ const Options = () => {
           </div>
         </div>
       </div>
+      <div className={styles.hide__text__down} />
     </section>
   );
 };
