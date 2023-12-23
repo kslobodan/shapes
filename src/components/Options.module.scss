@@ -35,10 +35,12 @@ $distance3: distance-in-elipse($elipse-width, $svg3-width);
   width: 60%;
   margin-left: 20%;
   margin-right: 20%;
-  height: 80vh;
-  padding-bottom: 5vh;
+  height: 90vh;
+  // padding-bottom: 1vh;
   position: relative;
   z-index: 1;
+  margin-top: 200px;
+  margin-bottom: 100px;
 
   //   background-color: green;
   // padding: 5%;
@@ -58,7 +60,7 @@ $distance3: distance-in-elipse($elipse-width, $svg3-width);
   margin-top: -50px;
   width: 255px;
   height: 438px;
-  //   background-color: red;
+  // background-color: red;
 }
 
 .part2 {
@@ -205,9 +207,9 @@ $distance3: distance-in-elipse($elipse-width, $svg3-width);
 }
 
 .hide__text__up {
-  @include hide-text(-65px, margin-bottom);
+  @include hide-text(-285px, margin-bottom);
 }
 
 .hide__text__down {
-  @include hide-text(-120px, margin-top);
+  @include hide-text(-200px, margin-top);
 }

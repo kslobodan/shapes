@@ -1,13 +1,9 @@
 import React from "react";
-import styles from "./Header.module.scss";
+import styles from "./Elipse.module.scss";
 
-const Header = () => {
+const Elipse = () => {
   return (
-    <section
-      id="header"
-      style={{ paddingBottom: "50px", position: "relative" }}
-    >
-      <div className={styles.box}></div>
+    <div>
       <div className={styles.elipse}></div>
       <div className={styles.shape1}>
         <svg
@@ -33,8 +29,8 @@ const Header = () => {
           />
         </svg>
       </div>
-    </section>
+    </div>
   );
 };
 
-export default Header;
+export default Elipse;

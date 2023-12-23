@@ -1,7 +1,7 @@
 @mixin hide-text($move: 0px, $margin: margin-top) {
   height: 200px;
   width: 100%;
-  //   background-color: purple;
+  // background-color: purple;
   background-color: $backgroun-color;
   @if $margin == margin-top {
     margin-top: $move;

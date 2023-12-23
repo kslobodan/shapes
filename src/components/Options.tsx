@@ -18,7 +18,7 @@ const Options = () => {
 
   return (
     <section id="options" style={{ position: "relative" }}>
-      <div style={{ marginBottom: "-200px" }}>
+      <div>
         <TitleWithText
           title="Be honest with yourself and"
           underTitle="SELECT YOUR SHAPE"
@@ -26,10 +26,7 @@ const Options = () => {
         />
       </div>
       <div className={styles.hide__text__up} />
-      <div
-        className={styles.content}
-        // style={{ position: "relative", zIndex: "1" }}
-      >
+      <div className={styles.content}>
         <div className={styles.content__box}>
           <div className={styles.part}>
             <div className={styles.group}>

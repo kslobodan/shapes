@@ -3,7 +3,8 @@ import Footer from "../components/Footer";
 import Portfolio from "../components/Portfolio";
 import About from "../components/About";
 import Options from "../components/Options";
-import Header from "../components/Header";
+import Header from "../components/header/Header";
+import Slider from "../components/Slider";
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
       <Header />
       <Options />
       {/* <About /> */}
+
       <Portfolio />
       <Footer />
     </div>

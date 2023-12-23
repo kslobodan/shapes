@@ -1,0 +1,21 @@
+.content {
+  height: 600px;
+  // margin-top: 200px;
+  // background-color: aquamarine;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 200px;
+}
+
+.gallery {
+  // width: 70%;
+  // height: 100px !important;
+  // background-color: purple;
+
+  margin-top: 5rem;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  box-shadow: #2b15453d 1px 10px 10px 5px;
+}
