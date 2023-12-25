@@ -1,11 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Elipse.module.scss";
 
 const Elipse = () => {
+  const [elipseWidth, setElipseWidth] = useState("17.5%");
+  const [elipseLeft, setElipseLeft] = useState("calc(50% - ( 17.5%/2))");
+  const [elipseTop, setElipseTop] = useState("-20%");
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      moveElipse();
+    }, 1000);
+    return () => clearTimeout(timeoutId);
+  }, []);
+
+  const moveElipse = () => {
+    setElipseWidth("12.5%");
+    setElipseLeft("calc(50% - ( 12.5%/2))");
+    setElipseTop("-80%");
+  };
+
   return (
     <div>
-      <div className={styles.elipse}></div>
-      <div className={styles.shape1}>
+      <div
+        className={styles.elipse}
+        style={{ width: elipseWidth, left: elipseLeft, top: elipseTop }}
+      ></div>
+      <div className={styles.shape}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="166"
