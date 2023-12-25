@@ -9,7 +9,7 @@ const Header = () => {
       id="header"
       style={{ paddingBottom: "50px", position: "relative" }}
     >
-      <div className={styles.box}></div>
+      {/* <div className={styles.box}></div> */}
       <Elipse />
       <div className={styles.logo}>
         <Logo />
