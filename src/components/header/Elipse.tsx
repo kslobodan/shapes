@@ -24,7 +24,7 @@ const Elipse = () => {
   const [boxHeight, setBoxHeight] = useState("1200px");
 
   const [logoTop, setLogoTop] = useState("420px");
-  const [logoGap, setLogoGap] = useState("");
+  const [logoGap, setLogoGap] = useState("4vh");
   const [logoBox, setLogoBox] = useState("515px");
   const [logoLetters, setLogoLetters] = useState(smallerLetters);
   const [logoVisible, setLogoVisible] = useState(false);
@@ -180,7 +180,11 @@ const Elipse = () => {
       </div>
       <div
         className={styles.logo}
-        style={{ top: logoTop, visibility: logoVisible ? "visible" : "hidden" }}
+        style={{
+          top: logoTop,
+          visibility: logoVisible ? "visible" : "hidden",
+          gap: logoGap,
+        }}
       >
         <div className={styles.logo__text} style={{ width: logoBox }}>
           <svg

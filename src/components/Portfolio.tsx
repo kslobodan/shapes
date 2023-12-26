@@ -21,8 +21,8 @@ const Portfolio = () => {
         underTitle="TILL NOW..."
         text={text}
       />
-      <Slider />
-      {/* <div className="section__content">
+      {/* <Slider /> */}
+      <div className="section__content">
         <div className={styles.portfolio}>
           <div className={styles.row}>
             <div className={styles.box1}></div>
@@ -40,7 +40,7 @@ const Portfolio = () => {
             <div className={styles.box3}></div>
           </div>
         </div>
-      </div> */}
+      </div>
     </section>
   );
 };
