@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Elipse.module.scss";
+import { biggerLetters, smallerLetters } from "./Letters";
 
 const Elipse = () => {
   const [elipseWidth, setElipseWidth] = useState("332px");
   const [elipseLeft, setElipseLeft] = useState("calc(50% - ( 332px/2))");
   const [elipseTop, setElipseTop] = useState("-200px");
-  const [shapeLeft, setShapeLeft] = useState("calc(50% - 238px / 2)");
-  //   const [shapeTop, setShapeTop] = useState("100px");
   const [shapeTop, setShapeTop] = useState("700px");
-  const [shapeTransform, setShapeTransform] = useState("");
   const [shapeWidth, setShapeWidth] = useState("238px");
   const [shapeHeight, setShapeHeight] = useState("238px");
   const [rectangleWidth, setRectangleWidth] = useState("30px");
@@ -25,8 +23,20 @@ const Elipse = () => {
   const [boxWidth, setBoxWidth] = useState("100%");
   const [boxHeight, setBoxHeight] = useState("1200px");
 
+  const [logoTop, setLogoTop] = useState("420px");
+  const [logoGap, setLogoGap] = useState("");
+  const [logoBox, setLogoBox] = useState("515px");
+  const [logoLetters, setLogoLetters] = useState(smallerLetters);
+  const [logoVisible, setLogoVisible] = useState(false);
+
+  const [chooseMarginTop, setChooseMarginTop] = useState("550px");
+  const [chooseColor, setChooseColor] = useState("#5F5F5F");
+  const [chooseFontSize, setChooseFontSize] = useState("48px");
+  const [chooseLineHeight, setChooseLineHeight] = useState("34px");
+
   useEffect(() => {
     const timeout1 = setTimeout(() => {
+      console.log("first");
       setCircleD(
         "M118.653 207.184C167.547 207.184 207.183 167.547 207.183 118.653C207.183 69.759 167.547 30.1225 118.653 30.1225C69.7588 30.1225 30.1223 69.759 30.1223 118.653C30.1223 167.547 69.7588 207.184 118.653 207.184ZM118.653 237.306C184.183 237.306 237.306 184.183 237.306 118.653C237.306 53.1229 184.183 0.000244141 118.653 0.000244141C53.1227 0.000244141 0 53.1229 0 118.653C0 184.183 53.1227 237.306 118.653 237.306Z"
       );
@@ -34,13 +44,32 @@ const Elipse = () => {
       setCircleViewBox("0 0 238 238");
       setBoxWidth("80%");
 
+      //   editLogo(true);
+
       const timeout2 = setTimeout(() => {
+        console.log("second");
         moveElipse();
         setBoxWidth("975px");
-        setBoxHeight("800px");
+        setBoxHeight("700px");
+        editLogo(true);
+        setLogoVisible(true);
+        setChooseMarginTop("750px");
+        setChooseFontSize("28.8px");
+        setChooseColor("rgba(95, 95, 95, 0.50)");
+        setChooseLineHeight("20.4px");
+
+        const timeout3 = setTimeout(() => {
+          console.log("third");
+          editLogo(false);
+          setChooseColor("#EDEDED");
+        }, 1000);
+
+        return () => clearTimeout(timeout3);
       }, 1000);
 
-      return () => clearTimeout(timeout2);
+      return () => {
+        clearTimeout(timeout2);
+      };
     }, 1000);
 
     return () => clearTimeout(timeout1);
@@ -49,10 +78,8 @@ const Elipse = () => {
   const moveElipse = () => {
     setElipseWidth("217px");
     setElipseLeft("calc(50% - ( 217px/2))");
-    setElipseTop("-650px");
+    setElipseTop("-680px");
     setShapeTop("800px");
-    setShapeLeft("calc(50% - 200px / 2)");
-    setShapeTransform("rotate(90deg)");
     setShapeWidth("150px");
     setShapeHeight("150px");
     setCircleWidth("208px");
@@ -66,20 +93,31 @@ const Elipse = () => {
       "M83.5998 0C107.654 0 128.35 14.3735 137.569 35H120.53C112.66 22.9575 99.0594 15 83.5998 15C59.2805 15 39.5605 34.6916 39.5143 59H24.5143C24.5604 26.4073 50.9962 0 83.5998 0ZM29.5539 83C38.7349 103.718 59.4795 118.171 83.5998 118.171C116.232 118.171 142.685 91.7176 142.685 59.0856L142.685 59H127.685L127.685 59.0856C127.685 83.4333 107.948 103.171 83.5998 103.171C68.067 103.171 54.4105 95.1382 46.5579 83H29.5539Z"
     );
 
-    const newViewBox = {
-      minX: 10,
-      minY: -20,
-      width: 150,
-      height: 150,
-    };
-
-    setCircleViewBox(
-      `${newViewBox.minX} ${newViewBox.minY} ${newViewBox.width} ${newViewBox.height}`
-    );
+    setCircleViewBox(editSVG(10, -20, 150, 150));
 
     setCircleFill("white");
+  };
 
-    // setrectangleTransform()
+  const editSVG = (
+    minX: number,
+    minY: number,
+    width: number,
+    height: number
+  ) => {
+    return `${minX} ${minY} ${width} ${height}`;
+  };
+
+  const editLogo = (bigger: boolean) => {
+    if (bigger) {
+      const newLetters = biggerLetters;
+      setLogoLetters(newLetters);
+      setLogoBox("903px");
+    } else {
+      setLogoTop("360px");
+      const newLetters = smallerLetters;
+      setLogoLetters(newLetters);
+      setLogoBox("515px");
+    }
   };
 
   return (
@@ -92,6 +130,17 @@ const Elipse = () => {
         className={styles.elipse}
         style={{ width: elipseWidth, left: elipseLeft, top: elipseTop }}
       >
+        <div
+          className={styles.choose}
+          style={{
+            top: chooseMarginTop,
+            color: chooseColor,
+            fontSize: chooseFontSize,
+            lineHeight: chooseLineHeight,
+          }}
+        >
+          choose
+        </div>
         <div
           className={styles.shape}
           style={{
@@ -127,6 +176,97 @@ const Elipse = () => {
               backgroundColor: rectangleColor,
             }}
           />
+        </div>
+      </div>
+      <div
+        className={styles.logo}
+        style={{ top: logoTop, visibility: logoVisible ? "visible" : "hidden" }}
+      >
+        <div className={styles.logo__text} style={{ width: logoBox }}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width={logoLetters[0].width}
+            height={logoLetters[0].height}
+            viewBox={logoLetters[0].viewBox}
+            fill="none"
+          >
+            <path d={logoLetters[0].path1} fill="white" />
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width={logoLetters[1].width}
+            height={logoLetters[1].height}
+            viewBox={logoLetters[1].viewBox}
+            fill="none"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d={logoLetters[1].path1}
+              fill="white"
+            />
+            <path d={logoLetters[1].path2} fill="#C3D400" />
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width={logoLetters[2].width}
+            height={logoLetters[2].height}
+            viewBox={logoLetters[2].viewBox}
+            fill="none"
+          >
+            <path d={logoLetters[2].path1} fill="white" />
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width={logoLetters[3].width}
+            height={logoLetters[3].height}
+            viewBox={logoLetters[3].viewBox}
+            fill="none"
+          >
+            <path d={logoLetters[3].path1} fill="white" />
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width={logoLetters[4].width}
+            height={logoLetters[4].height}
+            viewBox={logoLetters[4].viewBox}
+            fill="none"
+          >
+            <path d={logoLetters[4].path1} fill="#C3D400" />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d={logoLetters[4].path2}
+              fill="white"
+            />
+            <path d={logoLetters[4].path3} fill="white" />
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width={logoLetters[5].width}
+            height={logoLetters[5].height}
+            viewBox={logoLetters[5].viewBox}
+            fill="none"
+          >
+            <path d={logoLetters[5].path1} fill="white" />
+          </svg>
+        </div>
+        <div className={styles.description}>creative agency</div>
+        <div className={styles.arrow}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="116"
+            height="58"
+            viewBox="0 0 116 58"
+            fill="none"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M0 0L10.6066 10.6066L47.0661 47.0661L57.6727 57.6727L68.2793 47.0661L104.739 10.6066L115.345 0H94.1323L57.6727 36.4595L21.2132 0H0Z"
+              fill="#C3D400"
+            />
+          </svg>
         </div>
       </div>
     </div>

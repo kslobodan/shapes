@@ -11,9 +11,9 @@ const Header = () => {
     >
       {/* <div className={styles.box}></div> */}
       <Elipse />
-      <div className={styles.logo}>
+      {/* <div className={styles.logo}>
         <Logo />
-      </div>
+      </div> */}
     </section>
   );
 };

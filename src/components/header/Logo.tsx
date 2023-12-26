@@ -3,7 +3,7 @@ import styles from "./Logo.module.scss";
 
 const Logo = () => {
   return (
-    <div className={styles.content}>
+    <div className={styles.logo}>
       <div className={styles.logo__text}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -94,7 +94,7 @@ const Logo = () => {
           />
         </svg>
       </div>
-      <div className={styles.description}>agency</div>
+      <div className={styles.description}>creative agency</div>
       <div className={styles.arrow}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
