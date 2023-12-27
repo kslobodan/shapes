@@ -1,20 +1,111 @@
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.elipse {
+  height: 1000px;
+  flex-shrink: 0;
+  border-radius: 500px;
+  background: #ededed;
+  box-shadow: -20px 0px 21px 0px rgba(0, 0, 0, 0.1) inset,
+    -6px 0px 18px 2px rgba(0, 0, 0, 0.41) inset,
+    -10px 10px 15px 0px rgba(0, 0, 0, 0.25), 10px -10px 15px 0px #fff;
+  position: absolute;
+  transition: width 1s, left 1s, top 1s, fill 1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 2;
+}
+
 .box {
-  height: 750px;
-  width: 1000px;
+  // height: 750px;
+  // width: 1000px;
   opacity: 0.3;
   background: #ededed;
   box-shadow: -52.719px 0px 55.355px 0px rgba(0, 0, 0, 0.1) inset,
     -15.816px 0px 47.447px 5.272px rgba(0, 0, 0, 0.41) inset,
     -26.359px 26.359px 39.539px 0px rgba(0, 0, 0, 0.25),
     26.359px -26.359px 39.539px 0px #fff;
-  margin-left: calc(50% - 500px);
+  // margin-left: calc(50% - 500px);
   position: relative;
   z-index: 1;
+  transition: width 1s, height 1s;
+}
+
+.shape {
+  // transform: rotate(90deg);
+  flex-shrink: 0;
+  position: absolute;
+  transition: left 1s, top 1s, transform 1s;
+  // top: 100px;
+  // left: calc(50% - 118.171px / 2 - 20px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rectangle {
+  flex-shrink: 0;
+  position: absolute;
+  transition: left 1s, top 1s, transform 1s, background-color 1s;
+  // background-color: #c3d400;
+  background-color: white;
 }
 
 .logo {
   position: absolute;
   z-index: 2;
-  left: calc(50% - 515px / 2);
-  top: 450px;
+  top: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // gap: 4vh;
+  transition: top 1s;
+  // background-color: green;
+}
+
+.logo__text {
+  // width: 515px;
+  height: 100.81px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 3vh;
+  flex-shrink: 0;
+  filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.15));
+  transition: width 1s;
+}
+
+.description {
+  color: rgba(95, 95, 95, 0.5);
+  text-align: center;
+  font-family: Raleway;
+  font-size: 28.8px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 20.4px; /* 70.833% */
+  letter-spacing: 25px;
+}
+
+.arrow {
+  width: 115.346px;
+  height: 57.673px;
+  flex-shrink: 0;
+  fill: #c3d400;
+}
+
+.choose {
+  position: absolute;
+  text-align: center;
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 300;
+  transition: font-size 1s, color 1s, line-height 1s;
 }
