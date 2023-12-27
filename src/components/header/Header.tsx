@@ -72,7 +72,7 @@ const Elipse = () => {
       return () => {
         clearTimeout(timeout2);
       };
-    }, 1000);
+    }, 500);
 
     return () => clearTimeout(timeout1);
   }, []);
