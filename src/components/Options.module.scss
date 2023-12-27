@@ -35,12 +35,12 @@ $distance3: distance-in-elipse($elipse-width, $svg3-width);
   width: 60%;
   margin-left: 20%;
   margin-right: 20%;
-  height: 90vh;
+  height: 850px;
   // padding-bottom: 1vh;
   position: relative;
   z-index: 1;
-  margin-top: 200px;
-  margin-bottom: 100px;
+  margin-top: 100px;
+  margin-bottom: 0px;
 
   //   background-color: green;
   // padding: 5%;
@@ -129,30 +129,6 @@ $distance3: distance-in-elipse($elipse-width, $svg3-width);
   transition: margin-top $transition ease;
 }
 
-.circle__text__content {
-  position: absolute;
-  bottom: -350px;
-  right: 0;
-  width: $circle-width;
-  // background-color: pink;
-  transition: bottom $transition ease;
-}
-
-.circle__text__content2 {
-  position: absolute;
-  top: -360px;
-  right: 0;
-  width: $circle-width;
-  // background-color: pink;
-  transition: top $transition ease;
-}
-
-.circle__text {
-  text-align: center;
-  padding-left: 20%;
-  padding-right: 20%;
-}
-
 .elipse {
   width: $elipse-width;
   height: 245px;
@@ -207,9 +183,33 @@ $distance3: distance-in-elipse($elipse-width, $svg3-width);
 }
 
 .hide__text__up {
-  @include hide-text(-285px, margin-bottom);
+  @include hide-text(-215px, margin-bottom);
 }
 
 .hide__text__down {
-  @include hide-text(-200px, margin-top);
+  @include hide-text(-120px, margin-top);
+}
+
+.circle__text__content {
+  position: absolute;
+  bottom: -370px;
+  right: 0;
+  width: $circle-width;
+  // background-color: pink;
+  transition: bottom $transition ease;
+}
+
+.circle__text__content2 {
+  position: absolute;
+  top: -370px;
+  right: 0;
+  width: $circle-width;
+  // background-color: pink;
+  transition: top $transition ease;
+}
+
+.circle__text {
+  text-align: center;
+  padding-left: 20%;
+  padding-right: 20%;
 }

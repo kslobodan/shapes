@@ -15,7 +15,10 @@ const Portfolio = () => {
   including versions of Lorem Ipsum.`;
 
   return (
-    <section id="portfolio" style={{ marginTop: "100px" }}>
+    <section
+      id="portfolio"
+      style={{ marginTop: "0px", marginBottom: "-100px" }}
+    >
       <TitleWithText
         title="This is what we did!"
         underTitle="TILL NOW..."

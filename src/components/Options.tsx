@@ -18,7 +18,7 @@ const Options = () => {
 
   return (
     <section id="options" style={{ position: "relative" }}>
-      <div>
+      <div style={{ marginBottom: "-150px" }}>
         <TitleWithText
           title="Be honest with yourself and"
           underTitle="SELECT YOUR SHAPE"
@@ -159,7 +159,7 @@ const Options = () => {
           </div>
         </div>
       </div>
-      <div className={styles.hide__text__down} />
+      <div className={styles.hide__text__down}></div>
     </section>
   );
 };
