@@ -1,7 +1,10 @@
+import { CSSProperties } from "react";
+
 export interface SvgListProps {
   width: number;
   height: number;
   viewBox: string;
+  customStyle: CSSProperties | null;
   paths: Path[];
 }
 
@@ -11,6 +14,10 @@ export interface Path {
   d: string;
   fill: string;
 }
+
+const normalStyle = {
+  transition: "all 1s ease-in-out",
+};
 
 const SvgList: React.FC<{ sVGs: SvgListProps[] }> = ({ sVGs }) => {
   return (
@@ -23,16 +30,22 @@ const SvgList: React.FC<{ sVGs: SvgListProps[] }> = ({ sVGs }) => {
           height={s.height}
           viewBox={s.viewBox}
           fill="none"
-          style={{ transition: "all 1s ease-in-out" }}
+          style={s.customStyle ? (s.customStyle as CSSProperties) : normalStyle}
         >
           {s.paths.map((path, key) => (
-            <path
-              key={key}
-              fillRule={path.fillRule !== undefined ? path.fillRule : undefined}
-              clipRule={path.clipRule !== undefined ? path.clipRule : undefined}
-              d={path.d}
-              fill={path.fill}
-            />
+            <g>
+              <path
+                key={key}
+                fillRule={
+                  path.fillRule !== undefined ? path.fillRule : undefined
+                }
+                clipRule={
+                  path.clipRule !== undefined ? path.clipRule : undefined
+                }
+                d={path.d}
+                fill={path.fill}
+              />
+            </g>
           ))}
         </svg>
       ))}
