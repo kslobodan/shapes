@@ -18,7 +18,7 @@ const Options = () => {
 
   return (
     <section id="options" style={{ position: "relative" }}>
-      <div style={{ marginBottom: "-150px" }}>
+      <div style={{ marginBottom: "-160px" }}>
         <TitleWithText
           title="Be honest with yourself and"
           underTitle="SELECT YOUR MAJABO"

@@ -98,7 +98,7 @@ const Portfolio = () => {
   return (
     <section
       id="portfolio"
-      style={{ marginTop: "0px", marginBottom: "-100px" }}
+      style={{ marginTop: "-20px", marginBottom: "-100px" }}
     >
       <TitleWithText
         title="This is what we did!"
