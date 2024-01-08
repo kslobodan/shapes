@@ -170,8 +170,8 @@ const Elipse = () => {
               style={{ transition: "all 1s ease-in-out" }}
             >
               <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d={circle.D}
                 fill={circle.Fill}
               />
@@ -208,8 +208,8 @@ const Elipse = () => {
               fill="none"
             >
               <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M0 0L10.6066 10.6066L47.0661 47.0661L57.6727 57.6727L68.2793 47.0661L104.739 10.6066L115.345 0H94.1323L57.6727 36.4595L21.2132 0H0Z"
                 fill="#C3D400"
               />

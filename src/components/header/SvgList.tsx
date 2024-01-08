@@ -13,6 +13,7 @@ export interface Path {
   clipRule?: number | string | undefined;
   d: string;
   fill: string;
+  customStyle: CSSProperties | null;
 }
 
 const normalStyle = {
@@ -33,19 +34,18 @@ const SvgList: React.FC<{ sVGs: SvgListProps[] }> = ({ sVGs }) => {
           style={s.customStyle ? (s.customStyle as CSSProperties) : normalStyle}
         >
           {s.paths.map((path, key) => (
-            <g>
-              <path
-                key={key}
-                fillRule={
-                  path.fillRule !== undefined ? path.fillRule : undefined
-                }
-                clipRule={
-                  path.clipRule !== undefined ? path.clipRule : undefined
-                }
-                d={path.d}
-                fill={path.fill}
-              />
-            </g>
+            <path
+              key={key}
+              fillRule={path.fillRule !== undefined ? path.fillRule : undefined}
+              clipRule={path.clipRule !== undefined ? path.clipRule : undefined}
+              d={path.d}
+              fill={path.fill}
+              style={
+                path.customStyle
+                  ? (path.customStyle as CSSProperties)
+                  : undefined
+              }
+            />
           ))}
         </svg>
       ))}

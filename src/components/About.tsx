@@ -6,8 +6,8 @@ const About = () => {
     <section id="about">
       <div className="section__content">
         <div className="titles">
-          <h1>This is what we did!</h1>
-          <p className="title__green">TILL NOW...</p>
+          <h1>This is the Majabo way</h1>
+          <p className="title__green">TO DO IT!</p>
         </div>
         <p className="text" style={{ marginTop: "8vh", marginBottom: "20vh" }}>
           Lorem Ipsum is simply dummy text of the printing and typesetting

@@ -68,9 +68,11 @@ section {
 }
 
 .section__content {
-  width: 68%;
-  padding-left: 16%;
-  padding-right: 16%;
+  // width: 68%;
+  // padding-left: 16%;
+  // padding-right: 16%;
+  width: 976px;
+  margin-left: calc(50% - 976px / 2);
 }
 
 .text {

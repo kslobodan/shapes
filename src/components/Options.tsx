@@ -21,7 +21,7 @@ const Options = () => {
       <div style={{ marginBottom: "-150px" }}>
         <TitleWithText
           title="Be honest with yourself and"
-          underTitle="SELECT YOUR SHAPE"
+          underTitle="SELECT YOUR MAJABO"
           text={text}
         />
       </div>

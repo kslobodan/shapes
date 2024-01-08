@@ -1,0 +1,27 @@
+@import "../../styles/variables";
+
+.portfolio {
+  margin-bottom: 40vh;
+  // background-color: red;
+}
+.row {
+  position: relative;
+  width: 100%;
+  // height: 42.5vh;
+  // height: 340px;
+  background-color: yellow;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  //   margin: 4vh 0 4vh 0;
+  margin: 20px 0 10px 0;
+}
+
+.box {
+  // height: 100%;
+  // width: 31.5%;
+  height: 314px;
+  width: 314px;
+  // background-color: blue;
+}
