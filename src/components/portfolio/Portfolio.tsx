@@ -50,6 +50,7 @@ const Portfolio = () => {
     alt: "test1",
   });
   const [currentImage, setCurrentImage] = useState<number>(0);
+  const [mouseOutOfGallery, setMouseOutOfGallery] = useState<boolean>(true);
 
   const box: CSSProperties = {
     width: "314px",
@@ -57,24 +58,30 @@ const Portfolio = () => {
     // transition: "height 1s, width 1s",
   };
 
-  const firstRowTop = "-992px";
-  const secondRowTop = "-715px";
-  const thirdRowTop = "-440px";
+  const firstTop = "-992px";
+  const secondTop = "-715px";
+  const thirdTop = "-440px";
+  const fourthTop = "-660px";
 
-  const firstColumntLeft = "0px";
-  const secondColumnLeft = "200px";
-  const thirdColumnLeft = "331px";
+  const firstLeft = "0px";
+  const secondLeft = "270px";
+  const thirdLeft = "546px";
+
+  const size1 = "430px";
+  const size2 = "645px";
+  const size3 = "648px";
+  const size4 = "650px";
 
   const marginLookup: Record<ExpandType, string[]> = {
-    topLeft: [firstRowTop, firstColumntLeft, "645px", "430px"],
-    top: [firstRowTop, "270px", "430px", "648px"],
-    topRight: [firstRowTop, "546px", "430px", "648px"],
-    left: [secondRowTop, firstColumntLeft, "645px", "430px"],
-    center: ["-660px", "270px", "430px", "650px"],
-    right: ["-660px", "546px", "430px", "650px"],
-    bottomLeft: [thirdRowTop, firstColumntLeft, "645px", "430px"],
-    bottom: ["-660px", "270px", "430px", "650px"],
-    bottomRight: ["-660px", "546px", "430px", "650px"],
+    topLeft: [firstTop, firstLeft, size2, size1],
+    top: [firstTop, secondLeft, size1, size3],
+    topRight: [firstTop, thirdLeft, size1, size3],
+    left: [secondTop, firstLeft, size2, size1],
+    center: [fourthTop, secondLeft, size1, size4],
+    right: [fourthTop, thirdLeft, size1, size4],
+    bottomLeft: [thirdTop, firstLeft, size2, size1],
+    bottom: [fourthTop, secondLeft, size1, size4],
+    bottomRight: [fourthTop, thirdLeft, size1, size4],
   };
 
   const moveImage = (expandType: ExpandType, id: number) => {
@@ -86,9 +93,8 @@ const Portfolio = () => {
         marginLeft: marginLookup[expandType][1],
         width: marginLookup[expandType][2],
         height: marginLookup[expandType][3],
+        zIndex: "10",
       };
-
-      console.log("Updated marginTop:", updatedStyle.marginTop);
 
       setLargeImageProps((prevProps) => ({
         ...prevProps,
@@ -105,7 +111,6 @@ const Portfolio = () => {
       .flat()
       .find((img) => img.id === id);
     if (expand) {
-      console.log("id: " + image?.id + " currentImage: " + currentImage);
       // if (id === currentImage) return;
       // setCurrentImage(id);
       setLargeImageVisible(true);
@@ -137,7 +142,10 @@ const Portfolio = () => {
       />
       {/* <Slider /> */}
       <div className="section__content">
-        <div className={styles.portfolio}>
+        <div
+          className={styles.portfolio}
+          onMouseLeave={() => setLargeImageVisible(false)}
+        >
           {imageList.map((row, rowIndex) => (
             <div key={rowIndex} className={styles.row}>
               {row.map((image) => (
