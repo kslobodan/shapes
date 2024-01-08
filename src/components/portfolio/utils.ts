@@ -108,3 +108,52 @@ export const text = `Lorem Ipsum is simply dummy text of the printing and typese
   the release of Letraset sheets containing Lorem Ipsum passages, and
   more recently with desktop publishing software like Aldus PageMaker
   including versions of Lorem Ipsum.`;
+
+const firstTopSmall = "0px";
+const secondTopSmall = "334px";
+const thirdTopSmall = "668px";
+const fourthTopSmall = "668px";
+
+const firstLeftSmall = "0px";
+const secondLeftSmall = "331px";
+const thirdLeftSmall = "662px";
+
+const size1Small = "314px";
+
+export const smallSize: Record<ExpandType, string[]> = {
+  topLeft: [firstTopSmall, firstLeftSmall, size1Small, size1Small],
+  top: [firstTopSmall, secondLeftSmall, size1Small, size1Small],
+  topRight: [firstTopSmall, thirdLeftSmall, size1Small, size1Small],
+  left: [secondTopSmall, firstLeftSmall, size1Small, size1Small],
+  center: [fourthTopSmall, secondLeftSmall, size1Small, size1Small],
+  right: [fourthTopSmall, thirdLeftSmall, size1Small, size1Small],
+  bottomLeft: [thirdTopSmall, firstLeftSmall, size1Small, size1Small],
+  bottom: [fourthTopSmall, secondLeftSmall, size1Small, size1Small],
+  bottomRight: [fourthTopSmall, thirdLeftSmall, size1Small, size1Small],
+};
+
+const firstTopLarge = "0px";
+const secondTopLarge = "278px";
+const thirdTopLarge = "553px";
+const fourthTopLarge = "332px";
+
+const firstLeftLarge = "0px";
+const secondLeftLarge = "276px";
+const thirdLeftLarge = "546px";
+
+const size1Large = "430px";
+const size2Large = "645px";
+const size3Large = "648px";
+const size4Large = "650px";
+
+export const largeSize: Record<ExpandType, string[]> = {
+  topLeft: [firstTopLarge, firstLeftLarge, size2Large, size1Large],
+  top: [firstTopLarge, secondLeftLarge, size1Large, size3Large],
+  topRight: [firstTopLarge, thirdLeftLarge, size1Large, size3Large],
+  left: [secondTopLarge, firstLeftLarge, size2Large, size1Large],
+  center: [fourthTopLarge, secondLeftLarge, size1Large, size4Large],
+  right: [fourthTopLarge, thirdLeftLarge, size1Large, size4Large],
+  bottomLeft: [thirdTopLarge, firstLeftLarge, size2Large, size1Large],
+  bottom: [fourthTopLarge, secondLeftLarge, size1Large, size4Large],
+  bottomRight: [fourthTopLarge, thirdLeftLarge, size1Large, size4Large],
+};

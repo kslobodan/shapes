@@ -2,7 +2,7 @@ import React, { CSSProperties, useState } from "react";
 import styles from "./Portfolio.module.scss";
 import TitleWithText from "../TitleWithText";
 import Slider from "../Slider";
-import { images, text, Image, ExpandType } from "./utils";
+import { images, text, Image, ExpandType, smallSize, largeSize } from "./utils";
 
 interface largeImage {
   divStyle: CSSProperties;
@@ -17,19 +17,22 @@ const largeImageStyle: CSSProperties = {
   objectFit: "cover",
 };
 
+const box: CSSProperties = {
+  width: "314px",
+  height: "314px",
+};
+
+const boxExpanded: CSSProperties = {
+  position: "absolute",
+  width: "645px",
+  height: "430px",
+};
+
 const Portfolio = () => {
-  const [imageList, setImageList] = useState<Image[][]>(images);
-  const [boxExpanded, setBoxExpanded] = useState<CSSProperties>({
-    position: "absolute",
-    width: "645px",
-    height: "430px",
-    // transition: "height 1s, width 1s",
-  });
   const [largeImageVisible, setLargeImageVisible] = useState<boolean>(false);
+  const [currentId, setCurrentId] = useState<number>(0);
   const [largeImageDivStyle, setLargeImageDivStyle] = useState<CSSProperties>({
     position: "absolute",
-    // marginTop: "-350px",
-    // left: "0",
     width: "645px",
     height: "430px",
     zIndex: "10",
@@ -41,63 +44,6 @@ const Portfolio = () => {
     alt: "test1",
   });
 
-  const [currentId, setCurrentId] = useState<number>(0);
-
-  const box: CSSProperties = {
-    width: "314px",
-    height: "314px",
-    // transition: "height 1s, width 1s",
-  };
-
-  const firstTopSmall = "0px";
-  const secondTopSmall = "334px";
-  const thirdTopSmall = "668px";
-  const fourthTopSmall = "668px";
-
-  const firstLeftSmall = "0px";
-  const secondLeftSmall = "331px";
-  const thirdLeftSmall = "662px";
-
-  const size1Small = "314px";
-
-  const smallLookup: Record<ExpandType, string[]> = {
-    topLeft: [firstTopSmall, firstLeftSmall, size1Small, size1Small],
-    top: [firstTopSmall, secondLeftSmall, size1Small, size1Small],
-    topRight: [firstTopSmall, thirdLeftSmall, size1Small, size1Small],
-    left: [secondTopSmall, firstLeftSmall, size1Small, size1Small],
-    center: [fourthTopSmall, secondLeftSmall, size1Small, size1Small],
-    right: [fourthTopSmall, thirdLeftSmall, size1Small, size1Small],
-    bottomLeft: [thirdTopSmall, firstLeftSmall, size1Small, size1Small],
-    bottom: [fourthTopSmall, secondLeftSmall, size1Small, size1Small],
-    bottomRight: [fourthTopSmall, thirdLeftSmall, size1Small, size1Small],
-  };
-
-  const firstTopLarge = "0px";
-  const secondTopLarge = "278px";
-  const thirdTopLarge = "553px";
-  const fourthTopLarge = "332px";
-
-  const firstLeftLarge = "0px";
-  const secondLeftLarge = "276px";
-  const thirdLeftLarge = "546px";
-
-  const size1Large = "430px";
-  const size2Large = "645px";
-  const size3Large = "648px";
-  const size4Large = "650px";
-
-  const largeLookup: Record<ExpandType, string[]> = {
-    topLeft: [firstTopLarge, firstLeftLarge, size2Large, size1Large],
-    top: [firstTopLarge, secondLeftLarge, size1Large, size3Large],
-    topRight: [firstTopLarge, thirdLeftLarge, size1Large, size3Large],
-    left: [secondTopLarge, firstLeftLarge, size2Large, size1Large],
-    center: [fourthTopLarge, secondLeftLarge, size1Large, size4Large],
-    right: [fourthTopLarge, thirdLeftLarge, size1Large, size4Large],
-    bottomLeft: [thirdTopLarge, firstLeftLarge, size2Large, size1Large],
-    bottom: [fourthTopLarge, secondLeftLarge, size1Large, size4Large],
-    bottomRight: [fourthTopLarge, thirdLeftLarge, size1Large, size4Large],
-  };
-
   const moveImage = (expandType: ExpandType, id: number) => {
     if (currentId === id) return;
     setCurrentId(id);
@@ -106,10 +52,10 @@ const Portfolio = () => {
     setLargeImageDivStyle((prevStyle) => {
       const updatedStyle = {
         ...prevStyle,
-        top: smallLookup[expandType][0], // || "-100px"
-        left: smallLookup[expandType][1],
-        width: smallLookup[expandType][2],
-        height: smallLookup[expandType][3],
+        top: smallSize[expandType][0], // || "-100px"
+        left: smallSize[expandType][1],
+        width: smallSize[expandType][2],
+        height: smallSize[expandType][3],
         zIndex: "10",
         transition: "all 0.5s, 0.5s",
       };
@@ -126,10 +72,10 @@ const Portfolio = () => {
     setLargeImageDivStyle((prevStyle) => {
       const updatedStyle = {
         ...prevStyle,
-        top: largeLookup[expandType][0], // || "-100px"
-        left: largeLookup[expandType][1],
-        width: largeLookup[expandType][2],
-        height: largeLookup[expandType][3],
+        top: largeSize[expandType][0], // || "-100px"
+        left: largeSize[expandType][1],
+        width: largeSize[expandType][2],
+        height: largeSize[expandType][3],
         zIndex: "10",
         // transition: "all 0.5s, 0.5s",
       };
@@ -144,9 +90,7 @@ const Portfolio = () => {
   };
 
   const showLargeImage = (id: number) => {
-    const image: Image | undefined = imageList
-      .flat()
-      .find((img) => img.id === id);
+    const image: Image | undefined = images.flat().find((img) => img.id === id);
     setLargeImageVisible(true);
     if (image != null) moveImage(image.expandType, id);
   };
@@ -168,7 +112,7 @@ const Portfolio = () => {
           onMouseLeave={() => setLargeImageVisible(false)}
         >
           <div className={styles.portfolio}>
-            {imageList.map((row, rowIndex) => (
+            {images.map((row, rowIndex) => (
               <div key={rowIndex} className={styles.row}>
                 {row.map((image) => (
                   <div
