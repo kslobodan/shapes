@@ -1,9 +1,15 @@
 @import "../../styles/variables";
 
+.content {
+  position: relative;
+  height: 1300px;
+}
+
 .portfolio {
   margin-bottom: 40vh;
   // background-color: red;
 }
+
 .row {
   position: relative;
   width: 100%;

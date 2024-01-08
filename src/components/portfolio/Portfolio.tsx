@@ -11,15 +11,6 @@ interface largeImage {
   alt: string;
 }
 
-// const largeImageDivStyle: CSSProperties = {
-//   position: "relative",
-//   top: "-250px",
-//   // left: "0",
-//   width: "662px",
-//   height: "519px",
-//   zIndex: "10",
-// };
-
 const largeImageStyle: CSSProperties = {
   width: "100%",
   height: "100%",
@@ -36,8 +27,8 @@ const Portfolio = () => {
   });
   const [largeImageVisible, setLargeImageVisible] = useState<boolean>(false);
   const [largeImageDivStyle, setLargeImageDivStyle] = useState<CSSProperties>({
-    position: "relative",
-    marginTop: "-350px",
+    position: "absolute",
+    // marginTop: "-350px",
     // left: "0",
     width: "645px",
     height: "430px",
@@ -49,8 +40,8 @@ const Portfolio = () => {
     src: require(`../../images/1-large.png`),
     alt: "test1",
   });
-  const [currentImage, setCurrentImage] = useState<number>(0);
-  const [mouseOutOfGallery, setMouseOutOfGallery] = useState<boolean>(true);
+
+  const [currentId, setCurrentId] = useState<number>(0);
 
   const box: CSSProperties = {
     width: "314px",
@@ -58,13 +49,13 @@ const Portfolio = () => {
     // transition: "height 1s, width 1s",
   };
 
-  const firstTop = "-992px";
-  const secondTop = "-715px";
-  const thirdTop = "-440px";
-  const fourthTop = "-660px";
+  const firstTop = "0px";
+  const secondTop = "278px";
+  const thirdTop = "553px";
+  const fourthTop = "332px";
 
   const firstLeft = "0px";
-  const secondLeft = "270px";
+  const secondLeft = "276px";
   const thirdLeft = "546px";
 
   const size1 = "430px";
@@ -85,12 +76,14 @@ const Portfolio = () => {
   };
 
   const moveImage = (expandType: ExpandType, id: number) => {
-    console.log(expandType);
+    if (currentId === id) return;
+    setCurrentId(id);
+    console.log(expandType, id);
     setLargeImageDivStyle((prevStyle) => {
       const updatedStyle = {
         ...prevStyle,
-        marginTop: marginLookup[expandType][0], // || "-100px"
-        marginLeft: marginLookup[expandType][1],
+        top: marginLookup[expandType][0], // || "-100px"
+        left: marginLookup[expandType][1],
         width: marginLookup[expandType][2],
         height: marginLookup[expandType][3],
         zIndex: "10",
@@ -106,28 +99,12 @@ const Portfolio = () => {
     });
   };
 
-  const showLargeImage = (id: number, expand: boolean) => {
+  const showLargeImage = (id: number) => {
     const image: Image | undefined = imageList
       .flat()
       .find((img) => img.id === id);
-    if (expand) {
-      // if (id === currentImage) return;
-      // setCurrentImage(id);
-      setLargeImageVisible(true);
-      if (image != null) moveImage(image.expandType, id);
-    } else {
-      // setCurrentImage(0);
-      // setLargeImageVisible(false);
-    }
-    // setLargeImageVisible((state) => !state);
-    // console.log("id to change: ", id);
-
-    // setLargeImageProps({
-    //   divStyle: largeImageDivStyle,
-    //   imageStyle: largeImageDivStyle,
-    //   src: image ? require(`../../images/${image.big}`) : "",
-    //   alt: image ? image.alt : "",
-    // });
+    setLargeImageVisible(true);
+    if (image != null) moveImage(image.expandType, id);
   };
 
   return (
@@ -143,40 +120,33 @@ const Portfolio = () => {
       {/* <Slider /> */}
       <div className="section__content">
         <div
-          className={styles.portfolio}
+          className={styles.content}
           onMouseLeave={() => setLargeImageVisible(false)}
         >
-          {imageList.map((row, rowIndex) => (
-            <div key={rowIndex} className={styles.row}>
-              {row.map((image) => (
-                <div
-                  key={image.id}
-                  style={image.expanded ? boxExpanded : box}
-                  // onMouseEnter={() => changeImageSize(image.id, true)}
-                  // onMouseLeave={() => changeImageSize(image.id, false)}
-                  onMouseEnter={() => showLargeImage(image.id, true)}
-                  // onMouseOut={() => showLargeImage(image.id, false)}
-                >
-                  <img
-                    // src={require("../images/02-small.png")}
-                    // src={
-                    //   image.expanded
-                    //     ? require(`../../images/${image.big}`)
-                    //     : require(`../../images/${image.small}`)
-                    // }
-                    src={require(`../../images/${image.small}`)}
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                      // Add any additional styles as needed
-                    }}
-                    alt={image.alt}
-                  />
-                </div>
-              ))}
-            </div>
-          ))}
+          <div className={styles.portfolio}>
+            {imageList.map((row, rowIndex) => (
+              <div key={rowIndex} className={styles.row}>
+                {row.map((image) => (
+                  <div
+                    key={image.id}
+                    style={image.expanded ? boxExpanded : box}
+                    onMouseEnter={() => showLargeImage(image.id)}
+                  >
+                    <img
+                      // src={require("../images/02-small.png")}
+                      src={require(`../../images/${image.small}`)}
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                      }}
+                      alt={image.alt}
+                    />
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
           {largeImageVisible && (
             <div style={largeImageProps.divStyle}>
               <img
