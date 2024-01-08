@@ -49,50 +49,94 @@ const Portfolio = () => {
     // transition: "height 1s, width 1s",
   };
 
-  const firstTop = "0px";
-  const secondTop = "278px";
-  const thirdTop = "553px";
-  const fourthTop = "332px";
+  const firstTopSmall = "0px";
+  const secondTopSmall = "334px";
+  const thirdTopSmall = "668px";
+  const fourthTopSmall = "668px";
 
-  const firstLeft = "0px";
-  const secondLeft = "276px";
-  const thirdLeft = "546px";
+  const firstLeftSmall = "0px";
+  const secondLeftSmall = "331px";
+  const thirdLeftSmall = "662px";
 
-  const size1 = "430px";
-  const size2 = "645px";
-  const size3 = "648px";
-  const size4 = "650px";
+  const size1Small = "314px";
 
-  const marginLookup: Record<ExpandType, string[]> = {
-    topLeft: [firstTop, firstLeft, size2, size1],
-    top: [firstTop, secondLeft, size1, size3],
-    topRight: [firstTop, thirdLeft, size1, size3],
-    left: [secondTop, firstLeft, size2, size1],
-    center: [fourthTop, secondLeft, size1, size4],
-    right: [fourthTop, thirdLeft, size1, size4],
-    bottomLeft: [thirdTop, firstLeft, size2, size1],
-    bottom: [fourthTop, secondLeft, size1, size4],
-    bottomRight: [fourthTop, thirdLeft, size1, size4],
+  const smallLookup: Record<ExpandType, string[]> = {
+    topLeft: [firstTopSmall, firstLeftSmall, size1Small, size1Small],
+    top: [firstTopSmall, secondLeftSmall, size1Small, size1Small],
+    topRight: [firstTopSmall, thirdLeftSmall, size1Small, size1Small],
+    left: [secondTopSmall, firstLeftSmall, size1Small, size1Small],
+    center: [fourthTopSmall, secondLeftSmall, size1Small, size1Small],
+    right: [fourthTopSmall, thirdLeftSmall, size1Small, size1Small],
+    bottomLeft: [thirdTopSmall, firstLeftSmall, size1Small, size1Small],
+    bottom: [fourthTopSmall, secondLeftSmall, size1Small, size1Small],
+    bottomRight: [fourthTopSmall, thirdLeftSmall, size1Small, size1Small],
+  };
+
+  const firstTopLarge = "0px";
+  const secondTopLarge = "278px";
+  const thirdTopLarge = "553px";
+  const fourthTopLarge = "332px";
+
+  const firstLeftLarge = "0px";
+  const secondLeftLarge = "276px";
+  const thirdLeftLarge = "546px";
+
+  const size1Large = "430px";
+  const size2Large = "645px";
+  const size3Large = "648px";
+  const size4Large = "650px";
+
+  const largeLookup: Record<ExpandType, string[]> = {
+    topLeft: [firstTopLarge, firstLeftLarge, size2Large, size1Large],
+    top: [firstTopLarge, secondLeftLarge, size1Large, size3Large],
+    topRight: [firstTopLarge, thirdLeftLarge, size1Large, size3Large],
+    left: [secondTopLarge, firstLeftLarge, size2Large, size1Large],
+    center: [fourthTopLarge, secondLeftLarge, size1Large, size4Large],
+    right: [fourthTopLarge, thirdLeftLarge, size1Large, size4Large],
+    bottomLeft: [thirdTopLarge, firstLeftLarge, size2Large, size1Large],
+    bottom: [fourthTopLarge, secondLeftLarge, size1Large, size4Large],
+    bottomRight: [fourthTopLarge, thirdLeftLarge, size1Large, size4Large],
   };
 
   const moveImage = (expandType: ExpandType, id: number) => {
     if (currentId === id) return;
     setCurrentId(id);
     console.log(expandType, id);
+
     setLargeImageDivStyle((prevStyle) => {
       const updatedStyle = {
         ...prevStyle,
-        top: marginLookup[expandType][0], // || "-100px"
-        left: marginLookup[expandType][1],
-        width: marginLookup[expandType][2],
-        height: marginLookup[expandType][3],
+        top: smallLookup[expandType][0], // || "-100px"
+        left: smallLookup[expandType][1],
+        width: smallLookup[expandType][2],
+        height: smallLookup[expandType][3],
         zIndex: "10",
+        transition: "all 0.5s, 0.5s",
       };
 
       setLargeImageProps((prevProps) => ({
         ...prevProps,
         divStyle: updatedStyle,
         src: require(`../../images/${id}-large.png`),
+      }));
+
+      return updatedStyle;
+    });
+
+    setLargeImageDivStyle((prevStyle) => {
+      const updatedStyle = {
+        ...prevStyle,
+        top: largeLookup[expandType][0], // || "-100px"
+        left: largeLookup[expandType][1],
+        width: largeLookup[expandType][2],
+        height: largeLookup[expandType][3],
+        zIndex: "10",
+        // transition: "all 0.5s, 0.5s",
+      };
+
+      setLargeImageProps((prevProps) => ({
+        ...prevProps,
+        divStyle: updatedStyle,
       }));
 
       return updatedStyle;
