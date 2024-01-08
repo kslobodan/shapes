@@ -46,7 +46,7 @@ const Portfolio = () => {
   const [largeImageProps, setLargeImageProps] = useState<largeImage>({
     divStyle: largeImageDivStyle,
     imageStyle: largeImageStyle,
-    src: require(`../../images/01-large.png`),
+    src: require(`../../images/1-large.png`),
     alt: "test1",
   });
   const [currentImage, setCurrentImage] = useState<number>(0);
@@ -70,14 +70,14 @@ const Portfolio = () => {
     top: [firstRowTop, "270px", "430px", "648px"],
     topRight: [firstRowTop, "546px", "430px", "648px"],
     left: [secondRowTop, firstColumntLeft, "645px", "430px"],
-    center: ["-658px", "270px", "430px", "648px"],
-    right: ["-658px", "546px", "430px", "648px"],
+    center: ["-660px", "270px", "430px", "650px"],
+    right: ["-660px", "546px", "430px", "650px"],
     bottomLeft: [thirdRowTop, firstColumntLeft, "645px", "430px"],
-    bottom: ["-658px", "270px", "430px", "648px"],
-    bottomRight: ["-658px", "546px", "430px", "648px"],
+    bottom: ["-660px", "270px", "430px", "650px"],
+    bottomRight: ["-660px", "546px", "430px", "650px"],
   };
 
-  const moveImage = (expandType: ExpandType) => {
+  const moveImage = (expandType: ExpandType, id: number) => {
     console.log(expandType);
     setLargeImageDivStyle((prevStyle) => {
       const updatedStyle = {
@@ -93,6 +93,7 @@ const Portfolio = () => {
       setLargeImageProps((prevProps) => ({
         ...prevProps,
         divStyle: updatedStyle,
+        src: require(`../../images/${id}-large.png`),
       }));
 
       return updatedStyle;
@@ -108,7 +109,7 @@ const Portfolio = () => {
       // if (id === currentImage) return;
       // setCurrentImage(id);
       setLargeImageVisible(true);
-      if (image != null) moveImage(image.expandType);
+      if (image != null) moveImage(image.expandType, id);
     } else {
       // setCurrentImage(0);
       // setLargeImageVisible(false);
