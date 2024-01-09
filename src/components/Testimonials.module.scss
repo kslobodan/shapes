@@ -91,13 +91,13 @@
   justify-content: center;
 }
 
-.title1{
-    @extend %title;
-    bottom: 145px;
+.title1 {
+  @extend %title;
+  bottom: 145px;
 }
-.title2{
-    @extend %title;
-    top: 145px;
+.title2 {
+  @extend %title;
+  top: 145px;
 }
 
 %text-box {

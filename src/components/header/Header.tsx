@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { CSSProperties, useEffect, useState } from "react";
 import styles from "./Header.module.scss";
-import { biggerLetters, smallerLetters } from "./Letters";
-import SvgList, { SvgListProps } from "./SvgList";
+import { letters } from "./Letters";
+import SvgList from "./SvgList";
 
 const Elipse = () => {
   const [elipseWidth, setElipseWidth] = useState("332px");
@@ -28,8 +28,6 @@ const Elipse = () => {
   const [logoTop, setLogoTop] = useState("420px");
   const [logoGap, setLogoGap] = useState("4vh");
   const [logoBox, setLogoBox] = useState("515px");
-  const [logoLetters, setLogoLetters] =
-    useState<SvgListProps[]>(smallerLetters);
   const [logoVisible, setLogoVisible] = useState(false);
 
   const [chooseMarginTop, setChooseMarginTop] = useState("550px");
@@ -46,7 +44,7 @@ const Elipse = () => {
 
         const timeout3 = setTimeout(() => {
           thirdChange();
-        }, 1000);
+        }, 800);
 
         return () => clearTimeout(timeout3);
       }, 1000);
@@ -58,6 +56,11 @@ const Elipse = () => {
 
     return () => clearTimeout(timeout1);
   }, []);
+
+  const transformStyle: CSSProperties = {
+    width: logoBox,
+    transition: `tranform width 500ms ease-out `,
+  };
 
   const firstChange = () => {
     setCircle({
@@ -117,13 +120,9 @@ const Elipse = () => {
 
   const editLogo = (bigger: boolean) => {
     if (bigger) {
-      const newLetters = biggerLetters;
-      setLogoLetters(newLetters);
       setLogoBox("903px");
     } else {
       setLogoTop("360px");
-      const newLetters = smallerLetters;
-      setLogoLetters(newLetters);
       setLogoBox("515px");
     }
   };
@@ -195,8 +194,8 @@ const Elipse = () => {
             gap: logoGap,
           }}
         >
-          <div className={styles.logo__text} style={{ width: logoBox }}>
-            <SvgList sVGs={logoLetters} />
+          <div className={styles.logo__text} style={transformStyle}>
+            <SvgList sVGs={letters} />
           </div>
           <div className={styles.description}>creative agency</div>
           <div className={styles.arrow}>

@@ -4,6 +4,8 @@ import { CiInstagram, CiTwitter } from "react-icons/ci";
 import { LiaYoutube } from "react-icons/lia";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer id="footer">
       <div className={styles.box} />
@@ -19,7 +21,7 @@ const Footer = () => {
         </div>
         <div className={styles.small__text}>
           <p>Made by SHAPES agency</p>
-          <p>All rights reserved, 2023</p>
+          <p>All rights reserved, {currentYear}</p>
         </div>
       </div>
     </footer>
