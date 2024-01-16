@@ -1,4 +1,5 @@
 @import "../styles/variables";
+@import "../styles/mixins";
 
 footer {
   width: 100%;
@@ -9,6 +10,10 @@ footer {
   // background-color: red;
   position: absolute;
   margin-bottom: 0px;
+
+  @include x-large-screen {
+    height: 380px;
+  }
 }
 
 .box {
@@ -20,6 +25,10 @@ footer {
     -15.816px 0px 47.447px 5.272px rgba(0, 0, 0, 0.41) inset,
     -26.359px 26.359px 39.539px 0px rgba(0, 0, 0, 0.25),
     26.359px -26.359px 39.539px 0px #fff;
+
+  @include x-large-screen {
+    height: 340px;
+  }
 }
 
 .content {
@@ -31,6 +40,10 @@ footer {
   flex-direction: column;
   align-items: center;
   background-clip: padding-box;
+
+  @include x-large-screen {
+    height: 330px;
+  }
 }
 
 .social__media {
@@ -39,6 +52,10 @@ footer {
   flex-direction: row;
   gap: 40px;
   font-size: 50px;
+
+  @include x-large-screen {
+    margin-top: 40px;
+  }
 }
 
 .small__text {

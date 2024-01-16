@@ -11,3 +11,9 @@
   position: relative;
   z-index: 2;
 }
+
+@mixin x-large-screen() {
+  @media only screen and (max-width: 1800px) {
+    @content;
+  }
+}
