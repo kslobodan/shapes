@@ -1,17 +1,3 @@
-@mixin hide-text($move: 0px, $margin: margin-top) {
-  height: 200px;
-  width: 100%;
-  // background-color: purple;
-  background-color: $backgroun-color;
-  @if $margin == margin-top {
-    margin-top: $move;
-  } @else if $margin == margin-bottom {
-    margin-bottom: $move;
-  }
-  position: relative;
-  z-index: 2;
-}
-
 @mixin x-large-screen() {
   @media only screen and (max-width: 1800px) {
     @content;
