@@ -21,6 +21,10 @@ h1 {
   font-size: 55px;
 }
 
+h2 {
+  font-size: 40px;
+}
+
 h3 {
   font-size: 36px;
   line-height: 34px;
@@ -36,36 +40,51 @@ h4 {
   line-height: 24px;
 }
 
-.title__green {
+.title__green,
+.title__green__small {
   color: $color-neon;
-  font-size: 40px;
+
   font-style: normal;
   font-weight: 900;
   line-height: 34px; /* 85% */
   letter-spacing: 8px;
   text-transform: uppercase;
+
+  font-size: 40px;
+  &__small {
+    font-size: 30px;
+  }
 }
 
-.titles {
+.titles,
+.titles__small {
   padding-top: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
   gap: 15px;
-}
+  &__small {
+    gap: 10px;
+  }
 
-.titles > h1 {
-  margin: 0px;
-}
+  > h1,
+  h2 {
+    margin: 0;
+  }
 
-.titles > h3 {
-  margin: 0;
-  padding-bottom: 15px;
-}
+  > h3 {
+    margin: 0;
+    padding-bottom: 15px;
+  }
 
-.titles > p {
-  margin: 0;
+  > p {
+    margin: 0;
+    &__small {
+      padding-bottom: 10px;
+    }
+  }
 }
 
 section {
@@ -77,8 +96,9 @@ section {
   // padding-left: 16%;
   // padding-right: 16%;
   position: relative;
-  width: 976px;
-  margin-left: calc(50% - 976px / 2);
+  width: 1200px;
+  left: 50%;
+  transform: translate(-50%);
 }
 
 .text {
@@ -88,5 +108,5 @@ section {
   font-size: 20px;
   font-style: normal;
   font-weight: 500;
-  line-height: 40px;
+  line-height: 20px;
 }

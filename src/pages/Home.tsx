@@ -5,11 +5,13 @@ import Options from "../components/Options";
 import Header from "../components/header/Header";
 import Slider from "../components/Slider";
 import Testimonials from "../components/Testimonials";
+import ThreeMinds from "../components/ThreeMinds";
 
 const Home = () => {
   return (
     <div>
       <Header />
+      <ThreeMinds />
       <Options />
       <Portfolio />
       <Testimonials />

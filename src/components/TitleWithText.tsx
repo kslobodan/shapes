@@ -18,9 +18,15 @@ const TitleWithText: React.FC<TitleWithTextProps> = ({
         <p className="title__green">{underTitle}</p>
       </div>
       {text && (
-        <p className="text" style={{ marginTop: "8vh", marginBottom: "20vh" }}>
+        <pre
+          className="text"
+          style={{
+            marginTop: "8vh",
+            marginBottom: "20vh",
+          }}
+        >
           {text}
-        </p>
+        </pre>
       )}
     </div>
   );

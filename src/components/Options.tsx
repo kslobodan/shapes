@@ -10,11 +10,8 @@ const Options = () => {
     left: 202 / 2 - 137 / 2 - 5 + "px",
   } as const;
 
-  const text = `Lorem Ipsum is simply dummy text of the printing and typesetting
-  industry. Lorem Ipsum has been the industry's standard dummy text ever
-  since the 1500s, when an unknown printer took a galley of type and
-  scrambled it to make a type specimen book. It has survived not only
-  five centuries, but also the leap into electronic typesetting`;
+  const text = `We blend design, code, and copywriting, turning imperfections into innovative authentic brand stories.\n 
+  With MAJABO your brand will transcend boundaries and define a compelling narrative that deeply resonates with your target audience.`;
 
   return (
     <section id="options" style={{ position: "relative" }}>
