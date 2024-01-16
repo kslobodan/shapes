@@ -101,9 +101,10 @@ const Portfolio = () => {
       style={{ marginTop: "-20px", marginBottom: "-100px" }}
     >
       <TitleWithText
-        title="This is what we did!"
-        underTitle="TILL NOW..."
+        title="This is the Majabo way"
+        underTitle="TO DO IT!"
         text={text}
+        lineHeight="40px"
       />
       {/* <Slider /> */}
       <div className="section__content">

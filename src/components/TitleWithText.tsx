@@ -4,12 +4,14 @@ interface TitleWithTextProps {
   title: string;
   underTitle: string;
   text?: string;
+  lineHeight?: string;
 }
 
 const TitleWithText: React.FC<TitleWithTextProps> = ({
   title,
   underTitle,
   text,
+  lineHeight,
 }) => {
   return (
     <div className="section__content">
@@ -23,6 +25,7 @@ const TitleWithText: React.FC<TitleWithTextProps> = ({
           style={{
             marginTop: "8vh",
             marginBottom: "20vh",
+            lineHeight: lineHeight,
           }}
         >
           {text}

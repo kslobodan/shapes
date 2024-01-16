@@ -20,6 +20,7 @@ const Options = () => {
           title="Be honest with yourself and"
           underTitle="SELECT YOUR MAJABO"
           text={text}
+          lineHeight="20px"
         />
       </div>
       <div className={styles.content}>
