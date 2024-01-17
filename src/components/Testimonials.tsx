@@ -4,7 +4,10 @@ import TitleWithText from "./TitleWithText";
 
 const Testimonials = () => {
   return (
-    <section id="testimonials" style={{ marginBottom: "150px" }}>
+    <section
+      id="testimonials"
+      style={{ marginBottom: "150px", marginTop: "150px" }}
+    >
       <div>
         <TitleWithText title="Your opinion" underTitle="MATTERS TO US" />
       </div>

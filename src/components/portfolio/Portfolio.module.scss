@@ -2,32 +2,62 @@
 
 .content {
   position: relative;
-  height: 1300px;
+  height: 1100px;
 }
 
 .portfolio {
   margin-bottom: 40vh;
-  // background-color: red;
 }
 
 .row {
   position: relative;
   width: 100%;
-  // height: 42.5vh;
-  // height: 340px;
-  // background-color: yellow;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
-  //   margin: 4vh 0 4vh 0;
   margin: 20px 0 10px 0;
 }
 
 .box {
-  // height: 100%;
-  // width: 31.5%;
   height: 314px;
   width: 314px;
-  // background-color: blue;
+}
+
+.visible__area {
+  width: 100%;
+  overflow: hidden;
+  margin-top: -70px;
+}
+
+.text__content {
+  width: 1900px;
+  height: 60px;
+  overflow: hidden;
+}
+
+.text {
+  display: flex;
+  flex-direction: row;
+  animation: scrollText 15s linear infinite;
+
+  font-size: 24px;
+  font-family: "Raleway";
+  font-weight: 400;
+  color: rgba(195, 212, 0, 1);
+  letter-spacing: 2px;
+}
+
+.text p {
+  margin-right: 100px;
+}
+
+@keyframes scrollText {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-95%);
+  }
 }

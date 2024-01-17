@@ -151,3 +151,9 @@ export const largeSize: Record<ExpandType, string[]> = {
   bottom: [fourthTopLarge, secondLeftLarge, size1Large, size4Large],
   bottomRight: [fourthTopLarge, thirdLeftLarge, size1Large, size4Large],
 };
+
+export const textArray = [
+  "Your VISION isn't just an aim for us...",
+  "It's an EXCITING and MEMORABLE JOURNEY that we walk WITH YOU.",
+  "That is MAJABO.",
+];

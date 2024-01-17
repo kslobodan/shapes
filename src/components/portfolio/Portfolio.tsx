@@ -2,7 +2,15 @@ import React, { CSSProperties, useState } from "react";
 import styles from "./Portfolio.module.scss";
 import TitleWithText from "../TitleWithText";
 import Slider from "../Slider";
-import { images, text, Image, ExpandType, smallSize, largeSize } from "./utils";
+import {
+  images,
+  text,
+  Image,
+  ExpandType,
+  smallSize,
+  largeSize,
+  textArray,
+} from "./utils";
 
 interface largeImage {
   divStyle: CSSProperties;
@@ -145,6 +153,15 @@ const Portfolio = () => {
               />
             </div>
           )}
+        </div>
+        <div className={styles.visible__area}>
+          <div className={styles.text__content}>
+            <div className={styles.text}>
+              {textArray.map((element) => (
+                <p>{element}</p>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
