@@ -7,6 +7,7 @@ import Slider from "../components/Slider";
 import Testimonials from "../components/Testimonials";
 import ThreeMinds from "../components/ThreeMinds";
 import Statement from "../components/Statement";
+import Arrow from "../components/Arrow";
 
 const Home = () => {
   return (
@@ -18,6 +19,7 @@ const Home = () => {
       <Statement />
       <Testimonials />
       <Footer />
+      <Arrow />
     </div>
   );
 };
