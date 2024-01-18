@@ -2,6 +2,10 @@ import React from "react";
 import styles from "./Footer.module.scss";
 import { CiInstagram, CiTwitter } from "react-icons/ci";
 import { LiaYoutube } from "react-icons/lia";
+import Insta from "./Insta";
+import Tube from "./Tube";
+import Face from "./Face";
+import Logo from "./Logo";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -10,17 +14,23 @@ const Footer = () => {
     <footer id="footer">
       <div className={styles.box} />
       <div className={styles.content}>
-        <div className="titles" style={{ marginTop: "70px" }}>
-          <h3>Follow and contact us</h3>
-          <p className="title__green">ON SOCIAL MEDIA</p>
+        <div className="titles" style={{ marginTop: "30px" }}>
+          <h2>Be curious, follow and contact us</h2>
+          <p className="title__green__small">ON SOCIAL MEDIA</p>
         </div>
         <div className={styles.social__media}>
-          <CiInstagram />
+          <Insta />
+          <Tube />
+          <Face />
+          {/* <CiInstagram />
           <CiTwitter />
-          <LiaYoutube />
+          <LiaYoutube /> */}
+        </div>
+        <div className={styles.logo}>
+          <Logo />
         </div>
         <div className={styles.small__text}>
-          <p>Made by SHAPES agency</p>
+          <p>Made by MAJABO creative agency</p>
           <p>All rights reserved, {currentYear}</p>
         </div>
       </div>

@@ -1,15 +1,14 @@
-@import "../styles/variables";
-@import "../styles/mixins";
+@import "../../styles/variables";
+@import "../../styles/mixins";
 
 footer {
   width: 100%;
-  height: 490px;
+  height: 524px;
   display: flex;
   align-items: end;
   justify-content: center;
   // background-color: red;
   position: absolute;
-  margin-bottom: 0px;
 
   @include x-large-screen {
     height: 380px;
@@ -17,10 +16,10 @@ footer {
 }
 
 .box {
-  height: 440px;
+  height: 500px;
   width: 50%;
-  opacity: 0.3;
-  background: $light-grey-color;
+  opacity: 0.5;
+  background: $header-color;
   box-shadow: -52.719px 0px 55.355px 0px rgba(0, 0, 0, 0.1) inset,
     -15.816px 0px 47.447px 5.272px rgba(0, 0, 0, 0.41) inset,
     -26.359px 26.359px 39.539px 0px rgba(0, 0, 0, 0.25),
@@ -33,7 +32,7 @@ footer {
 
 .content {
   position: absolute;
-  height: 440px;
+  height: 500px;
   width: 50%;
   margin-bottom: 0px;
   display: flex;
@@ -58,8 +57,14 @@ footer {
   }
 }
 
+.logo {
+  position: absolute;
+  bottom: 150px;
+}
+
 .small__text {
-  margin-top: 60px;
+  position: absolute;
+  bottom: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;

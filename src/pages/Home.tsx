@@ -1,5 +1,5 @@
 import React from "react";
-import Footer from "../components/Footer";
+import Footer from "../components/footer/Footer";
 import Portfolio from "../components/portfolio/Portfolio";
 import Options from "../components/Options";
 import Header from "../components/header/Header";
