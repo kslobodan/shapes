@@ -3,3 +3,20 @@
     @content;
   }
 }
+
+@mixin center-content($type: xy) {
+  position: absolute;
+  left: 50%;
+
+  @if $type == xy {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  } @else if $type == x {
+    left: 50%;
+    transform: translateX(-50%);
+  } @else if $type == y {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
