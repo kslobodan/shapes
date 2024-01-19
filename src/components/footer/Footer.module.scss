@@ -25,6 +25,8 @@ footer {
     -26.359px 26.359px 39.539px 0px rgba(0, 0, 0, 0.25),
     26.359px -26.359px 39.539px 0px #fff;
 
+  transition: all 500ms linear;
+
   @include x-large-screen {
     height: 340px;
   }
@@ -59,12 +61,10 @@ footer {
 
 .logo {
   position: absolute;
-  bottom: 150px;
 }
 
 .small__text {
   position: absolute;
-  bottom: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -76,4 +76,80 @@ footer {
   font-style: normal;
   font-weight: 500;
   line-height: 20px;
+}
+
+.email {
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.field {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+  // background-color: red;
+}
+
+.label {
+  color: $color-grey;
+  text-align: center;
+  font-family: Raleway;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 40px; /* 200% */
+  width: 100px;
+}
+
+.input {
+  border-width: 0px;
+  height: 20px;
+  width: 400px;
+  color: $color-grey;
+  text-align: center;
+  font-family: Raleway;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  text-align: start;
+}
+
+.text__area {
+  margin-top: 10px;
+  width: 100%;
+  border-width: 0px;
+  height: 200px;
+}
+
+.buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.button {
+  background-color: $color-neon;
+  width: 200px;
+  height: 50px;
+  border-radius: 32.5px 32.178px 32.5px 32.5px;
+  border-width: 0px;
+  color: #fff;
+
+  text-align: center;
+  font-family: Raleway;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 20px; /* 100% */
+  letter-spacing: 4px;
 }
