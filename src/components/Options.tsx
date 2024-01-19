@@ -53,7 +53,7 @@ const Options = () => {
                   marginLeft: "53px",
                 }}
               >
-                <h4 className={styles.circle__title}>Wizard of text</h4>
+                <h4 className={styles.circle__title}>Wizard of copy</h4>
                 <div className={styles.circle__text__content}>
                   <div className={styles.circle__text}>
                     Shaping words that do wonders for your brand.

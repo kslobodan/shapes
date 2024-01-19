@@ -100,8 +100,8 @@ export const images: Image[][] = [
 ];
 
 export const text = `Unleashing the full spectrum of Creative Excellence! MAJABO is your business partner for Complete Marketing Solution.
-MAJABO offers you a range of services, from Graphic design and PPC to Social Media Management, SEO & Copywriting, Video editing 
-and Website design, ensuring all your marketing needs are covered for a unique brand experience.`;
+MAJABO offers you a range of services, from graphic design and PPC to Social Media Management, SEO & copywriting, video editing, 
+UGC videos and website design, ensuring all your marketing needs are covered for a unique brand experience.`;
 
 const firstTopSmall = "0px";
 const secondTopSmall = "334px";

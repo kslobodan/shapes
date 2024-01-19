@@ -27,7 +27,7 @@ const Elipse = () => {
 
   const [logoTop, setLogoTop] = useState("420px");
   const [logoGap, setLogoGap] = useState("4vh");
-  const [logoBox, setLogoBox] = useState("515px");
+  const [logoBox, setLogoBox] = useState("450px");
   const [logoVisible, setLogoVisible] = useState(false);
 
   const [chooseMarginTop, setChooseMarginTop] = useState("550px");
@@ -120,10 +120,10 @@ const Elipse = () => {
 
   const editLogo = (bigger: boolean) => {
     if (bigger) {
-      setLogoBox("903px");
+      setLogoBox("803px");
     } else {
       setLogoTop("360px");
-      setLogoBox("515px");
+      setLogoBox("450px");
     }
   };
 

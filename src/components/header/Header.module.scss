@@ -87,14 +87,14 @@
 }
 
 .description {
-  color: rgba(95, 95, 95, 0.8);
+  color: $color-grey;
   text-align: center;
   font-family: Raleway;
   font-size: 28.8px;
   font-style: normal;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 20.4px; /* 70.833% */
-  letter-spacing: 25px;
+  letter-spacing: 20px;
 }
 
 .arrow {
