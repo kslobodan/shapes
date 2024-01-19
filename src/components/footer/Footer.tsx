@@ -1,10 +1,5 @@
 import React from "react";
 import styles from "./Footer.module.scss";
-import { CiInstagram, CiTwitter } from "react-icons/ci";
-import { LiaYoutube } from "react-icons/lia";
-import Insta from "./Insta";
-import Tube from "./Tube";
-import Face from "./Face";
 import Logo from "./Logo";
 
 const Footer = () => {
@@ -19,12 +14,10 @@ const Footer = () => {
           <p className="title__green__small">ON SOCIAL MEDIA</p>
         </div>
         <div className={styles.social__media}>
-          <Insta />
-          <Tube />
-          <Face />
-          {/* <CiInstagram />
-          <CiTwitter />
-          <LiaYoutube /> */}
+          <img src={require(`../../../src/images/insta.png`)} alt="instagram" />
+          <img src={require(`../../../src/images/yt.png`)} alt="youtube" />
+          <img src={require(`../../../src/images/fb.png`)} alt="facebook" />
+          <img src={require(`../../../src/images/message.png`)} alt="email" />
         </div>
         <div className={styles.logo}>
           <Logo />
