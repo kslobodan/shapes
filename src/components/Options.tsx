@@ -53,13 +53,13 @@ const Options = () => {
                   marginLeft: "53px",
                 }}
               >
-                <h4 className={styles.circle__title}>Wizard of copy</h4>
                 <div className={styles.circle__text__content}>
                   <div className={styles.circle__text}>
                     Shaping words that do wonders for your brand.
                   </div>
                 </div>
               </div>
+              <h4 className={styles.circle__title}>Wizard of copy</h4>
               <div className={styles.animation} />
             </div>
             <div className={styles.frame}>
@@ -97,14 +97,13 @@ const Options = () => {
                   marginRight: "53px",
                 }}
               >
-                <h4 className={styles.circle__title2}>Master of code</h4>
                 <div className={styles.circle__text__content2}>
                   <div className={styles.circle__text}>
                     Turning ideas into seamless digital experiences.
                   </div>
                 </div>
               </div>
-
+              <h4 className={styles.circle__title2}>Master of code</h4>
               <div className={styles.animation} />
             </div>
           </div>
@@ -135,16 +134,15 @@ const Options = () => {
                   position: "relative",
                   top: "142px",
                   marginRight: "53px",
-                  // overflow: "hidden",
                 }}
               >
-                <h4 className={styles.circle__title}>Builder of design</h4>
                 <div className={styles.circle__text__content}>
                   <div className={styles.circle__text}>
                     Crafting visuals that make your brand unforgettable.
                   </div>
                 </div>
               </div>
+              <h4 className={styles.circle__title3}>Builder of design</h4>
               <div className={styles.animation} />
             </div>
             <div className={styles.frame}>

@@ -10,17 +10,21 @@ $svg2-width: 78.749px;
 $distance2: distance-in-elipse($circle-width, $svg2-width);
 $svg3-width: 68.847px;
 $distance3: distance-in-elipse($elipse-width, $svg3-width);
-$title-move: -75px;
-$text-move: 50px;
+$title-move: 210px;
+$text-move: 55px;
 $extended-ellipse-width: 370px;
 
 %move-circle-title {
   .circle__title {
-    margin-top: $title-move;
+    top: $title-move;
   }
 
   .circle__title2 {
-    margin-bottom: $title-move;
+    bottom: 220px;
+  }
+
+  .circle__title3 {
+    top: $title-move;
   }
 }
 
@@ -87,6 +91,15 @@ $extended-ellipse-width: 370px;
   height: 343px;
   //   background-color: yellow;
   position: relative;
+
+  &:hover > .circle {
+    height: $extended-ellipse-width;
+  }
+
+  &:hover {
+    @extend %move-circle-title;
+    @extend %move-circle-text;
+  }
 }
 
 .frame {
@@ -111,32 +124,46 @@ $extended-ellipse-width: 370px;
   display: flex;
   align-items: center;
   justify-content: center;
-  // z-index: 1;
-
-  &:hover {
-    height: $extended-ellipse-width;
-
-    @extend %move-circle-title;
-    @extend %move-circle-text;
-  }
+  z-index: 1;
 }
 
 .circle__title {
-  width: 60%;
+  width: 44%;
   color: #fff;
   text-align: center;
   font-style: normal;
   font-weight: 900;
-  transition: margin-top $transition ease;
+  transition: top $transition ease;
+  position: absolute;
+  z-index: 10;
+  left: 95px;
+  top: 190px;
 }
 
 .circle__title2 {
-  width: 60%;
+  width: 44%;
   color: #fff;
   text-align: center;
   font-style: normal;
   font-weight: 900;
-  transition: margin-top $transition ease;
+  transition: bottom $transition ease;
+  position: absolute;
+  z-index: 10;
+  left: 55px;
+  bottom: 190px;
+}
+
+.circle__title3 {
+  width: 44%;
+  color: #fff;
+  text-align: center;
+  font-style: normal;
+  font-weight: 900;
+  transition: top $transition ease;
+  position: absolute;
+  z-index: 10;
+  right: 95px;
+  top: 190px;
 }
 
 .elipse {
@@ -153,13 +180,6 @@ $extended-ellipse-width: 370px;
     -15.3px 15.3px 22.949px 0px rgba(0, 0, 0, 0.25),
     15.3px -15.3px 22.949px 0px #fff;
   z-index: 5;
-
-  &:hover + .circle {
-    height: $extended-ellipse-width;
-
-    @extend %move-circle-title;
-    @extend %move-circle-text;
-  }
 }
 
 .svg1 {
@@ -198,7 +218,8 @@ $extended-ellipse-width: 370px;
   right: 0;
   width: $circle-width;
   // background-color: pink;
-  transition: bottom $transition ease;
+  color: $color-grey;
+  transition: bottom $transition ease, color 500ms ease-out;
   @extend %text;
 }
 
@@ -208,7 +229,8 @@ $extended-ellipse-width: 370px;
   right: 0;
   width: $circle-width;
   // background-color: pink;
-  transition: top $transition ease;
+  color: $color-grey;
+  transition: top $transition ease, color 500ms ease-out;
   @extend %text;
 }
 
