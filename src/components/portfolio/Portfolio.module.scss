@@ -2,11 +2,15 @@
 
 .content {
   position: relative;
-  height: 1100px;
+  height: 1000px;
+  display: flex;
+  justify-content: center;
 }
 
 .portfolio {
-  margin-bottom: 40vh;
+  margin-top: -100px;
+  // background-color: red;
+  width: 976px;
 }
 
 .row {

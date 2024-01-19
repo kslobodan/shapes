@@ -126,14 +126,14 @@ export const smallSize: Record<ExpandType, string[]> = {
   bottomRight: [fourthTopSmall, thirdLeftSmall, size1Small, size1Small],
 };
 
-const firstTopLarge = "0px";
-const secondTopLarge = "278px";
-const thirdTopLarge = "553px";
-const fourthTopLarge = "332px";
+const firstTopLarge = "20px";
+const secondTopLarge = "292px";
+const thirdTopLarge = "570px";
+const fourthTopLarge = "354px";
 
-const firstLeftLarge = "0px";
+const firstLeftLarge = "111px";
 const secondLeftLarge = "385px";
-const thirdLeftLarge = "770px";
+const thirdLeftLarge = "658px";
 
 const size1Large = "430px";
 const size2Large = "645px";
