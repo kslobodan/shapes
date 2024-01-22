@@ -32,6 +32,8 @@ const Arrow = () => {
     transition: "opacity 0.5s",
     display: isFixed ? "block" : "none",
     opacity: isFixed ? 1 : 0,
+    cursor: "pointer",
+    zIndex: "100",
   };
 
   return (

@@ -34,6 +34,7 @@ const Elipse = () => {
   const [chooseColor, setChooseColor] = useState("#5F5F5F");
   const [chooseFontSize, setChooseFontSize] = useState("48px");
   const [chooseLineHeight, setChooseLineHeight] = useState("34px");
+  const [languagesOpacity, setLanguagesOpacity] = useState("0");
 
   useEffect(() => {
     const timeout1 = setTimeout(() => {
@@ -106,7 +107,8 @@ const Elipse = () => {
 
   const thirdChange = () => {
     editLogo(false);
-    setChooseColor("#EDEDED");
+    setChooseColor("transparent");
+    setLanguagesOpacity("1");
   };
 
   const editSVG = (
@@ -142,6 +144,12 @@ const Elipse = () => {
           className={styles.elipse}
           style={{ width: elipseWidth, left: elipseLeft, top: elipseTop }}
         >
+          <div
+            className={styles.languages}
+            style={{ opacity: languagesOpacity }}
+          >
+            EN/SR
+          </div>
           <div
             className={styles.choose}
             style={{

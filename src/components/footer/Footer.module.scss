@@ -172,7 +172,7 @@ footer {
 
 .button__disabled {
   @extend %button;
-  background-color: $light-grey-color;
+  background-color: $color-light-grey;
 }
 
 .popup {
