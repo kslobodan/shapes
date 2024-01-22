@@ -1,9 +1,13 @@
 import React, { CSSProperties, useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import styles from "./Header.module.scss";
 import { letters } from "./Letters";
 import SvgList from "./SvgList";
+import { Language, useLanguage } from "../../customHooks/useLanguage";
 
 const Elipse = () => {
+  const [t, i18n] = useTranslation("global");
+  const { language, setLanguage } = useLanguage();
   const [elipseWidth, setElipseWidth] = useState("332px");
   const [elipseLeft, setElipseLeft] = useState("calc(50% - ( 332px/2))");
   const [elipseTop, setElipseTop] = useState("-200px");
@@ -57,6 +61,8 @@ const Elipse = () => {
 
     return () => clearTimeout(timeout1);
   }, []);
+
+  const languateText = language === "en" ? "EN/SR" : "SR/EN";
 
   const transformStyle: CSSProperties = {
     width: logoBox,
@@ -130,6 +136,16 @@ const Elipse = () => {
     }
   };
 
+  const handleChangeLanguage = () => {
+    if (language === "en") {
+      setLanguage("sr" as Language);
+      i18n.changeLanguage("sr");
+    } else {
+      setLanguage("en" as Language);
+      i18n.changeLanguage("en");
+    }
+  };
+
   return (
     <section
       id="header"
@@ -144,12 +160,13 @@ const Elipse = () => {
           className={styles.elipse}
           style={{ width: elipseWidth, left: elipseLeft, top: elipseTop }}
         >
-          <div
+          <button
             className={styles.languages}
             style={{ opacity: languagesOpacity }}
+            onClick={() => handleChangeLanguage()}
           >
-            EN/SR
-          </div>
+            {languateText}
+          </button>
           <div
             className={styles.choose}
             style={{
@@ -206,7 +223,7 @@ const Elipse = () => {
           <div className={styles.logo__text} style={transformStyle}>
             <SvgList sVGs={letters} />
           </div>
-          <div className={styles.description}>creative agency</div>
+          <div className={styles.description}>{t("header.subtitle")}</div>
           <div className={styles.arrow}>
             <svg
               xmlns="http://www.w3.org/2000/svg"

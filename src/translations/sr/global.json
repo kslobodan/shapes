@@ -1,0 +1,25 @@
+{
+  "header": { "subtitle": "kreativna agencija", "choose": "izaberi" },
+  "footer": {
+    "madeBy": "Napravila MAJABO krativna agencija",
+    "rightsReserved": "Sva prava rezervisana, 2023"
+  },
+  "three minds": {
+    "title": "Gde se tri uma sudaraju radi",
+    "subtitle": "NEOGRANIČENE KREATIVNOSTI",
+    "beyond1": "Izvan Perfekcije.",
+    "beyond2": "Izvan Uobičajenog.",
+    "beyond3": "Izvan Mašte."
+  },
+  "options": {
+    "title": "Be honest with yourself and",
+    "subtitle": "SELECT YOUR MAJABO",
+    "text": "We blend design, code, and copywriting, turning imperfections into innovative authentic brand stories.\nWith MAJABO your brand will transcend boundaries and define a compelling narrative that deeply resonates with your target audience.",
+    "option1Title": "Wizard of copy",
+    "option1Text": " Shaping words that do wonders for your brand.",
+    "option2Title": "Master of code",
+    "option2Text": " Turning ideas into seamless digital experiences.",
+    "option3Title": "Builder of design",
+    "option3Text": " Crafting visuals that make your brand unforgettable."
+  }
+}

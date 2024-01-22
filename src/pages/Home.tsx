@@ -1,4 +1,4 @@
-import React from "react";
+import React, { createContext } from "react";
 import Footer from "../components/footer/Footer";
 import Portfolio from "../components/portfolio/Portfolio";
 import Options from "../components/Options";
@@ -8,10 +8,11 @@ import Testimonials from "../components/Testimonials";
 import ThreeMinds from "../components/ThreeMinds";
 import Statement from "../components/Statement";
 import Arrow from "../components/Arrow";
+import { LanguageProvider } from "../customHooks/useLanguage";
 
 const Home = () => {
   return (
-    <div>
+    <LanguageProvider>
       <Header />
       <ThreeMinds />
       <Options />
@@ -20,7 +21,7 @@ const Home = () => {
       <Testimonials />
       <Footer />
       <Arrow />
-    </div>
+    </LanguageProvider>
   );
 };
 

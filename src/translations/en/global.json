@@ -1,0 +1,25 @@
+{
+  "header": { "subtitle": "creative agency", "choose": "choose" },
+  "footer": {
+    "madeBy": "Made by MAJABO creative agency",
+    "rightsReserved": "All rights reserved, 2023"
+  },
+  "three minds": {
+    "title": "Where three minds collide for",
+    "subtitle": "INFINITE CREATIVITY",
+    "beyond1": "Beyond Perfection.",
+    "beyond2": "Beyond the Ordinary.",
+    "beyond3": "Beyond Imagination."
+  },
+  "options": {
+    "title": "Be honest with yourself and",
+    "subtitle": "SELECT YOUR MAJABO",
+    "text": "We blend design, code, and copywriting, turning imperfections into innovative authentic brand stories.\nWith MAJABO your brand will transcend boundaries and define a compelling narrative that deeply resonates with your target audience.",
+    "option1Title": "Wizard of copy",
+    "option1Text": " Shaping words that do wonders for your brand.",
+    "option2Title": "Master of code",
+    "option2Text": " Turning ideas into seamless digital experiences.",
+    "option3Title": "Builder of design",
+    "option3Text": " Crafting visuals that make your brand unforgettable."
+  }
+}
