@@ -29,13 +29,17 @@ const Footer = () => {
   const [logoBottom, setLogoBottom] = useState("100px");
   const [rightsBottom, setRightsBottom] = useState("50px");
   const [text, setText] = useState("");
-  const currentYear = new Date().getFullYear();
+  const [emailFormVisible, setEmailFormVisible] = useState(false);
 
   const handleShowMail = (show: boolean) => {
     setShowEmail(show);
     if (show) {
       setBoxHeight("650px");
+      setTimeout(() => {
+        setEmailFormVisible(true);
+      }, 400);
     } else {
+      setEmailFormVisible(false);
       setBoxHeight("500px");
     }
   };
@@ -52,7 +56,7 @@ const Footer = () => {
     <footer id="footer" style={{ position: "absolute", zIndex: "100" }}>
       <div className={styles.box} style={{ height: boxHeight }} />
       <div className={styles.content} style={{ height: boxHeight }}>
-        {showEmail && (
+        {emailFormVisible && (
           <div className="titles" style={{ marginTop: "20px" }}>
             <h2>Be curious, follow and contact us</h2>
             <p className="title__green__small">ON SOCIAL MEDIA</p>
@@ -81,8 +85,10 @@ const Footer = () => {
           </div>
         )}
 
-        {showEmail && (
-          <div className={styles.email}>
+        {emailFormVisible && (
+          <div
+            className={` ${styles.email} ${showEmail ? styles.visibleDiv : ""}`}
+          >
             <div className={styles.field}>
               <label className={styles.label}>Name:</label>
               <input type="text" className="text" style={inputStyle} />
