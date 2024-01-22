@@ -131,7 +131,7 @@ const secondTopLarge = "292px";
 const thirdTopLarge = "570px";
 const fourthTopLarge = "354px";
 
-const firstLeftLarge = "111px";
+const firstLeftLarge = "112px";
 const secondLeftLarge = "385px";
 const thirdLeftLarge = "658px";
 
