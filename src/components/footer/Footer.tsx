@@ -1,20 +1,50 @@
-import React, { useState } from "react";
+import React, { CSSProperties, ChangeEvent, useState } from "react";
 import styles from "./Footer.module.scss";
 import Logo from "./Logo";
+
+const inputStyle: CSSProperties = {
+  borderWidth: "0px",
+  height: "20px",
+  textAlign: "start",
+  flex: "1",
+  fontSize: "16px",
+};
+
+const textAreaStyle: CSSProperties = {
+  marginTop: "10px",
+  width: "100%",
+  borderWidth: "0px",
+  height: "200px",
+  textAlign: "left",
+  resize: "none",
+  overflowY: "auto",
+  fontSize: "16px",
+};
+
+const textAreaMaxLength = 1000;
 
 const Footer = () => {
   const [showEmail, setShowEmail] = useState(false);
   const [boxHeight, setBoxHeight] = useState("500px");
   const [logoBottom, setLogoBottom] = useState("100px");
   const [rightsBottom, setRightsBottom] = useState("50px");
+  const [text, setText] = useState("");
   const currentYear = new Date().getFullYear();
 
   const handleShowMail = (show: boolean) => {
     setShowEmail(show);
     if (show) {
-      setBoxHeight("700px");
+      setBoxHeight("650px");
     } else {
       setBoxHeight("500px");
+    }
+  };
+
+  const handleChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
+    const inputValue: string = event.target.value;
+
+    if (inputValue.length <= textAreaMaxLength) {
+      setText(inputValue);
     }
   };
 
@@ -55,17 +85,21 @@ const Footer = () => {
           <div className={styles.email}>
             <div className={styles.field}>
               <label className={styles.label}>Name:</label>
-              <input type="text" className={styles.input} />
+              <input type="text" className="text" style={inputStyle} />
             </div>
             <div className={styles.field}>
               <label className={styles.label}>E-mail:</label>
-              <input type="text" className={styles.input} />
+              <input type="text" className="text" style={inputStyle} />
             </div>
-            <div className={styles.field}>
-              <label className={styles.label}>Mesage:</label>
-              <input type="text" className={styles.input} />
-            </div>
-            <input type="text" className={styles.text__area} />
+
+            <textarea
+              className="text"
+              style={textAreaStyle}
+              placeholder="Message..."
+              value={text}
+              onChange={handleChange}
+              maxLength={textAreaMaxLength}
+            />
             <div className={styles.buttons}>
               <button
                 className={styles.button}
@@ -73,6 +107,11 @@ const Footer = () => {
               >
                 SEND
               </button>
+              {text.length > 0 && (
+                <div style={{ marginTop: "-10px" }}>
+                  {text.length}/{textAreaMaxLength}
+                </div>
+              )}
               <button
                 className={styles.button}
                 onClick={() => handleShowMail(false)}
@@ -84,14 +123,14 @@ const Footer = () => {
         )}
 
         <div
-          className={styles.logo}
+          className={` ${styles.logo} ${showEmail ? styles.rotated : ""}`}
           style={{ position: "absolute", bottom: logoBottom }}
         >
           <Logo />
         </div>
         <div className={styles.small__text} style={{ bottom: rightsBottom }}>
           <p>Made by MAJABO creative agency</p>
-          <p>All rights reserved, {currentYear}</p>
+          <p>All rights reserved, 2023</p>
         </div>
       </div>
     </footer>

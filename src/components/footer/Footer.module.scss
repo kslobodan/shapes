@@ -61,6 +61,11 @@ footer {
 
 .logo {
   position: absolute;
+  transition: transform 500ms linear;
+}
+
+.rotated {
+  transform: rotate(180deg);
 }
 
 .small__text {
@@ -93,7 +98,7 @@ footer {
   flex-direction: row;
   justify-content: start;
   align-items: center;
-  width: 100%;
+  width: 100.3%;
   gap: 10px;
   // background-color: red;
 }
@@ -107,12 +112,13 @@ footer {
   font-weight: 500;
   line-height: 40px; /* 200% */
   width: 100px;
+  text-align: start;
 }
 
 .input {
   border-width: 0px;
   height: 20px;
-  width: 400px;
+  flex: 1;
   color: $color-grey;
   text-align: center;
   font-family: Raleway;
