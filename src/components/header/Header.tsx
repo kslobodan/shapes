@@ -25,9 +25,9 @@ const Elipse = () => {
   const [boxWidth, setBoxWidth] = useState("100%");
   const [boxHeight, setBoxHeight] = useState("1200px");
 
-  const [logoTop, setLogoTop] = useState("420px");
-  const [logoGap, setLogoGap] = useState("4vh");
-  const [logoBox, setLogoBox] = useState("450px");
+  const [logoTop, setLogoTop] = useState("480px");
+  const [logoGap, setLogoGap] = useState("2vh");
+  const [logoBox, setLogoBox] = useState("100px");
   const [logoVisible, setLogoVisible] = useState(false);
 
   const [chooseMarginTop, setChooseMarginTop] = useState("550px");
@@ -59,7 +59,7 @@ const Elipse = () => {
 
   const transformStyle: CSSProperties = {
     width: logoBox,
-    transition: `tranform width 500ms ease-out `,
+    transition: `all width 500ms ease-out `,
   };
 
   const firstChange = () => {
@@ -120,9 +120,10 @@ const Elipse = () => {
 
   const editLogo = (bigger: boolean) => {
     if (bigger) {
-      setLogoBox("803px");
+      setLogoBox("700px");
     } else {
       setLogoTop("360px");
+      setLogoGap("4vh");
       setLogoBox("450px");
     }
   };
