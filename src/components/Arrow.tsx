@@ -29,8 +29,8 @@ const Arrow = () => {
     position: "fixed",
     bottom: "0",
     right: "50px",
-    transition: "visibility 0.5s, opacity 0.5s",
-    visibility: isFixed ? "visible" : "hidden",
+    transition: "opacity 0.5s",
+    display: isFixed ? "block" : "none",
     opacity: isFixed ? 1 : 0,
   };
 
