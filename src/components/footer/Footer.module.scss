@@ -149,19 +149,36 @@ footer {
   margin-top: 20px;
 }
 
-.button {
-  background-color: $color-neon;
+%button {
   width: 200px;
   height: 50px;
   border-radius: 32.5px 32.178px 32.5px 32.5px;
   border-width: 0px;
   color: #fff;
-
   text-align: center;
   font-family: Raleway;
   font-size: 20px;
   font-style: normal;
   font-weight: 900;
-  line-height: 20px; /* 100% */
+  line-height: 20px;
   letter-spacing: 4px;
+}
+
+.button {
+  @extend %button;
+  background-color: $color-neon;
+  cursor: pointer;
+}
+
+.button__disabled {
+  @extend %button;
+  background-color: $light-grey-color;
+}
+
+.popup {
+  position: absolute;
+  top: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

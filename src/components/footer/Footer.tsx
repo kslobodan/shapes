@@ -28,8 +28,14 @@ const Footer = () => {
   const [boxHeight, setBoxHeight] = useState("500px");
   const [logoBottom, setLogoBottom] = useState("100px");
   const [rightsBottom, setRightsBottom] = useState("50px");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const [text, setText] = useState("");
   const [emailFormVisible, setEmailFormVisible] = useState(false);
+  const [popupVisible, setPopupVisible] = useState<boolean>(false);
+
+  const sendbuttonEnabled =
+    name.length > 0 && email.length > 0 && text.length > 0;
 
   const handleShowMail = (show: boolean) => {
     setShowEmail(show);
@@ -44,12 +50,35 @@ const Footer = () => {
     }
   };
 
-  const handleChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
+  const handleTextChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
     const inputValue: string = event.target.value;
 
     if (inputValue.length <= textAreaMaxLength) {
       setText(inputValue);
     }
+  };
+
+  const handleNameChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const inputValue: string = event.target.value;
+    setName(inputValue);
+  };
+
+  const handleEmailChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const inputValue: string = event.target.value;
+    setEmail(inputValue);
+  };
+
+  const handleSendEmail = () => {
+    setEmailFormVisible(false);
+    setPopupVisible(true);
+  };
+
+  const handleOKClick = () => {
+    setPopupVisible(false);
+    setName("");
+    setEmail("");
+    setText("");
+    handleShowMail(false);
   };
 
   return (
@@ -91,11 +120,25 @@ const Footer = () => {
           >
             <div className={styles.field}>
               <label className={styles.label}>Name:</label>
-              <input type="text" className="text" style={inputStyle} />
+              <input
+                type="email"
+                className="text"
+                style={inputStyle}
+                value={name}
+                onChange={handleNameChange}
+                maxLength={50}
+              />
             </div>
             <div className={styles.field}>
               <label className={styles.label}>E-mail:</label>
-              <input type="text" className="text" style={inputStyle} />
+              <input
+                type="text"
+                className="text"
+                style={inputStyle}
+                value={email}
+                onChange={handleEmailChange}
+                maxLength={50}
+              />
             </div>
 
             <textarea
@@ -103,13 +146,16 @@ const Footer = () => {
               style={textAreaStyle}
               placeholder="Message..."
               value={text}
-              onChange={handleChange}
+              onChange={handleTextChange}
               maxLength={textAreaMaxLength}
             />
             <div className={styles.buttons}>
               <button
-                className={styles.button}
-                onClick={() => handleShowMail(false)}
+                className={
+                  sendbuttonEnabled ? styles.button : styles.button__disabled
+                }
+                onClick={handleSendEmail}
+                disabled={!sendbuttonEnabled}
               >
                 SEND
               </button>
@@ -125,6 +171,22 @@ const Footer = () => {
                 CANCEL
               </button>
             </div>
+          </div>
+        )}
+
+        {popupVisible && (
+          <div className={styles.popup}>
+            <div className="text">
+              <h3>Mail successfully sent.</h3>
+              <p>Our tim will contact you soon.</p>
+            </div>
+            <button
+              className={styles.button}
+              onClick={handleOKClick}
+              style={{ marginTop: "30px" }}
+            >
+              OK
+            </button>
           </div>
         )}
 
