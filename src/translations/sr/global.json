@@ -42,53 +42,53 @@
     "statement": {
       "title": "Budućnost pripada onima koji veruju u lepotu svojih snova.",
       "subtitle": "ELENOR RUZVELT"
-    },
-    "testimonials": {
-      "title": "Vaše mišljenje",
-      "subtitle": "NAM JE BITNO",
-      "testimonialList": [
-        {
-          "title": "Marina Ćirić",
-          "subtitle": "Fizioterapeut",
-          "text": "Oni su uspeli da ožive moju viziju na način koji nikada nisam mogla da zamislim. Njihov pristup dizajnu zaista je istakao moj brend."
-        },
-        {
-          "title": "Robert Wilson",
-          "subtitle": "Finansijski Direktor",
-          "text": "Njihovo stručno znanje i pažnja prema detaljima pretvorili su moje online prisustvo u nešto izuzetno. Ne mogu dovoljno preporučiti Majabo."
-        },
-        {
-          "title": "Sofija Blažić",
-          "subtitle": "Dijetetičar i Nutricionista",
-          "text": "Ako tražite pouzdane i kvalitetne usluge digitalnog marketinga, ne tražite dalje od Majabo-a. Oni će svaki put premašiti Vaša očekivanja!"
-        },
-        {
-          "title": "James Anderson",
-          "subtitle": "Računovođa",
-          "text": "Visoko preporučujem Majabo! Njihov rad govori sam za sebe i zahvalan sam što imam priliku da radim sa tako talentovanim i kreativnim timom."
-        }
-      ]
-    },
-    "footer": {
-      "title": "Budite znatiželjni, pratite i kontaktiraj nas",
-      "subtitle": "NA SOCIJALNIM MEDIJIMA",
-      "madeBy": "Napravila MAJABO kreativna agencija",
-      "rightsReserved": "Sva prava rezervisana, 2023",
-      "mail": {
-        "title": "Budite slobodni da nam pošaljete poruku,",
-        "subtitle": "JER MI SMO OVDE ZBOG VAS",
-        "name": "Ime",
-        "email": "Mejl",
-        "text": "Poruka...",
-        "buttonSent": "POšALJI",
-        "buttonCancel": "ODUSTANI"
+    }
+  },
+  "testimonials": {
+    "title": "Vaše mišljenje",
+    "subtitle": "NAM JE BITNO",
+    "testimonialList": [
+      {
+        "title": "Marina Ćirić",
+        "subtitle": "Fizioterapeut",
+        "text": "Oni su uspeli da ožive moju viziju na način koji nikada nisam mogla da zamislim. Njihov pristup dizajnu zaista je istakao moj brend."
       },
-      "mailSent": {
-        "title": "Mejl je uspešno poslat.",
-        "errorTitle": "Greška prilikom slanja mejla. Molimo pokušajte kasnije.",
-        "subtitle": "Naš tim će Vas kontaktirati uskoro.",
-        "okButton": "OK"
+      {
+        "title": "Robert Wilson",
+        "subtitle": "Finansijski Direktor",
+        "text": "Njihovo stručno znanje i pažnja prema detaljima pretvorili su moje online prisustvo u nešto izuzetno. Ne mogu dovoljno preporučiti Majabo."
+      },
+      {
+        "title": "Sofija Blažić",
+        "subtitle": "Dijetetičar i Nutricionista",
+        "text": "Ako tražite pouzdane i kvalitetne usluge digitalnog marketinga, ne tražite dalje od Majabo-a. Oni će svaki put premašiti Vaša očekivanja!"
+      },
+      {
+        "title": "James Anderson",
+        "subtitle": "Računovođa",
+        "text": "Visoko preporučujem Majabo! Njihov rad govori sam za sebe i zahvalan sam što imam priliku da radim sa tako talentovanim i kreativnim timom."
       }
+    ]
+  },
+  "footer": {
+    "title": "Budite znatiželjni, pratite i kontaktiraj nas",
+    "subtitle": "NA SOCIJALNIM MEDIJIMA",
+    "madeBy": "Napravila MAJABO kreativna agencija",
+    "rightsReserved": "Sva prava rezervisana, 2023",
+    "mail": {
+      "title": "Budite slobodni da nam pošaljete poruku,",
+      "subtitle": "JER MI SMO OVDE ZBOG VAS",
+      "name": "Ime",
+      "email": "Mejl",
+      "text": "Poruka...",
+      "buttonSent": "POšALJI",
+      "buttonCancel": "ODUSTANI"
+    },
+    "mailSent": {
+      "title": "Mejl je uspešno poslat.",
+      "errorTitle": "Greška prilikom slanja mejla. Molimo pokušajte kasnije.",
+      "subtitle": "Naš tim će Vas kontaktirati uskoro.",
+      "okButton": "OK"
     }
   }
 }

@@ -23,19 +23,19 @@ export interface Translation {
       title: string;
       subtitle: string;
     };
-    testimonials: {
-      title: string;
-      subtitle: string;
-      testimonialList: Testimonial[];
-    };
-    footer: {
-      title: string;
-      subtitle: string;
-      madeBy: string;
-      rightsReserved: string;
-      mail: Mail;
-      mailSent: MailSent;
-    };
+  };
+  testimonials: {
+    title: string;
+    subtitle: string;
+    testimonialList: Testimonial[];
+  };
+  footer: {
+    title: string;
+    subtitle: string;
+    madeBy: string;
+    rightsReserved: string;
+    mail: Mail;
+    mailSent: MailSent;
   };
 }
 
@@ -44,13 +44,13 @@ export type Option = {
   optionText: string;
 };
 
-type Testimonial = {
+export type Testimonial = {
   title: string;
   subtitle: string;
   text: string;
 };
 
-type Mail = {
+export type Mail = {
   title: string;
   subtitle: string;
   name: string;
@@ -60,7 +60,7 @@ type Mail = {
   buttonCancel: string;
 };
 
-type MailSent = {
+export type MailSent = {
   title: string;
   errorTitle: string;
   subtitle: string;

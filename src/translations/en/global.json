@@ -42,53 +42,53 @@
     "statement": {
       "title": "The future belongs to those who believe in the beauty of their dreams.",
       "subtitle": "ELEANOR ROOSEVELT"
-    },
-    "testimonials": {
-      "title": "Your opinion",
-      "subtitle": "MATTERS TO US",
-      "testimonialList": [
-        {
-          "title": "Marina Ćirić",
-          "subtitle": "Physical Therapist",
-          "text": "They were able to bring my vision to life in a way that I never could have imagined. Their approach to design truly made my brand stand out."
-        },
-        {
-          "title": "Robert Wilson",
-          "subtitle": "Financial Manager",
-          "text": "Their expertise and attention to detail transformed my online presence into something remarkable. I cannot recommend Majabo enough."
-        },
-        {
-          "title": "Sofija Blažić",
-          "subtitle": "Dietitian and Nutritionist",
-          "text": "If you are looking for reliable and quality digital marketing services, look no further than Majabo. They will exceed your expectations every time!"
-        },
-        {
-          "title": "James Anderson",
-          "subtitle": "Accountant",
-          "text": "I highly recommend Majabo! Their work speaks for itself and I am grateful to have the opportunity to work with such a talented and creative team."
-        }
-      ]
-    },
-    "footer": {
-      "title": "Be curious, follow and contact us",
-      "subtitle": "ON SOCIAL MEDIA",
-      "madeBy": "Made by MAJABO creative agency",
-      "rightsReserved": "All rights reserved, 2023",
-      "mail": {
-        "title": "Feel free to send us a message,",
-        "subtitle": "BECAUSE WE ARE HERE FOR YOU",
-        "name": "Name",
-        "email": "E-mail",
-        "text": "Message...",
-        "buttonSent": "SEND",
-        "buttonCancel": "CANCEL"
+    }
+  },
+  "testimonials": {
+    "title": "Your opinion",
+    "subtitle": "MATTERS TO US",
+    "testimonialList": [
+      {
+        "title": "Marina Ćirić",
+        "subtitle": "Physical Therapist",
+        "text": "They were able to bring my vision to life in a way that I never could have imagined. Their approach to design truly made my brand stand out."
       },
-      "mailSent": {
-        "title": "Mail successfully sent.",
-        "errorTitle": "Error sending email. Please try later.",
-        "subtitle": "Our tim will contact you soon.",
-        "okButton": "OK"
+      {
+        "title": "Robert Wilson",
+        "subtitle": "Financial Manager",
+        "text": "Their expertise and attention to detail transformed my online presence into something remarkable. I cannot recommend Majabo enough."
+      },
+      {
+        "title": "Sofija Blažić",
+        "subtitle": "Dietitian and Nutritionist",
+        "text": "If you are looking for reliable and quality digital marketing services, look no further than Majabo. They will exceed your expectations every time!"
+      },
+      {
+        "title": "James Anderson",
+        "subtitle": "Accountant",
+        "text": "I highly recommend Majabo! Their work speaks for itself and I am grateful to have the opportunity to work with such a talented and creative team."
       }
+    ]
+  },
+  "footer": {
+    "title": "Be curious, follow and contact us",
+    "subtitle": "ON SOCIAL MEDIA",
+    "madeBy": "Made by MAJABO creative agency",
+    "rightsReserved": "All rights reserved, 2023",
+    "mail": {
+      "title": "Feel free to send us a message,",
+      "subtitle": "BECAUSE WE ARE HERE FOR YOU",
+      "name": "Name",
+      "email": "E-mail",
+      "text": "Message...",
+      "buttonSent": "SEND",
+      "buttonCancel": "CANCEL"
+    },
+    "mailSent": {
+      "title": "Mail successfully sent.",
+      "errorTitle": "Error sending email. Please try later.",
+      "subtitle": "Our tim will contact you soon.",
+      "okButton": "OK"
     }
   }
 }
