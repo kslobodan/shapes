@@ -32,15 +32,24 @@
   "portfolio": {
     "title": "Ovo je Majabo način",
     "subtitle": "DA SE TO URADI!",
-    "text": "Otkrivanje punog spektra kreativne izvrsnosti! MAJABO je vaš poslovni partner za potpuno marketinško rešenje./nMAJABO Vam nudi širok spektar usluga, od grafičkog dizajna i PPC-a do upravljanja društvenim medijima, SEO-a i pisanja tekstova, uređivanja video materijala,/nUGC videozapisi i dizajn veb sajta, obezbeđujući pokrivanje svih vaših marketing potreba za jedinstveno iskustvo brenda.",
+    "text": [
+      "Otkrivanje punog spektra kreativne izvrsnosti! MAJABO je vaš poslovni partner za potpuno marketinško rešenje. MAJABO",
+      "Vam nudi širok spektar usluga, od grafičkog dizajna i PPC-a do upravljanja društvenim medijima, SEO-a i pisanja tekstova,",
+      "uređivanja video materijala, UGC videozapisa i dizajn veb sajta, pokrivajući sve Vaše marketinške potrebe za jedinstveno iskustvo."
+    ],
     "kairon": [
       "Vaša VIZIJA nije samo cilj za nas....",
-      "To je UZBUDLJIVO i NEZABORAVNO PUTOVANJE koje koje IDEMO ZAJEDNO.",
+      "To je NEZABORAVNO PUTOVANJE na koje IDEMO ZAJEDNO.",
       "To je MAJABO."
-    ],
+    ]
+  },
+  "statement": {
     "description": " U MAJABO-u, mi pomažemo Vašem brendu da zablista. Gradimo izuzetne identitete, moderne veb sajtove i precizne digitalne kampanje. Nismo samo marketinška agencija. Mi smo Vaš odgovoran partner! Mi kažemo da se sve svodi na razumevanje Vaše vizije, podizanje Vašeg brenda, deljenje Vaše priče i pružanje rezultata koje možete izmeriti.",
-    "statement": {
-      "title": "Budućnost pripada onima koji veruju u lepotu svojih snova.",
+    "statementList": {
+      "title": [
+        "Budućnost pripada onima",
+        "koji veruju u lepotu svojih snova."
+      ],
       "subtitle": "ELENOR RUZVELT"
     }
   },

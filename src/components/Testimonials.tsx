@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Testimonials.module.scss";
 import TitleWithText from "./TitleWithText";
+import { useTranslation } from "react-i18next";
 
 const persons = [
   {
@@ -34,13 +35,18 @@ const persons = [
 ];
 
 const Testimonials = () => {
+  const [translate] = useTranslation("global");
+
   return (
     <section
       id="testimonials"
       style={{ marginBottom: "150px", marginTop: "150px" }}
     >
       <div>
-        <TitleWithText title="Your opinion" underTitle="MATTERS TO US" />
+        <TitleWithText
+          title={translate("testimonials.title")}
+          underTitle={translate("testimonials.subtitle")}
+        />
       </div>
       <div className={styles.content}>
         <div className={styles.content__box}>

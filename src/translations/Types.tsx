@@ -16,11 +16,13 @@ export interface Translation {
   portfolio: {
     title: string;
     subtitle: string;
-    text: string;
+    text: string[];
     kairon: string[];
+  };
+  statement: {
     description: string;
-    statement: {
-      title: string;
+    statementList: {
+      title: string[];
       subtitle: string;
     };
   };

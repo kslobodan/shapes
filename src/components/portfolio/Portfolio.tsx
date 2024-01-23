@@ -1,16 +1,8 @@
 import React, { CSSProperties, useState } from "react";
 import styles from "./Portfolio.module.scss";
 import TitleWithText from "../TitleWithText";
-import Slider from "../Slider";
-import {
-  images,
-  text,
-  Image,
-  ExpandType,
-  smallSize,
-  largeSize,
-  textArray,
-} from "./utils";
+import { images, Image, ExpandType, smallSize, largeSize } from "./utils";
+import { useTranslation } from "react-i18next";
 
 interface largeImage {
   divStyle: CSSProperties;
@@ -37,6 +29,7 @@ const boxExpanded: CSSProperties = {
 };
 
 const Portfolio = () => {
+  const [translate] = useTranslation("global");
   const [largeImageVisible, setLargeImageVisible] = useState<boolean>(false);
   const [currentId, setCurrentId] = useState<number>(0);
   const [largeImageDivStyle, setLargeImageDivStyle] = useState<CSSProperties>({
@@ -51,6 +44,13 @@ const Portfolio = () => {
     src: require(`../../images/1-large.png`),
     alt: "test1",
   });
+
+  const text: string[] =
+    translate("portfolio.text", { returnObjects: true }) || [];
+  const splitedText = text.join("\n");
+
+  const kairon: string[] =
+    translate("portfolio.kairon", { returnObjects: true }) || [];
 
   const moveImage = (expandType: ExpandType, id: number) => {
     if (currentId === id) return;
@@ -109,12 +109,11 @@ const Portfolio = () => {
       style={{ marginTop: "-20px", marginBottom: "-100px" }}
     >
       <TitleWithText
-        title="This is the Majabo way"
-        underTitle="TO DO IT!"
-        text={text}
+        title={translate("portfolio.title")}
+        underTitle={translate("portfolio.subtitle")}
+        text={splitedText}
         lineHeight="40px"
       />
-      {/* <Slider /> */}
       <div className="section__content">
         <div
           className={styles.content}
@@ -157,7 +156,7 @@ const Portfolio = () => {
         <div className={styles.visible__area}>
           <div className={styles.text__content}>
             <div className={styles.text}>
-              {textArray.map((element, index) => (
+              {kairon.map((element, index) => (
                 <p key={index}>{element}</p>
               ))}
             </div>

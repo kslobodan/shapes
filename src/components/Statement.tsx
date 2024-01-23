@@ -1,18 +1,20 @@
 import React from "react";
 import styles from "./Statement.module.scss";
+import { useTranslation } from "react-i18next";
 
 const Statement = () => {
+  const [translate] = useTranslation("global");
+
+  const title: string[] =
+    translate("statement.statementList.title", { returnObjects: true }) || [];
+
+  const titlePopulated = title && title.length === 2;
+
   return (
     <section style={{ marginTop: "150px" }}>
       <div className={styles.content}>
         <div className={styles.text}>
-          <p>
-            At MAJABO, we he­lp your brand shine. We build standout identitie­s,
-            modern websites, and accurate­ digital campaigns.We­'re not just a
-            marketing agency. We­'re your accountable partner! We say, it’s ­all
-            about understanding your vision, lifting your brand, sharing your
-            story, and delivering results you can me­asure.
-          </p>
+          <p>{translate("statement.description")}</p>
         </div>
         <div className={styles.top}>
           <svg
@@ -32,11 +34,17 @@ const Statement = () => {
         </div>
         <div className={styles.middle}>
           <div className={styles.title1}>
-            <h2>The future belongs to those</h2>
-            <h2>who believe in the beauty of their dreams.</h2>
+            {titlePopulated && (
+              <>
+                <h2>{title[0]}</h2>
+                <h2>{title[1]}</h2>
+              </>
+            )}
           </div>
           <div className={styles.title2}>
-            <p className="title__green__small">ELEANOR ROOSEVELT</p>
+            <p className="title__green__small">
+              {translate("statement.statementList.subtitle")}
+            </p>
           </div>
         </div>
         <div className={styles.bottom}>

@@ -32,15 +32,24 @@
   "portfolio": {
     "title": "This is the Majabo way",
     "subtitle": "TO DO IT!",
-    "text": "Unleashing the full spectrum of Creative Excellence! MAJABO is your business partner for Complete Marketing Solution./nMAJABO offers you a range of services, from graphic design and PPC to Social Media Management, SEO & copywriting, video editing,/nUGC videos and website design, ensuring all your marketing needs are covered for a unique brand experience.",
+    "text": [
+      "Unleashing the full spectrum of Creative Excellence! MAJABO is your business partner for Complete Marketing Solution.",
+      "MAJABO offers you a range of services, from graphic design and PPC to Social Media Management, SEO & copywriting, video editing,",
+      "UGC videos and website design, ensuring all your marketing needs are covered for a unique brand experience."
+    ],
     "kairon": [
       "Your VISION isn't just an aim for us...",
       "It's an EXCITING and MEMORABLE JOURNEY that we walk WITH YOU.",
       "That is MAJABO."
-    ],
+    ]
+  },
+  "statement": {
     "description": " At MAJABO, we he­lp your brand shine. We build standout identitie­s, modern websites, and accurate­ digital campaigns.We­'re not just a marketing agency. We­'re your accountable partner! We say, it’s ­all about understanding your vision, lifting your brand, sharing your story, and delivering results you can me­asure.",
-    "statement": {
-      "title": "The future belongs to those who believe in the beauty of their dreams.",
+    "statementList": {
+      "title": [
+        "The future belongs to those",
+        "who believe in the beauty of their dreams."
+      ],
       "subtitle": "ELEANOR ROOSEVELT"
     }
   },
