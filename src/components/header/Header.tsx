@@ -4,8 +4,10 @@ import styles from "./Header.module.scss";
 import { letters } from "./Letters";
 import SvgList from "./SvgList";
 import { Language, useLanguage } from "../../customHooks/useLanguage";
+import Arrow from "./ArrowSVG";
+import Circle from "./Circle";
 
-const Elipse = () => {
+const Header = () => {
   const [t, i18n] = useTranslation("global");
   const { language, setLanguage } = useLanguage();
   const [elipseWidth, setElipseWidth] = useState("332px");
@@ -64,9 +66,31 @@ const Elipse = () => {
 
   const languateText = language === "en" ? "EN/SR" : "SR/EN";
 
+  const logoStyle: CSSProperties = {
+    top: logoTop,
+    visibility: logoVisible ? "visible" : "hidden",
+    gap: logoGap,
+  };
+  const rectangleStyle: CSSProperties = {
+    width: rectangleWidth,
+    height: rectangleHeight,
+    transform: rectangleTransform,
+    backgroundColor: rectangleColor,
+  };
+  const shapeStyle: CSSProperties = {
+    top: shapeTop,
+    width: shapeWidth,
+    height: shapeHeight,
+  };
   const transformStyle: CSSProperties = {
     width: logoBox,
     transition: `all width 500ms ease-out `,
+  };
+  const chooseStyle: CSSProperties = {
+    top: chooseMarginTop,
+    color: chooseColor,
+    fontSize: chooseFontSize,
+    lineHeight: chooseLineHeight,
   };
 
   const firstChange = () => {
@@ -167,78 +191,26 @@ const Elipse = () => {
           >
             {languateText}
           </button>
-          <div
-            className={styles.choose}
-            style={{
-              top: chooseMarginTop,
-              color: chooseColor,
-              fontSize: chooseFontSize,
-              lineHeight: chooseLineHeight,
-            }}
-          >
+          <div className={styles.choose} style={chooseStyle}>
             choose
           </div>
-          <div
-            className={styles.shape}
-            style={{
-              top: shapeTop,
-              width: shapeWidth,
-              height: shapeHeight,
-            }}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width={circle.Widht}
-              height={circle.Widht}
+          <div className={styles.shape} style={shapeStyle}>
+            <Circle
+              circleWidth={circle.Widht}
               viewBox={circle.ViewBox}
-              fill="none"
-              style={{ transition: "all 1s ease-in-out" }}
-            >
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d={circle.D}
-                fill={circle.Fill}
-              />
-            </svg>
-            <div
-              className={styles.rectangle}
-              style={{
-                width: rectangleWidth,
-                height: rectangleHeight,
-                transform: rectangleTransform,
-                backgroundColor: rectangleColor,
-              }}
+              d={circle.D}
+              fill={circle.Fill}
             />
+            <div className={styles.rectangle} style={rectangleStyle} />
           </div>
         </div>
-        <div
-          className={styles.logo}
-          style={{
-            top: logoTop,
-            visibility: logoVisible ? "visible" : "hidden",
-            gap: logoGap,
-          }}
-        >
+        <div className={styles.logo} style={logoStyle}>
           <div className={styles.logo__text} style={transformStyle}>
             <SvgList sVGs={letters} />
           </div>
           <div className={styles.description}>{t("header.subtitle")}</div>
           <div className={styles.arrow}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="116"
-              height="58"
-              viewBox="0 0 116 58"
-              fill="none"
-            >
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M0 0L10.6066 10.6066L47.0661 47.0661L57.6727 57.6727L68.2793 47.0661L104.739 10.6066L115.345 0H94.1323L57.6727 36.4595L21.2132 0H0Z"
-                fill="#C3D400"
-              />
-            </svg>
+            <Arrow />
           </div>
         </div>
       </div>
@@ -246,4 +218,4 @@ const Elipse = () => {
   );
 };
 
-export default Elipse;
+export default Header;
