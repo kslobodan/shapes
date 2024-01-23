@@ -36,8 +36,21 @@ export interface Translation {
     subtitle: string;
     madeBy: string;
     rightsReserved: string;
-    mail: Mail;
-    mailSent: MailSent;
+  };
+  email: {
+    title: string;
+    subtitle: string;
+    name: string;
+    email: string;
+    text: string;
+    buttonSend: string;
+    buttonCancel: string;
+  };
+  emailSent: {
+    title: string;
+    errorTitle: string;
+    subtitle: string;
+    okButton: string;
   };
 }
 
@@ -52,21 +65,4 @@ export type Testimonial = {
   title: string;
   subtitle: string;
   text: string;
-};
-
-export type Mail = {
-  title: string;
-  subtitle: string;
-  name: string;
-  email: string;
-  text: string;
-  buttonSent: string;
-  buttonCancel: string;
-};
-
-export type MailSent = {
-  title: string;
-  errorTitle: string;
-  subtitle: string;
-  okButton: string;
 };

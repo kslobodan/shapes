@@ -91,21 +91,21 @@
     "title": "Be curious, follow and contact us",
     "subtitle": "ON SOCIAL MEDIA",
     "madeBy": "Made by MAJABO creative agency",
-    "rightsReserved": "All rights reserved, 2023",
-    "mail": {
-      "title": "Feel free to send us a message,",
-      "subtitle": "BECAUSE WE ARE HERE FOR YOU",
-      "name": "Name",
-      "email": "E-mail",
-      "text": "Message...",
-      "buttonSent": "SEND",
-      "buttonCancel": "CANCEL"
-    },
-    "mailSent": {
-      "title": "Mail successfully sent.",
-      "errorTitle": "Error sending email. Please try later.",
-      "subtitle": "Our tim will contact you soon.",
-      "okButton": "OK"
-    }
+    "rightsReserved": "All rights reserved, 2023"
+  },
+  "email": {
+    "title": "Feel free to send us a message,",
+    "subtitle": "BECAUSE WE ARE HERE FOR YOU",
+    "name": "Name",
+    "email": "E-mail",
+    "text": "Message...",
+    "buttonSend": "SEND",
+    "buttonCancel": "CANCEL"
+  },
+  "emailSent": {
+    "title": "Mail successfully sent.",
+    "errorTitle": "Error sending email. Please try later.",
+    "subtitle": "Our tim will contact you soon.",
+    "okButton": "OK"
   }
 }

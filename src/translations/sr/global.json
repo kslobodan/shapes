@@ -91,21 +91,21 @@
     "title": "Budite znatiželjni, pratite i kontaktiraj nas",
     "subtitle": "NA SOCIJALNIM MEDIJIMA",
     "madeBy": "Napravila MAJABO kreativna agencija",
-    "rightsReserved": "Sva prava rezervisana, 2023",
-    "mail": {
-      "title": "Budite slobodni da nam pošaljete poruku,",
-      "subtitle": "JER MI SMO OVDE ZBOG VAS",
-      "name": "Ime",
-      "email": "Mejl",
-      "text": "Poruka...",
-      "buttonSent": "POšALJI",
-      "buttonCancel": "ODUSTANI"
-    },
-    "mailSent": {
-      "title": "Mejl je uspešno poslat.",
-      "errorTitle": "Greška prilikom slanja mejla. Molimo pokušajte kasnije.",
-      "subtitle": "Naš tim će Vas kontaktirati uskoro.",
-      "okButton": "OK"
-    }
+    "rightsReserved": "Sva prava rezervisana, 2023"
+  },
+  "email": {
+    "title": "Budite slobodni da nam pošaljete poruku,",
+    "subtitle": "JER MI SMO OVDE ZBOG VAS",
+    "name": "Ime",
+    "email": "Mejl",
+    "text": "Poruka...",
+    "buttonSend": "POŠALJI",
+    "buttonCancel": "ODUSTANI"
+  },
+  "emailSent": {
+    "title": "Mejl je uspešno poslat.",
+    "errorTitle": "Greška prilikom slanja mejla. Molimo pokušajte kasnije.",
+    "subtitle": "Naš tim će Vas uskoro kontaktirati.",
+    "okButton": "U REDU"
   }
 }

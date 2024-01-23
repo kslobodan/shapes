@@ -1,6 +1,7 @@
 import React, { CSSProperties, ChangeEvent, useState } from "react";
 import styles from "./Footer.module.scss";
 import Logo from "./Logo";
+import { useTranslation } from "react-i18next";
 
 const inputStyle: CSSProperties = {
   borderWidth: "0px",
@@ -24,6 +25,7 @@ const textAreaStyle: CSSProperties = {
 const textAreaMaxLength = 1000;
 
 const Footer = () => {
+  const [translate] = useTranslation("global");
   const [showEmail, setShowEmail] = useState(false);
   const [boxHeight, setBoxHeight] = useState("500px");
   const [logoBottom, setLogoBottom] = useState("100px");
@@ -85,16 +87,18 @@ const Footer = () => {
     <footer id="footer" style={{ position: "absolute", zIndex: "100" }}>
       <div className={styles.box} style={{ height: boxHeight }} />
       <div className={styles.content} style={{ height: boxHeight }}>
-        {emailFormVisible && (
+        {!showEmail && (
           <div className="titles" style={{ marginTop: "20px" }}>
-            <h2>Be curious, follow and contact us</h2>
-            <p className="title__green__small">ON SOCIAL MEDIA</p>
+            <h2>{translate("footer.title")}</h2>
+            <p className="title__green__small">
+              {translate("footer.subtitle")}
+            </p>
           </div>
         )}
-        {!showEmail && (
+        {emailFormVisible && (
           <div className="titles" style={{ marginTop: "30px" }}>
-            <h2>Feel free to send us a message,</h2>
-            <p className="title__green__small">BECAUSE WE ARE HERE FOR YOU</p>
+            <h2>{translate("email.title")}</h2>
+            <p className="title__green__small">{translate("email.subtitle")}</p>
           </div>
         )}
 
@@ -119,7 +123,7 @@ const Footer = () => {
             className={` ${styles.email} ${showEmail ? styles.visibleDiv : ""}`}
           >
             <div className={styles.field}>
-              <label className={styles.label}>Name:</label>
+              <label className={styles.label}>{translate("email.name")}:</label>
               <input
                 type="email"
                 className="text"
@@ -130,7 +134,9 @@ const Footer = () => {
               />
             </div>
             <div className={styles.field}>
-              <label className={styles.label}>E-mail:</label>
+              <label className={styles.label}>
+                {translate("email.email")}:
+              </label>
               <input
                 type="text"
                 className="text"
@@ -144,7 +150,7 @@ const Footer = () => {
             <textarea
               className="text"
               style={textAreaStyle}
-              placeholder="Message..."
+              placeholder={translate("email.text")}
               value={text}
               onChange={handleTextChange}
               maxLength={textAreaMaxLength}
@@ -157,7 +163,7 @@ const Footer = () => {
                 onClick={handleSendEmail}
                 disabled={!sendbuttonEnabled}
               >
-                SEND
+                {translate("email.buttonSend")}
               </button>
               {text.length > 0 && (
                 <div style={{ marginTop: "-10px" }}>
@@ -168,7 +174,7 @@ const Footer = () => {
                 className={styles.button}
                 onClick={() => handleShowMail(false)}
               >
-                CANCEL
+                {translate("email.buttonCancel")}
               </button>
             </div>
           </div>
@@ -177,15 +183,15 @@ const Footer = () => {
         {popupVisible && (
           <div className={styles.popup}>
             <div className="text">
-              <h3>Mail successfully sent.</h3>
-              <p>Our tim will contact you soon.</p>
+              <h3>{translate("emailSent.title")}</h3>
+              <p>{translate("emailSent.subtitle")}</p>
             </div>
             <button
               className={styles.button}
               onClick={handleOKClick}
               style={{ marginTop: "30px" }}
             >
-              OK
+              {translate("emailSent.okButton")}
             </button>
           </div>
         )}
@@ -197,8 +203,8 @@ const Footer = () => {
           <Logo />
         </div>
         <div className={styles.small__text} style={{ bottom: rightsBottom }}>
-          <p>Made by MAJABO creative agency</p>
-          <p>All rights reserved, 2023</p>
+          <p>{translate("footer.madeBy")}</p>
+          <p>{translate("footer.rightsReserved")}</p>
         </div>
       </div>
     </footer>
