@@ -16,16 +16,16 @@
     ],
     "optionList": [
       {
-        "option1Title": "Wizard of copy",
-        "option1Text": " Shaping words that do wonders for your brand."
+        "optionTitle": "Wizard of copy",
+        "optionText": " Shaping words that do wonders for your brand."
       },
       {
-        "option2Title": "Master of code",
-        "option2Text": " Turning ideas into seamless digital experiences."
+        "optionTitle": "Master of code",
+        "optionText": " Turning ideas into seamless digital experiences."
       },
       {
-        "option3Title": "Builder of design",
-        "option3Text": " Crafting visuals that make your brand unforgettable."
+        "optionTitle": "Builder of design",
+        "optionText": " Crafting visuals that make your brand unforgettable."
       }
     ]
   },

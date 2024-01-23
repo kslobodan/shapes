@@ -141,7 +141,7 @@ $extended-ellipse-width: 370px;
 }
 
 .circle__title2 {
-  width: 44%;
+  width: 60%;
   color: #fff;
   text-align: center;
   font-style: normal;
@@ -151,6 +151,7 @@ $extended-ellipse-width: 370px;
   z-index: 10;
   left: 55px;
   bottom: 190px;
+  @include center-content(x);
 }
 
 .circle__title3 {

@@ -40,8 +40,8 @@ export interface Translation {
 }
 
 export type Option = {
-  option1Title: string;
-  option1Text: string;
+  optionTitle: string;
+  optionText: string;
 };
 
 type Testimonial = {

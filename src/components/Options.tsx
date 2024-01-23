@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./Options.module.scss";
 import TitleWithText from "./TitleWithText";
-import { relative } from "path";
 import { useTranslation } from "react-i18next";
+import { Option } from "../Types";
 
 const Options = () => {
   const [translate] = useTranslation("global");
@@ -16,8 +16,11 @@ const Options = () => {
     translate("options.text", { returnObjects: true }) || [];
   const splitedText = text.join("\n");
 
-  // const optionList: Option[] =
-  //   translate("options.optionList", { returnObjects: true }) || [];
+  const optionList: Option[] =
+    translate("options.optionList", { returnObjects: true }) || [];
+  console.log("optionList: ", optionList);
+
+  const optionListPopulated = optionList && optionList.length == 3;
 
   return (
     <section id="options" style={{ position: "relative" }}>
@@ -61,11 +64,13 @@ const Options = () => {
               >
                 <div className={styles.circle__text__content}>
                   <div className={styles.circle__text}>
-                    Shaping words that do wonders for your brand.
+                    {optionListPopulated && optionList[0].optionText}
                   </div>
                 </div>
               </div>
-              <h4 className={styles.circle__title}>Wizard of copy</h4>
+              <h4 className={styles.circle__title}>
+                {optionListPopulated && optionList[0].optionTitle}
+              </h4>
               <div className={styles.animation} />
             </div>
             <div className={styles.frame}>
@@ -105,11 +110,13 @@ const Options = () => {
               >
                 <div className={styles.circle__text__content2}>
                   <div className={styles.circle__text}>
-                    Turning ideas into seamless digital experiences.
+                    {optionListPopulated && optionList[1].optionText}
                   </div>
                 </div>
               </div>
-              <h4 className={styles.circle__title2}>Master of code</h4>
+              <h4 className={styles.circle__title2}>
+                {optionListPopulated && optionList[1].optionTitle}
+              </h4>
               <div className={styles.animation} />
             </div>
           </div>
@@ -144,11 +151,13 @@ const Options = () => {
               >
                 <div className={styles.circle__text__content}>
                   <div className={styles.circle__text}>
-                    Crafting visuals that make your brand unforgettable.
+                    {optionListPopulated && optionList[2].optionText}
                   </div>
                 </div>
               </div>
-              <h4 className={styles.circle__title3}>Builder of design</h4>
+              <h4 className={styles.circle__title3}>
+                {optionListPopulated && optionList[2].optionTitle}
+              </h4>
               <div className={styles.animation} />
             </div>
             <div className={styles.frame}>

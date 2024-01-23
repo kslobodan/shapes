@@ -16,16 +16,16 @@
     ],
     "optionList": [
       {
-        "option1Title": "Čarobnjak reči",
-        "option1Text": "Oblikovane reči koje čine čuda za Vaš brend."
+        "optionTitle": "Čarobnjak reči",
+        "optionText": "Oblikovane reči koje čine čuda za Vaš brend."
       },
       {
-        "option2Title": "Majstor kodiranja",
-        "option2Text": "Pretvaranje ideja u besprekorna digitalna iskustva."
+        "optionTitle": "Majstor kodiranja",
+        "optionText": "Pretvaranje ideja u besprekorna digitalna iskustva."
       },
       {
-        "option3Title": "Graditelj dizajna",
-        "option3Text": "Kreiranje vizuelnih elemenata koji Vaš brend čine nezaboravnim."
+        "optionTitle": "Graditelj dizajna",
+        "optionText": "Kreiranje vizuelnih elemenata koji Vaš brend čine nezaboravnim."
       }
     ]
   },
