@@ -47,6 +47,8 @@ export type Option = {
 };
 
 export type Testimonial = {
+  url: string;
+  odd: boolean;
   title: string;
   subtitle: string;
   text: string;

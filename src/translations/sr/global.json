@@ -58,21 +58,29 @@
     "subtitle": "NAM JE BITNO",
     "testimonialList": [
       {
+        "url": "person1.png",
+        "odd": true,
         "title": "Marina Ćirić",
         "subtitle": "Fizioterapeut",
         "text": "Oni su uspeli da ožive moju viziju na način koji nikada nisam mogla da zamislim. Njihov pristup dizajnu zaista je istakao moj brend."
       },
       {
+        "url": "person2.png",
+        "odd": false,
         "title": "Robert Wilson",
         "subtitle": "Finansijski Direktor",
         "text": "Njihovo stručno znanje i pažnja prema detaljima pretvorili su moje online prisustvo u nešto izuzetno. Ne mogu dovoljno preporučiti Majabo."
       },
       {
+        "url": "person3.png",
+        "odd": true,
         "title": "Sofija Blažić",
         "subtitle": "Dijetetičar i Nutricionista",
         "text": "Ako tražite pouzdane i kvalitetne usluge digitalnog marketinga, ne tražite dalje od Majabo-a. Oni će svaki put premašiti Vaša očekivanja!"
       },
       {
+        "url": "person4.png",
+        "odd": false,
         "title": "James Anderson",
         "subtitle": "Računovođa",
         "text": "Visoko preporučujem Majabo! Njihov rad govori sam za sebe i zahvalan sam što imam priliku da radim sa tako talentovanim i kreativnim timom."
