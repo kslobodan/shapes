@@ -10,7 +10,7 @@ export interface Translation {
   options: {
     title: string;
     subtitle: string;
-    text: string;
+    text: string[];
     optionList: Option[];
   };
   portfolio: {
@@ -39,7 +39,7 @@ export interface Translation {
   };
 }
 
-type Option = {
+export type Option = {
   option1Title: string;
   option1Text: string;
 };

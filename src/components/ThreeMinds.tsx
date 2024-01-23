@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import styles from "./ThreeMinds.module.scss";
+import { useTranslation } from "react-i18next";
 
 const ThreeMinds = () => {
+  const [translate] = useTranslation("global");
   const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
@@ -13,16 +15,18 @@ const ThreeMinds = () => {
   }, []);
 
   const divs = [
-    "Beyond Perfection.",
-    "Beyond the Ordinary.",
-    "Beyond Imagination.",
+    translate("threeMinds.beyond1"),
+    translate("threeMinds.beyond2"),
+    translate("threeMinds.beyond3"),
   ];
 
   return (
     <section id="threeMinds">
       <div className="titles__small">
-        <h2>Where three minds collide for</h2>
-        <p className="title__green__small">INFINITE CREATIVITY</p>
+        <h2>{translate("threeMinds.title")}</h2>
+        <p className="title__green__small">
+          {translate("threeMinds.subtitle")}
+        </p>
       </div>
       <div className={styles.box}>
         <div className={styles.content}>

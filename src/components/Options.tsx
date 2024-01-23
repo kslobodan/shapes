@@ -2,25 +2,31 @@ import React from "react";
 import styles from "./Options.module.scss";
 import TitleWithText from "./TitleWithText";
 import { relative } from "path";
+import { useTranslation } from "react-i18next";
 
 const Options = () => {
+  const [translate] = useTranslation("global");
   const middleElipseStyle = {
     position: "absolute",
     bottom: "0",
     left: 202 / 2 - 137 / 2 - 5 + "px",
   } as const;
 
-  const text = `We blend design, code, and copywriting, turning imperfections into innovative authentic brand stories.\n 
-  With MAJABO your brand will transcend boundaries and define a compelling narrative that deeply resonates with your target audience.`;
+  const text: string[] =
+    translate("options.text", { returnObjects: true }) || [];
+  const splitedText = text.join("\n");
+
+  // const optionList: Option[] =
+  //   translate("options.optionList", { returnObjects: true }) || [];
 
   return (
     <section id="options" style={{ position: "relative" }}>
       <div style={{ marginBottom: "-160px" }}>
         <TitleWithText
-          title="Be honest with yourself and"
-          underTitle="SELECT YOUR MAJABO"
-          text={text}
-          lineHeight="20px"
+          title={translate("options.title")}
+          underTitle={translate("options.subtitle")}
+          text={splitedText}
+          lineHeight="40px"
         />
       </div>
       <div className={styles.content}>

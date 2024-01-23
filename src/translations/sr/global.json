@@ -10,7 +10,10 @@
   "options": {
     "title": "Budite iskreni prema sebi i",
     "subtitle": "ODABERITE SVOJ MAJABO",
-    "text": "Mi miksujemo dizajn, kod i copywriting, pretvarajući nesavršenosti u inovativne autentične brendirane priće.\nSa MAJABO-m vaš brend će prevazići granice i definisati uzbudljivu priču koja duboko rezonuje sa Vašom ciljnom grupom.",
+    "text": [
+      "Mi miksujemo dizajn, kod i copywriting, pretvarajući nesavršenosti u inovativne autentične brendirane priće.",
+      "nSa MAJABO-m vaš brend će prevazići granice i definisati uzbudljivu priču koja duboko rezonuje sa Vašom ciljnom grupom."
+    ],
     "optionList": [
       {
         "option1Title": "Čarobnjak reči",

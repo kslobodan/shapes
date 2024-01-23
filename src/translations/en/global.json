@@ -10,7 +10,10 @@
   "options": {
     "title": "Be honest with yourself and",
     "subtitle": "SELECT YOUR MAJABO",
-    "text": "We blend design, code, and copywriting, turning imperfections into innovative authentic brand stories.\nWith MAJABO your brand will transcend boundaries and define a compelling narrative that deeply resonates with your target audience.",
+    "text": [
+      "We blend design, code, and copywriting, turning imperfections into innovative authentic brand stories.",
+      "With MAJABO your brand will transcend boundaries and define a compelling narrative that deeply resonates with your target audience."
+    ],
     "optionList": [
       {
         "option1Title": "Wizard of copy",

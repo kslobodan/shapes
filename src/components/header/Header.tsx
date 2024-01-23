@@ -8,7 +8,7 @@ import Arrow from "./ArrowSVG";
 import Circle from "./Circle";
 
 const Header = () => {
-  const [t, i18n] = useTranslation("global");
+  const [translate, i18n] = useTranslation("global");
   const { language, setLanguage } = useLanguage();
   const [elipseWidth, setElipseWidth] = useState("332px");
   const [elipseLeft, setElipseLeft] = useState("calc(50% - ( 332px/2))");
@@ -192,7 +192,7 @@ const Header = () => {
             {languateText}
           </button>
           <div className={styles.choose} style={chooseStyle}>
-            choose
+            {translate("header.choose")}
           </div>
           <div className={styles.shape} style={shapeStyle}>
             <Circle
@@ -208,7 +208,9 @@ const Header = () => {
           <div className={styles.logo__text} style={transformStyle}>
             <SvgList sVGs={letters} />
           </div>
-          <div className={styles.description}>{t("header.subtitle")}</div>
+          <div className={styles.description}>
+            {translate("header.subtitle")}
+          </div>
           <div className={styles.arrow}>
             <Arrow />
           </div>
