@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Options.module.scss";
 import TitleWithText from "./TitleWithText";
 import { useTranslation } from "react-i18next";
-import { Option } from "../Types";
+import { Option } from "../translations/Types";
 
 const Options = () => {
   const [translate] = useTranslation("global");

@@ -45,7 +45,7 @@ const Testimonials = () => {
       <div className={styles.content}>
         <div className={styles.content__box}>
           {persons.map((person, index) => (
-            <div className={styles.box}>
+            <div key={index} className={styles.box}>
               <div
                 className={
                   person.odd ? styles.text__field1 : styles.text__field2

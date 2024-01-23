@@ -157,8 +157,8 @@ const Portfolio = () => {
         <div className={styles.visible__area}>
           <div className={styles.text__content}>
             <div className={styles.text}>
-              {textArray.map((element) => (
-                <p>{element}</p>
+              {textArray.map((element, index) => (
+                <p key={index}>{element}</p>
               ))}
             </div>
           </div>
