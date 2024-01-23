@@ -8,16 +8,17 @@ import global_en from "./translations/en/global.json";
 import global_sr from "./translations/sr/global.json";
 import i18next from "i18next";
 import { I18nextProvider } from "react-i18next";
+import { Translation } from "./Types";
 
 i18next.init({
   interpolation: { escapeValue: true },
   lng: "en",
   resources: {
     en: {
-      global: global_en,
+      global: global_en as Translation,
     },
     sr: {
-      global: global_sr,
+      global: global_sr as Translation,
     },
   },
 });

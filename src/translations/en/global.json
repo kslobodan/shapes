@@ -1,10 +1,6 @@
 {
   "header": { "subtitle": "creative agency", "choose": "choose" },
-  "footer": {
-    "madeBy": "Made by MAJABO creative agency",
-    "rightsReserved": "All rights reserved, 2023"
-  },
-  "three minds": {
+  "threeMinds": {
     "title": "Where three minds collide for",
     "subtitle": "INFINITE CREATIVITY",
     "beyond1": "Beyond Perfection.",
@@ -15,11 +11,81 @@
     "title": "Be honest with yourself and",
     "subtitle": "SELECT YOUR MAJABO",
     "text": "We blend design, code, and copywriting, turning imperfections into innovative authentic brand stories.\nWith MAJABO your brand will transcend boundaries and define a compelling narrative that deeply resonates with your target audience.",
-    "option1Title": "Wizard of copy",
-    "option1Text": " Shaping words that do wonders for your brand.",
-    "option2Title": "Master of code",
-    "option2Text": " Turning ideas into seamless digital experiences.",
-    "option3Title": "Builder of design",
-    "option3Text": " Crafting visuals that make your brand unforgettable."
+    "optionList": [
+      {
+        "option1Title": "Wizard of copy",
+        "option1Text": " Shaping words that do wonders for your brand."
+      },
+      {
+        "option2Title": "Master of code",
+        "option2Text": " Turning ideas into seamless digital experiences."
+      },
+      {
+        "option3Title": "Builder of design",
+        "option3Text": " Crafting visuals that make your brand unforgettable."
+      }
+    ]
+  },
+  "portfolio": {
+    "title": "This is the Majabo way",
+    "subtitle": "TO DO IT!",
+    "text": "Unleashing the full spectrum of Creative Excellence! MAJABO is your business partner for Complete Marketing Solution./nMAJABO offers you a range of services, from graphic design and PPC to Social Media Management, SEO & copywriting, video editing,/nUGC videos and website design, ensuring all your marketing needs are covered for a unique brand experience.",
+    "kairon": [
+      "Your VISION isn't just an aim for us...",
+      "It's an EXCITING and MEMORABLE JOURNEY that we walk WITH YOU.",
+      "That is MAJABO."
+    ],
+    "description": " At MAJABO, we he­lp your brand shine. We build standout identitie­s, modern websites, and accurate­ digital campaigns.We­'re not just a marketing agency. We­'re your accountable partner! We say, it’s ­all about understanding your vision, lifting your brand, sharing your story, and delivering results you can me­asure.",
+    "statement": {
+      "title": "The future belongs to those who believe in the beauty of their dreams.",
+      "subtitle": "ELEANOR ROOSEVELT"
+    },
+    "testimonials": {
+      "title": "Your opinion",
+      "subtitle": "MATTERS TO US",
+      "testimonialList": [
+        {
+          "title": "Marina Ćirić",
+          "subtitle": "Physical Therapist",
+          "text": "They were able to bring my vision to life in a way that I never could have imagined. Their approach to design truly made my brand stand out."
+        },
+        {
+          "title": "Robert Wilson",
+          "subtitle": "Financial Manager",
+          "text": "Their expertise and attention to detail transformed my online presence into something remarkable. I cannot recommend Majabo enough."
+        },
+        {
+          "title": "Sofija Blažić",
+          "subtitle": "Dietitian and Nutritionist",
+          "text": "If you are looking for reliable and quality digital marketing services, look no further than Majabo. They will exceed your expectations every time!"
+        },
+        {
+          "title": "James Anderson",
+          "subtitle": "Accountant",
+          "text": "I highly recommend Majabo! Their work speaks for itself and I am grateful to have the opportunity to work with such a talented and creative team."
+        }
+      ]
+    },
+    "footer": {
+      "title": "Be curious, follow and contact us",
+      "subtitle": "ON SOCIAL MEDIA",
+      "madeBy": "Made by MAJABO creative agency",
+      "rightsReserved": "All rights reserved, 2023",
+      "mail": {
+        "title": "Feel free to send us a message,",
+        "subtitle": "BECAUSE WE ARE HERE FOR YOU",
+        "name": "Name",
+        "email": "E-mail",
+        "text": "Message...",
+        "buttonSent": "SEND",
+        "buttonCancel": "CANCEL"
+      },
+      "mailSent": {
+        "title": "Mail successfully sent.",
+        "errorTitle": "Error sending email. Please try later.",
+        "subtitle": "Our tim will contact you soon.",
+        "okButton": "OK"
+      }
+    }
   }
 }

@@ -1,10 +1,6 @@
 {
-  "header": { "subtitle": "kreativna agencija", "choose": "izaberi" },
-  "footer": {
-    "madeBy": "Napravila MAJABO krativna agencija",
-    "rightsReserved": "Sva prava rezervisana, 2023"
-  },
-  "three minds": {
+  "header": { "subtitle": "kreativna agencija", "choose": "izaberite" },
+  "threeMinds": {
     "title": "Gde se tri uma sudaraju radi",
     "subtitle": "NEOGRANIČENE KREATIVNOSTI",
     "beyond1": "Izvan Perfekcije.",
@@ -12,14 +8,84 @@
     "beyond3": "Izvan Mašte."
   },
   "options": {
-    "title": "Be honest with yourself and",
-    "subtitle": "SELECT YOUR MAJABO",
-    "text": "We blend design, code, and copywriting, turning imperfections into innovative authentic brand stories.\nWith MAJABO your brand will transcend boundaries and define a compelling narrative that deeply resonates with your target audience.",
-    "option1Title": "Wizard of copy",
-    "option1Text": " Shaping words that do wonders for your brand.",
-    "option2Title": "Master of code",
-    "option2Text": " Turning ideas into seamless digital experiences.",
-    "option3Title": "Builder of design",
-    "option3Text": " Crafting visuals that make your brand unforgettable."
+    "title": "Budite iskreni prema sebi i",
+    "subtitle": "ODABERITE SVOJ MAJABO",
+    "text": "Mi miksujemo dizajn, kod i copywriting, pretvarajući nesavršenosti u inovativne autentične brendirane priće.\nSa MAJABO-m vaš brend će prevazići granice i definisati uzbudljivu priču koja duboko rezonuje sa Vašom ciljnom grupom.",
+    "optionList": [
+      {
+        "option1Title": "Čarobnjak reči",
+        "option1Text": "Oblikovane reči koje čine čuda za Vaš brend."
+      },
+      {
+        "option2Title": "Majstor kodiranja",
+        "option2Text": "Pretvaranje ideja u besprekorna digitalna iskustva."
+      },
+      {
+        "option3Title": "Graditelj dizajna",
+        "option3Text": "Kreiranje vizuelnih elemenata koji Vaš brend čine nezaboravnim."
+      }
+    ]
+  },
+  "portfolio": {
+    "title": "Ovo je Majabo način",
+    "subtitle": "DA SE TO URADI!",
+    "text": "Otkrivanje punog spektra kreativne izvrsnosti! MAJABO je vaš poslovni partner za potpuno marketinško rešenje./nMAJABO Vam nudi širok spektar usluga, od grafičkog dizajna i PPC-a do upravljanja društvenim medijima, SEO-a i pisanja tekstova, uređivanja video materijala,/nUGC videozapisi i dizajn veb sajta, obezbeđujući pokrivanje svih vaših marketing potreba za jedinstveno iskustvo brenda.",
+    "kairon": [
+      "Vaša VIZIJA nije samo cilj za nas....",
+      "To je UZBUDLJIVO i NEZABORAVNO PUTOVANJE koje koje IDEMO ZAJEDNO.",
+      "To je MAJABO."
+    ],
+    "description": " U MAJABO-u, mi pomažemo Vašem brendu da zablista. Gradimo izuzetne identitete, moderne veb sajtove i precizne digitalne kampanje. Nismo samo marketinška agencija. Mi smo Vaš odgovoran partner! Mi kažemo da se sve svodi na razumevanje Vaše vizije, podizanje Vašeg brenda, deljenje Vaše priče i pružanje rezultata koje možete izmeriti.",
+    "statement": {
+      "title": "Budućnost pripada onima koji veruju u lepotu svojih snova.",
+      "subtitle": "ELENOR RUZVELT"
+    },
+    "testimonials": {
+      "title": "Vaše mišljenje",
+      "subtitle": "NAM JE BITNO",
+      "testimonialList": [
+        {
+          "title": "Marina Ćirić",
+          "subtitle": "Fizioterapeut",
+          "text": "Oni su uspeli da ožive moju viziju na način koji nikada nisam mogla da zamislim. Njihov pristup dizajnu zaista je istakao moj brend."
+        },
+        {
+          "title": "Robert Wilson",
+          "subtitle": "Finansijski Direktor",
+          "text": "Njihovo stručno znanje i pažnja prema detaljima pretvorili su moje online prisustvo u nešto izuzetno. Ne mogu dovoljno preporučiti Majabo."
+        },
+        {
+          "title": "Sofija Blažić",
+          "subtitle": "Dijetetičar i Nutricionista",
+          "text": "Ako tražite pouzdane i kvalitetne usluge digitalnog marketinga, ne tražite dalje od Majabo-a. Oni će svaki put premašiti Vaša očekivanja!"
+        },
+        {
+          "title": "James Anderson",
+          "subtitle": "Računovođa",
+          "text": "Visoko preporučujem Majabo! Njihov rad govori sam za sebe i zahvalan sam što imam priliku da radim sa tako talentovanim i kreativnim timom."
+        }
+      ]
+    },
+    "footer": {
+      "title": "Budite znatiželjni, pratite i kontaktiraj nas",
+      "subtitle": "NA SOCIJALNIM MEDIJIMA",
+      "madeBy": "Napravila MAJABO kreativna agencija",
+      "rightsReserved": "Sva prava rezervisana, 2023",
+      "mail": {
+        "title": "Budite slobodni da nam pošaljete poruku,",
+        "subtitle": "JER MI SMO OVDE ZBOG VAS",
+        "name": "Ime",
+        "email": "Mejl",
+        "text": "Poruka...",
+        "buttonSent": "POšALJI",
+        "buttonCancel": "ODUSTANI"
+      },
+      "mailSent": {
+        "title": "Mejl je uspešno poslat.",
+        "errorTitle": "Greška prilikom slanja mejla. Molimo pokušajte kasnije.",
+        "subtitle": "Naš tim će Vas kontaktirati uskoro.",
+        "okButton": "OK"
+      }
+    }
   }
 }
