@@ -14,7 +14,7 @@ const TitleWithText: React.FC<TitleWithTextProps> = ({
   lineHeight,
 }) => {
   return (
-    <div className="section__content">
+    <div>
       <div className="titles">
         <h1>{title}</h1>
         <p className="title__green">{underTitle}</p>
@@ -26,6 +26,7 @@ const TitleWithText: React.FC<TitleWithTextProps> = ({
             marginTop: "8vh",
             marginBottom: "20vh",
             lineHeight: lineHeight,
+            textAlign: "center",
           }}
         >
           {text}

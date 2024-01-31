@@ -88,7 +88,7 @@ const Footer = () => {
       <div className={styles.box} style={{ height: boxHeight }} />
       <div className={styles.content} style={{ height: boxHeight }}>
         {!showEmail && (
-          <div className="titles" style={{ marginTop: "20px" }}>
+          <div className="titles" style={{ marginTop: "25px" }}>
             <h2>{translate("footer.title")}</h2>
             <p className="title__green__small">
               {translate("footer.subtitle")}

@@ -8,7 +8,7 @@
     "beyond3": "Beyond Imagination."
   },
   "options": {
-    "title": "Be honest with yourself and",
+    "title": "Be honest with yourself,",
     "subtitle": "SELECT YOUR MAJABO",
     "text": [
       "We blend design, code, and copywriting, turning imperfections into innovative authentic brand stories.",
@@ -54,8 +54,8 @@
     }
   },
   "testimonials": {
-    "title": "Your opinion",
-    "subtitle": "MATTERS TO US",
+    "title": "Your opinion is important to us",
+    "subtitle": "AND WE VALUE IT",
     "testimonialList": [
       {
         "url": "person1.png",
@@ -88,7 +88,7 @@
     ]
   },
   "footer": {
-    "title": "Be curious, follow and contact us",
+    "title": "Be curious, contact and follow us",
     "subtitle": "ON SOCIAL MEDIA",
     "madeBy": "Made by MAJABO creative agency",
     "rightsReserved": "All rights reserved, 2023"
