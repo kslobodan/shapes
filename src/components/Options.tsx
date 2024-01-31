@@ -18,7 +18,6 @@ const Options = () => {
 
   const optionList: Option[] =
     translate("options.optionList", { returnObjects: true }) || [];
-  console.log("optionList: ", optionList);
 
   const optionListPopulated = optionList && optionList.length == 3;
 

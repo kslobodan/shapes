@@ -55,7 +55,6 @@ const Portfolio = () => {
   const moveImage = (expandType: ExpandType, id: number) => {
     if (currentId === id) return;
     setCurrentId(id);
-    console.log(expandType, id);
 
     setLargeImageDivStyle((prevStyle) => {
       const updatedStyle = {
