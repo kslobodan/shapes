@@ -3,13 +3,13 @@ import { useTranslation } from "react-i18next";
 import styles from "./Header.module.scss";
 import { letters } from "./Letters";
 import SvgList from "./SvgList";
-import { Language, useLanguage } from "../../customHooks/useLanguage";
+import { Language, useAppContext } from "../../customHooks/useAppContext";
 import Arrow from "./ArrowSVG";
 import Circle from "./Circle";
 
 const Header = () => {
   const [translate, i18n] = useTranslation("global");
-  const { language, setLanguage } = useLanguage();
+  const { language, setLanguage } = useAppContext();
   const [elipseWidth, setElipseWidth] = useState("332px");
   const [elipseLeft, setElipseLeft] = useState("calc(50% - ( 332px/2))");
   const [elipseTop, setElipseTop] = useState("-200px");

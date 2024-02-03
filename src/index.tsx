@@ -9,6 +9,7 @@ import global_sr from "./translations/sr/global.json";
 import i18next from "i18next";
 import { I18nextProvider } from "react-i18next";
 import { Translation } from "./translations/Types";
+import { AppProvider } from "./customHooks/useAppContext";
 
 i18next.init({
   interpolation: { escapeValue: true },
@@ -29,7 +30,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <I18nextProvider i18n={i18next}>
-      <App />
+      <AppProvider>
+        <App />
+      </AppProvider>
     </I18nextProvider>
   </React.StrictMode>
 );
