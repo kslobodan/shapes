@@ -8,9 +8,9 @@ import React, {
 
 export type Language = "en" | "rs";
 export type ScreenSize =
-  | "xx-large-screen" // > 1680px
+  | "xx-large-screen" // > 1920px
   | "x-large-screen" // > 1280px
-  | "large-screen" // > 768px
+  | "large-screen" // > 720px
   | "medium-screen" // > 480px
   | "small-screen"; // <= 480px
 

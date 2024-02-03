@@ -15,10 +15,10 @@ const Home = () => {
   useEffect(() => {
     const handleResize = () => {
       const screenWidth = window.innerWidth;
-      if (screenWidth > 1680) setScreenSize("xx-large-screen");
+      if (screenWidth > 1920) setScreenSize("xx-large-screen");
       else if (screenWidth > 1280) setScreenSize("x-large-screen");
-      else if (screenWidth > 1280) setScreenSize("large-screen");
-      else if (screenWidth > 768) setScreenSize("medium-screen");
+      else if (screenWidth > 720) setScreenSize("large-screen");
+      else if (screenWidth > 480) setScreenSize("medium-screen");
       else if (screenWidth <= 480) setScreenSize("small-screen");
     };
 
