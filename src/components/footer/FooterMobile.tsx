@@ -24,7 +24,7 @@ const textAreaStyle: CSSProperties = {
 
 const textAreaMaxLength = 1000;
 
-export const Footer = () => {
+export const FooterMobile = () => {
   const [translate] = useTranslation("global");
   const [showEmail, setShowEmail] = useState(false);
   const [boxHeight, setBoxHeight] = useState("500px");

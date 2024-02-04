@@ -1,5 +1,5 @@
-import React, { createContext, useEffect } from "react";
-import Footer from "../components/footer/Footer";
+import React, { useEffect } from "react";
+import { Footer, FooterMobile } from "../components/footer";
 import Portfolio from "../components/portfolio/Portfolio";
 import Options from "../components/Options";
 import Header from "../components/header/Header";
@@ -10,7 +10,7 @@ import Arrow from "../components/Arrow";
 import { useAppContext } from "../customHooks/useAppContext";
 
 const Home = () => {
-  const { setScreenSize } = useAppContext();
+  const { screenSize, setScreenSize } = useAppContext();
 
   useEffect(() => {
     const handleResize = () => {
@@ -31,14 +31,24 @@ const Home = () => {
 
   return (
     <>
-      <Header />
-      <ThreeMinds />
-      <Options />
-      <Portfolio />
-      <Statement />
-      <Testimonials />
-      <Footer />
-      <Arrow />
+      {screenSize !== "small-screen" && (
+        <>
+          <Header />
+          <ThreeMinds />
+          <Options />
+          <Portfolio />
+          <Statement />
+          <Testimonials />
+          <Footer />
+          <Arrow />
+        </>
+      )}
+
+      {screenSize === "small-screen" && (
+        <>
+          <FooterMobile />
+        </>
+      )}
     </>
   );
 };
