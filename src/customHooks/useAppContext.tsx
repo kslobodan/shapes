@@ -9,10 +9,12 @@ import React, {
 export type Language = "en" | "rs";
 export type ScreenSize =
   | "xx-large-screen" // > 1920px
-  | "x-large-screen" // > 1280px
-  | "large-screen" // > 720px
-  | "medium-screen" // > 480px
-  | "small-screen"; // <= 480px
+  | "x-large-screen" // < 1920px
+  | "large-screen" // < 1280px
+  | "medium-screen" // < 720px
+  | "small-screen" // < 480px
+  | "x-small-screen" // < 400px
+  | "xx-small-screen"; // < 350px
 
 type AppContextProps = {
   language: Language;

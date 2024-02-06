@@ -1,5 +1,5 @@
 import React, { CSSProperties, ChangeEvent, useState } from "react";
-import styles from "./Footer.module.scss";
+import styles from "./FooterMobile.module.scss";
 import Logo from "./Logo";
 import { useTranslation } from "react-i18next";
 
@@ -88,29 +88,43 @@ export const FooterMobile = () => {
       <div className={styles.box} style={{ height: boxHeight }} />
       <div className={styles.content} style={{ height: boxHeight }}>
         {!showEmail && (
-          <div className="titles" style={{ marginTop: "25px" }}>
-            <h2>{translate("footer.title")}</h2>
-            <p className="title__green__small">
+          <div className="titles__mobile" style={{ marginTop: "25px" }}>
+            <div className={styles.title}>
+              <h2>{translate("footer.title")}</h2>
+            </div>
+            <p className="title__mobile__green__small">
               {translate("footer.subtitle")}
             </p>
           </div>
         )}
         {emailFormVisible && (
-          <div className="titles" style={{ marginTop: "30px" }}>
+          <div className="titles__mobile" style={{ marginTop: "30px" }}>
             <h2>{translate("email.title")}</h2>
-            <p className="title__green__small">{translate("email.subtitle")}</p>
+            <p className="title__mobile__green__small">
+              {translate("email.subtitle")}
+            </p>
           </div>
         )}
 
         {!showEmail && (
           <div className={styles.social__media}>
             <img
+              className={styles.social_button}
               src={require(`../../../src/images/insta.png`)}
               alt="instagram"
             />
-            <img src={require(`../../../src/images/yt.png`)} alt="youtube" />
-            <img src={require(`../../../src/images/fb.png`)} alt="facebook" />
             <img
+              className={styles.social_button}
+              src={require(`../../../src/images/yt.png`)}
+              alt="youtube"
+            />
+            <img
+              className={styles.social_button}
+              src={require(`../../../src/images/fb.png`)}
+              alt="facebook"
+            />
+            <img
+              className={styles.social_button}
               src={require(`../../../src/images/message.png`)}
               alt="email"
               onClick={() => handleShowMail(true)}

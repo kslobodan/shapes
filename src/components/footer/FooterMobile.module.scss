@@ -1,0 +1,207 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+footer {
+  width: 100%;
+  height: 457px;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  // background-color: red;
+  position: absolute;
+}
+
+.box {
+  height: 431px;
+  width: 84%;
+  opacity: 0.5;
+  background: $header-color;
+  box-shadow: -52.719px 0px 55.355px 0px rgba(0, 0, 0, 0.1) inset,
+    -15.816px 0px 47.447px 5.272px rgba(0, 0, 0, 0.41) inset,
+    -26.359px 26.359px 39.539px 0px rgba(0, 0, 0, 0.25),
+    26.359px -26.359px 39.539px 0px #fff;
+
+  transition: all 500ms linear;
+}
+
+.content {
+  position: absolute;
+  height: 500px;
+  width: 75%;
+  margin-bottom: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-clip: padding-box;
+}
+.title {
+  @include small-screen {
+    width: 231px;
+  }
+  @include x-small-screen {
+    width: 200px;
+  }
+  @include xx-small-screen {
+    width: 180px;
+  }
+}
+
+.social__media {
+  width: 98%;
+  // background-color: yellow;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 50px;
+
+  @include x-large-screen {
+    margin-top: 40px;
+  }
+}
+
+.social_button {
+  @include small-screen {
+    width: 58px;
+    height: 58px;
+    // background-color: red;
+  }
+  @include x-small-screen {
+    width: 50px;
+    height: 50px;
+  }
+  @include xx-small-screen {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+.logo {
+  position: absolute;
+  transition: transform 500ms linear;
+}
+
+.rotated {
+  transform: rotate(180deg);
+}
+
+.small__text {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.small__text > p {
+  margin: 0;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.email {
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  opacity: 0;
+  transition: opacity 500ms ease;
+}
+
+.visibleDiv {
+  opacity: 1;
+}
+
+.field {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  width: 100.3%;
+  gap: 10px;
+  // background-color: red;
+}
+
+.label {
+  color: $color-grey;
+  text-align: center;
+  font-family: Raleway;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 40px; /* 200% */
+  width: 100px;
+  text-align: start;
+}
+
+.input {
+  border-width: 0px;
+  height: 20px;
+  flex: 1;
+  color: $color-grey;
+  text-align: center;
+  font-family: Raleway;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  text-align: start;
+}
+
+.text__area {
+  margin-top: 10px;
+  width: 100%;
+  border-width: 0px;
+  height: 200px;
+}
+
+.buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+%button {
+  width: 200px;
+  height: 50px;
+  border-radius: 32.5px 32.178px 32.5px 32.5px;
+  border-width: 0px;
+  color: #fff;
+  text-align: center;
+  font-family: Raleway;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 20px;
+  letter-spacing: 4px;
+}
+
+.button {
+  @extend %button;
+  background-color: $color-neon;
+  cursor: pointer;
+}
+
+.button__disabled {
+  @extend %button;
+  background-color: $color-light-grey;
+}
+
+.popup {
+  position: absolute;
+  top: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div {
+  > img {
+    cursor: pointer;
+  }
+}

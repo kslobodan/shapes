@@ -22,6 +22,18 @@
   }
 }
 
+@mixin x-small-screen() {
+  @media only screen and (max-width: 400px) {
+    @content;
+  }
+}
+
+@mixin xx-small-screen() {
+  @media only screen and (max-width: 350px) {
+    @content;
+  }
+}
+
 @mixin center-content($type: xy) {
   position: absolute;
   left: 50%;

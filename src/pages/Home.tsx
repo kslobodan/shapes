@@ -14,24 +14,25 @@ const Home = () => {
 
   return (
     <>
-      {screenSize !== "small-screen" && (
-        <>
-          <Header />
-          <ThreeMinds />
-          <Options />
-          <Portfolio />
-          <Statement />
-          <Testimonials />
-          <Footer />
-          <Arrow />
-        </>
-      )}
+      {/* {screenSize !== "small-screen" && ( */}
+      <>
+        <Header />
+        <ThreeMinds />
+        <Options />
+        <Portfolio />
+        <Statement />
+        <Testimonials />
+        {screenSize !== "small-screen" ? <Footer /> : <FooterMobile />}
+        <Arrow />
+      </>
+      {/* )} */}
 
-      {screenSize === "small-screen" && (
+      {/* {screenSize === "small-screen" && (
         <>
+          <Testimonials />
           <FooterMobile />
         </>
-      )}
+      )} */}
     </>
   );
 };

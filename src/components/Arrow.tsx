@@ -1,7 +1,9 @@
 import React, { CSSProperties, useEffect, useState } from "react";
+import { useAppContext } from "../customHooks/useAppContext";
 
 const Arrow = () => {
   const [isFixed, setIsFixed] = useState(false);
+  const { screenSize } = useAppContext();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,10 +27,17 @@ const Arrow = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const smallScreen = [
+    "small-screen",
+    "x-small-screen",
+    "xx-small-screen",
+  ].includes(screenSize);
+
   const arrowStyle: CSSProperties = {
     position: "fixed",
     bottom: "0",
-    right: "50px",
+    right: smallScreen ? "50%" : "50px",
+    transform: smallScreen ? " translateX(50%) scale(0.5)" : "scale(1)",
     transition: "opacity 0.5s",
     display: isFixed ? "block" : "none",
     opacity: isFixed ? 1 : 0,
@@ -37,7 +46,7 @@ const Arrow = () => {
   };
 
   return (
-    <div id="arrow" style={arrowStyle} onClick={handleClick}>
+    <div style={arrowStyle} onClick={handleClick}>
       <img src={require(`../../src/images/up-button.png`)} alt="" />
     </div>
   );
