@@ -1,3 +1,5 @@
+@import "../../styles/mixins";
+
 .content {
   display: flex;
   flex-direction: column;
@@ -63,4 +65,11 @@
   flex-shrink: 0;
   position: absolute;
   margin-top: 600px;
+}
+
+.pointer__down,
+.pointer__up {
+  @include xx-small-screen {
+    transform: scale(0.8);
+  }
 }

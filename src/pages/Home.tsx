@@ -5,7 +5,7 @@ import Options from "../components/Options";
 import Header from "../components/header/Header";
 import Testimonials from "../components/Testimonials";
 import ThreeMinds from "../components/ThreeMinds";
-import Statement from "../components/Statement";
+import Statement from "../components/statement/Statement";
 import Arrow from "../components/Arrow";
 import { useAppContext } from "../customHooks/useAppContext";
 

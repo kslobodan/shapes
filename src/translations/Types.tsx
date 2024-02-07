@@ -23,6 +23,7 @@ export interface Translation {
     description: string;
     statementList: {
       title: string[];
+      titleMobile: string[];
       subtitle: string;
     };
   };
