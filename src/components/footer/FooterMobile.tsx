@@ -1,4 +1,4 @@
-import React, { CSSProperties, ChangeEvent, useState } from "react";
+import React, { CSSProperties, ChangeEvent, useRef, useState } from "react";
 import styles from "./FooterMobile.module.scss";
 import Logo from "./Logo";
 import { useTranslation } from "react-i18next";
@@ -26,6 +26,8 @@ const textAreaStyle: CSSProperties = {
 const textAreaMaxLength = 1000;
 
 export const FooterMobile = () => {
+  const useRefMailTitle = useRef<HTMLDivElement>(null);
+  const useRefPopup = useRef<HTMLDivElement>(null);
   const [translate] = useTranslation("global");
   const [showEmail, setShowEmail] = useState(false);
   const [footerHeight, setFooterHeight] = useState("380px");
@@ -48,6 +50,7 @@ export const FooterMobile = () => {
       setBoxHeight("850px");
       setTimeout(() => {
         setEmailFormVisible(true);
+        if (useRefMailTitle.current) useRefMailTitle.current.focus();
       }, 400);
     } else {
       setEmailFormVisible(false);
@@ -77,6 +80,7 @@ export const FooterMobile = () => {
   const handleSendEmail = () => {
     setEmailFormVisible(false);
     setPopupVisible(true);
+    if (useRefPopup.current) useRefPopup.current.focus();
   };
 
   const handleOKClick = () => {
@@ -105,7 +109,11 @@ export const FooterMobile = () => {
           </div>
         )}
         {emailFormVisible && (
-          <div className="titles__mobile" style={{ marginTop: "30px" }}>
+          <div
+            ref={useRefMailTitle}
+            className="titles__mobile"
+            style={{ marginTop: "30px" }}
+          >
             <div className={styles.mail__title}>
               <div>{translate("email.title")}</div>
             </div>
@@ -212,7 +220,7 @@ export const FooterMobile = () => {
         )}
 
         {popupVisible && (
-          <div className={styles.popup}>
+          <div ref={useRefPopup} className={styles.popup}>
             <div className="text">
               <h3>{translate("emailSent.title")}</h3>
               <p>{translate("emailSent.subtitle")}</p>
