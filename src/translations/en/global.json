@@ -56,6 +56,8 @@
   "testimonials": {
     "title": "Your opinion is important to us",
     "subtitle": "AND WE VALUE IT",
+    "titleMobile": "Your opinion",
+    "subtitleMobile": "MATTERS TO US!",
     "testimonialList": [
       {
         "url": "person1.png",

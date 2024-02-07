@@ -29,6 +29,8 @@ export interface Translation {
   testimonials: {
     title: string;
     subtitle: string;
+    titleMobile: string;
+    subtitleMobile: string;
     testimonialList: Testimonial[];
   };
   footer: {

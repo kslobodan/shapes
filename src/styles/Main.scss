@@ -54,6 +54,21 @@ h4 {
   &__small {
     font-size: 30px;
   }
+
+  @include small-screen {
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  @include x-small-screen {
+    font-size: 18px;
+    line-height: 18px;
+  }
+
+  @include xx-small-screen {
+    font-size: 16px;
+    line-height: 16px;
+  }
 }
 
 .titles,
@@ -160,6 +175,10 @@ section {
 }
 
 @include small-screen {
+  h1 {
+    font-size: 35px;
+  }
+
   h2 {
     font-size: 35px;
   }
@@ -182,12 +201,18 @@ section {
 }
 
 @include x-small-screen {
+  h1 {
+    font-size: 32px;
+  }
   h2 {
     font-size: 35px;
   }
 }
 
 @include xx-small-screen {
+  h1 {
+    font-size: 28px;
+  }
   h2 {
     font-size: 26px;
   }

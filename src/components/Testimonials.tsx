@@ -17,8 +17,8 @@ const Testimonials = () => {
     >
       <div>
         <TitleWithText
-          title={translate("testimonials.title")}
-          underTitle={translate("testimonials.subtitle")}
+          title={translate("testimonials.titleMobile")}
+          underTitle={translate("testimonials.subtitleMobile")}
         />
       </div>
       <div className={styles.content}>

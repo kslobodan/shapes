@@ -6,8 +6,19 @@
   position: relative;
   z-index: 1;
   overflow-x: auto;
+  // background-color: green;
 
-  //   background-color: green;
+  @include small-screen {
+    height: 450px;
+  }
+
+  @include x-small-screen {
+    height: 420px;
+  }
+
+  @include xx-small-screen {
+    height: 380px;
+  }
 }
 
 .content__box {
