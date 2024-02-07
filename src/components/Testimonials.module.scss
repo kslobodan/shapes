@@ -5,6 +5,7 @@
   height: 550px;
   position: relative;
   z-index: 1;
+  overflow-x: auto;
 
   //   background-color: green;
 }
@@ -17,6 +18,18 @@
   justify-content: center;
   // background-color: blue;
   align-items: center;
+
+  @include small-screen {
+    width: 1400px;
+  }
+
+  @include x-small-screen {
+    width: 1300px;
+  }
+
+  @include xx-small-screen {
+    width: 1000px;
+  }
 }
 
 .box {
@@ -26,6 +39,24 @@
   position: relative;
   margin-left: -10px;
   margin-right: -10px;
+
+  @include small-screen {
+    transform: scale(0.85);
+    margin-left: -30px;
+    margin-right: -30px;
+  }
+
+  @include x-small-screen {
+    transform: scale(0.78);
+    margin-left: -45px;
+    margin-right: -45px;
+  }
+
+  @include xx-small-screen {
+    transform: scale(0.65);
+    margin-left: -68px;
+    margin-right: -68px;
+  }
 }
 
 %text-field {

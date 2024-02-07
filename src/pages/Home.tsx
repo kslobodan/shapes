@@ -15,7 +15,7 @@ const Home = () => {
   return (
     <>
       {/* {screenSize !== "small-screen" && ( */}
-      <>
+      <div style={{ overflow: "hidden" }}>
         <Header />
         <ThreeMinds />
         <Options />
@@ -24,7 +24,7 @@ const Home = () => {
         <Testimonials />
         {screenSize !== "small-screen" ? <Footer /> : <FooterMobile />}
         <Arrow />
-      </>
+      </div>
       {/* )} */}
 
       {/* {screenSize === "small-screen" && (
