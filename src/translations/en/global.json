@@ -45,6 +45,19 @@
   },
   "statement": {
     "description": " At MAJABO, we he­lp your brand shine. We build standout identitie­s, modern websites, and accurate­ digital campaigns.We­'re not just a marketing agency. We­'re your accountable partner! We say, it’s ­all about understanding your vision, lifting your brand, sharing your story, and delivering results you can me­asure.",
+    "descriptionMobile": [
+      "At MAJABO, we he­lp your",
+      "brand shine. We build standout",
+      "identitie­s, modern websites,",
+      "and accurate­ digital campaigns.",
+      "We­'re not just a marketing",
+      "agency. We­'re your accountable",
+      "partner! We say, it’s ­all about",
+      "understanding your vision, lifting",
+      "your brand, sharing your story,",
+      "and delivering results",
+      "you can me­asure."
+    ],
     "statementList": {
       "title": [
         "The future belongs to those",

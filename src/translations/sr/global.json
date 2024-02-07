@@ -45,6 +45,19 @@
   },
   "statement": {
     "description": " U MAJABO-u, mi pomažemo Vašem brendu da zablista. Gradimo identitete koji se ističu, moderne sajtove i precizne digitalne kampanje. Nismo samo marketinška agencija. Mi smo Vaš odgovoran partner! Verujemo, sve se svodi na razumevanje Vaše vizije, podizanje Vašeg brenda, deljenje Vaše priče i pružanje rezultata koje možete u svakom trenutku izmeriti.",
+    "descriptionMobile": [
+      "U MAJABO-u, mi pomažemo",
+      "Vašem brendu da zablista.",
+      "Gradimo identitete koji se ističu,",
+      "moderne sajtove i precizne",
+      "digitalne kampanje. Nismo samo",
+      "marketinška agencija. Mi smo Vaš",
+      "odgovoran partnerVerujemo, sve se",
+      "svodi na razumevanje Vaše vizije,",
+      "podizanje Vašeg brenda, deljenje",
+      "Vaše priče i pružanje rezultata koje",
+      "možete u svakom trenutku izmeriti."
+    ],
     "statementList": {
       "title": [
         "Budućnost pripada onima",

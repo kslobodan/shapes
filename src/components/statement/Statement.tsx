@@ -21,13 +21,22 @@ const Statement = () => {
       { returnObjects: true }
     ) || [];
 
+  const descriptionList: string[] =
+    translate("statement.descriptionMobile", { returnObjects: true }) || [];
+
   const titlePopulated = titleList && titleList.length > 0;
 
   return (
     <section style={{ marginTop: "150px" }}>
       <div className={styles.content}>
+        {smallScreen &&
+          descriptionList.map((row, index) => (
+            <div key={index} className={styles.text__mobile}>
+              {row}
+            </div>
+          ))}
         <div className={styles.text}>
-          <p>{translate("statement.description")}</p>
+          {!smallScreen && <p>{translate("statement.description")}</p>}
         </div>
         {!smallScreen && <StatermentTop />}
         {smallScreen && (
