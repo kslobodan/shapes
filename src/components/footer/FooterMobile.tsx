@@ -107,7 +107,7 @@ export const FooterMobile = () => {
         {emailFormVisible && (
           <div className="titles__mobile" style={{ marginTop: "30px" }}>
             <div className={styles.mail__title}>
-              <h2>{translate("email.title")}</h2>
+              <div>{translate("email.title")}</div>
             </div>
             <p className="title__mobile__green__small">
               <div className={styles.mail__subtitle}>
@@ -148,7 +148,6 @@ export const FooterMobile = () => {
             className={` ${styles.email} ${showEmail ? styles.visibleDiv : ""}`}
           >
             <div className={styles.field}>
-              {/* <div className={styles.part}> */}
               <label className={styles.label}>{translate("email.name")}:</label>
               <input
                 type="email"
@@ -158,7 +157,6 @@ export const FooterMobile = () => {
                 onChange={handleNameChange}
                 maxLength={50}
               />
-              {/* </div> */}
             </div>
             <div className={styles.field}>
               <label className={styles.label}>

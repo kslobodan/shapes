@@ -135,6 +135,14 @@ footer {
   line-height: 40px; /* 200% */
   width: 100px;
   text-align: start;
+
+  @include x-small-screen {
+    font-size: 18px;
+  }
+
+  @include xx-small-screen {
+    font-size: 16px;
+  }
 }
 
 .input {
@@ -183,6 +191,18 @@ footer {
     width: 100px;
     height: 30px;
   }
+
+  @include x-small-screen {
+    width: 86px;
+    font-size: 12px;
+    font-weight: 900;
+  }
+
+  @include xx-small-screen {
+    width: 80px;
+    font-size: 11px;
+    font-weight: 800;
+  }
 }
 
 .button {
@@ -212,12 +232,29 @@ div {
 
 .mail__title {
   width: 280px;
-  font-size: 34px;
+  font-size: 35px;
+  font-weight: 300;
   // background-color: red;
+
+  @include x-small-screen {
+    transform: scale(0.9);
+  }
+
+  @include xx-small-screen {
+    transform: scale(0.8);
+  }
 }
 
 .mail__subtitle {
   width: 260px;
+
+  @include x-small-screen {
+    transform: scale(0.9);
+  }
+
+  @include xx-small-screen {
+    transform: scale(0.8);
+  }
 }
 
 .text__length {
