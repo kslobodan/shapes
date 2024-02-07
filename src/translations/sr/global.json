@@ -99,6 +99,7 @@
     "name": "Ime",
     "email": "E-mail",
     "text": "Poruka...",
+    "textMobile": "Poruka",
     "buttonSend": "POŠALJI",
     "buttonCancel": "ODUSTANI"
   },

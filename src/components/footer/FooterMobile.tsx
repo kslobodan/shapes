@@ -8,7 +8,8 @@ const inputStyle: CSSProperties = {
   height: "20px",
   textAlign: "start",
   flex: "1",
-  fontSize: "16px",
+  fontSize: "14px",
+  width: "100%",
 };
 
 const textAreaStyle: CSSProperties = {
@@ -19,7 +20,7 @@ const textAreaStyle: CSSProperties = {
   textAlign: "left",
   resize: "none",
   overflowY: "auto",
-  fontSize: "16px",
+  fontSize: "14px",
 };
 
 const textAreaMaxLength = 1000;
@@ -27,6 +28,7 @@ const textAreaMaxLength = 1000;
 export const FooterMobile = () => {
   const [translate] = useTranslation("global");
   const [showEmail, setShowEmail] = useState(false);
+  const [footerHeight, setFooterHeight] = useState("380px");
   const [boxHeight, setBoxHeight] = useState("500px");
   const [logoBottom, setLogoBottom] = useState("100px");
   const [rightsBottom, setRightsBottom] = useState("50px");
@@ -42,13 +44,15 @@ export const FooterMobile = () => {
   const handleShowMail = (show: boolean) => {
     setShowEmail(show);
     if (show) {
-      setBoxHeight("650px");
+      setFooterHeight("700px");
+      setBoxHeight("850px");
       setTimeout(() => {
         setEmailFormVisible(true);
       }, 400);
     } else {
       setEmailFormVisible(false);
       setBoxHeight("500px");
+      setFooterHeight("380px");
     }
   };
 
@@ -84,7 +88,10 @@ export const FooterMobile = () => {
   };
 
   return (
-    <footer id="footer" style={{ position: "absolute", zIndex: "100" }}>
+    <footer
+      id="footer"
+      style={{ position: "absolute", zIndex: "100", height: footerHeight }}
+    >
       <div className={styles.box} style={{ height: boxHeight }} />
       <div className={styles.content} style={{ height: boxHeight }}>
         {!showEmail && (
@@ -99,9 +106,13 @@ export const FooterMobile = () => {
         )}
         {emailFormVisible && (
           <div className="titles__mobile" style={{ marginTop: "30px" }}>
-            <h2>{translate("email.title")}</h2>
+            <div className={styles.mail__title}>
+              <h2>{translate("email.title")}</h2>
+            </div>
             <p className="title__mobile__green__small">
-              {translate("email.subtitle")}
+              <div className={styles.mail__subtitle}>
+                {translate("email.subtitle")}
+              </div>
             </p>
           </div>
         )}
@@ -137,6 +148,7 @@ export const FooterMobile = () => {
             className={` ${styles.email} ${showEmail ? styles.visibleDiv : ""}`}
           >
             <div className={styles.field}>
+              {/* <div className={styles.part}> */}
               <label className={styles.label}>{translate("email.name")}:</label>
               <input
                 type="email"
@@ -146,6 +158,7 @@ export const FooterMobile = () => {
                 onChange={handleNameChange}
                 maxLength={50}
               />
+              {/* </div> */}
             </div>
             <div className={styles.field}>
               <label className={styles.label}>
@@ -160,15 +173,18 @@ export const FooterMobile = () => {
                 maxLength={50}
               />
             </div>
-
-            <textarea
-              className="text"
-              style={textAreaStyle}
-              placeholder={translate("email.text")}
-              value={text}
-              onChange={handleTextChange}
-              maxLength={textAreaMaxLength}
-            />
+            <div className={styles.field}>
+              <label className={styles.label}>
+                {translate("email.textMobile")}:
+              </label>
+              <textarea
+                className="text"
+                style={textAreaStyle}
+                value={text}
+                onChange={handleTextChange}
+                maxLength={textAreaMaxLength}
+              />
+            </div>
             <div className={styles.buttons}>
               <button
                 className={
@@ -180,7 +196,10 @@ export const FooterMobile = () => {
                 {translate("email.buttonSend")}
               </button>
               {text.length > 0 && (
-                <div style={{ marginTop: "-10px" }}>
+                <div
+                  className={styles.text__length}
+                  style={{ marginTop: "-20px" }}
+                >
                   {text.length}/{textAreaMaxLength}
                 </div>
               )}

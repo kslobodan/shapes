@@ -43,6 +43,7 @@ export interface Translation {
     name: string;
     email: string;
     text: string;
+    textMobile: string;
     buttonSend: string;
     buttonCancel: string;
   };

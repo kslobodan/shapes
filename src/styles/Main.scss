@@ -47,7 +47,7 @@ h4 {
   font-style: normal;
   font-weight: 900;
   line-height: 34px; /* 85% */
-  letter-spacing: 8px;
+  letter-spacing: 4px;
   text-transform: uppercase;
 
   font-size: 40px;
@@ -127,7 +127,7 @@ h4 {
   font-style: normal;
   font-weight: 900;
   line-height: 20px; /* 85% */
-  letter-spacing: 8px;
+  letter-spacing: 4px;
   text-transform: uppercase;
 
   font-size: 20px;
@@ -171,19 +171,19 @@ section {
     font-style: normal;
     font-weight: 900;
     line-height: 20px; /* 85% */
-    letter-spacing: 8px;
+    letter-spacing: 4px;
     text-transform: uppercase;
 
     font-size: 20px;
     &__small {
-      font-size: 18px;
+      font-size: 20px;
     }
   }
 }
 
 @include x-small-screen {
   h2 {
-    font-size: 30px;
+    font-size: 35px;
   }
 }
 
