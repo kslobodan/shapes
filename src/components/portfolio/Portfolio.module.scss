@@ -91,3 +91,32 @@
     height: 80%;
   }
 }
+
+.decription__mobile {
+  margin-top: 20px;
+}
+
+.text__mobile__content {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.text__mobile {
+  color: var(--majabo-dark-gray);
+  text-align: center;
+  font-family: Raleway;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 35px; /* 200% */
+
+  @include x-small-screen {
+    font-size: 18px;
+    line-height: 30px;
+  }
+
+  @include xx-small-screen {
+    font-size: 16px;
+    line-height: 26px;
+  }
+}

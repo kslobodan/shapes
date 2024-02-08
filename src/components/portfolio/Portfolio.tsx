@@ -131,6 +131,9 @@ const Portfolio = () => {
     setMobileImageList(updatedImageList);
   };
 
+  const textList: string[] =
+    translate("portfolio.textMobile", { returnObjects: true }) || [];
+
   return (
     <section
       id="portfolio"
@@ -139,9 +142,18 @@ const Portfolio = () => {
       <TitleWithText
         title={translate("portfolio.title")}
         underTitle={translate("portfolio.subtitle")}
-        text={splitedText}
+        text={smallScreen ? "" : splitedText}
         lineHeight="40px"
       />
+      {smallScreen && (
+        <div className={styles.text__mobile__content}>
+          {textList.map((row, index) => (
+            <div key={index} className={styles.text__mobile}>
+              {row}
+            </div>
+          ))}
+        </div>
+      )}
       <div className="section__content">
         {!smallScreen && (
           <div

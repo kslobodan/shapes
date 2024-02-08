@@ -17,6 +17,7 @@ export interface Translation {
     title: string;
     subtitle: string;
     text: string[];
+    textMobile: string[];
     kairon: string[];
   };
   statement: {
