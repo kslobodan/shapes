@@ -19,6 +19,7 @@ export type ScreenSize =
 type AppContextProps = {
   language: Language;
   screenSize: ScreenSize;
+  smallScreen: boolean;
   setLanguage: React.Dispatch<React.SetStateAction<Language>>;
   setScreenSize: React.Dispatch<React.SetStateAction<ScreenSize>>;
 };
@@ -32,10 +33,14 @@ type AppProviderProps = {
 export const AppProvider: FC<AppProviderProps> = ({ children }) => {
   const [language, setLanguage] = useState<Language>("en");
   const [screenSize, setScreenSize] = useState<ScreenSize>("large-screen");
+  const smallScreen =
+    screenSize === "small-screen" ||
+    screenSize === "x-small-screen" ||
+    screenSize === "xx-small-screen";
 
   return (
     <AppContext.Provider
-      value={{ language, screenSize, setLanguage, setScreenSize }}
+      value={{ language, screenSize, smallScreen, setLanguage, setScreenSize }}
     >
       {children}
     </AppContext.Provider>

@@ -1,5 +1,5 @@
 @import "../../styles/variables";
-
+@import "../../styles/mixins";
 .content {
   position: relative;
   height: 1100px;
@@ -33,6 +33,10 @@
   width: 100%;
   overflow: hidden;
   margin-top: -70px;
+
+  @include small-screen {
+    margin-top: 0px;
+  }
 }
 
 .text__content {
@@ -65,4 +69,15 @@
   100% {
     transform: translateX(-95%);
   }
+}
+
+.mobile__section {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.mobile__portfolio {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
 }

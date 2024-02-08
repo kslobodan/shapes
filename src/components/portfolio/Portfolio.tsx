@@ -1,8 +1,16 @@
-import React, { CSSProperties, useState } from "react";
+import React, { CSSProperties, useEffect, useState } from "react";
 import styles from "./Portfolio.module.scss";
 import TitleWithText from "../TitleWithText";
-import { images, Image, ExpandType, smallSize, largeSize } from "./utils";
+import {
+  images,
+  mobileImages,
+  Image,
+  ExpandType,
+  smallSize,
+  largeSize,
+} from "./utils";
 import { useTranslation } from "react-i18next";
+import { useAppContext } from "../../customHooks/useAppContext";
 
 interface largeImage {
   divStyle: CSSProperties;
@@ -29,6 +37,7 @@ const boxExpanded: CSSProperties = {
 };
 
 const Portfolio = () => {
+  const { smallScreen, screenSize } = useAppContext();
   const [translate] = useTranslation("global");
   const [largeImageVisible, setLargeImageVisible] = useState<boolean>(false);
   const [currentId, setCurrentId] = useState<number>(0);
@@ -44,6 +53,13 @@ const Portfolio = () => {
     src: require(`../../images/1-large.png`),
     alt: "test1",
   });
+  const [imageMultiplier, setImageMultiplier] = useState(1);
+
+  useEffect(() => {
+    if (screenSize === "x-small-screen") setImageMultiplier(0.9);
+    else if (screenSize === "xx-small-screen") setImageMultiplier(0.8);
+    else setImageMultiplier(1);
+  }, [screenSize]);
 
   const text: string[] =
     translate("portfolio.text", { returnObjects: true }) || [];
@@ -114,44 +130,74 @@ const Portfolio = () => {
         lineHeight="40px"
       />
       <div className="section__content">
-        <div
-          className={styles.content}
-          onMouseLeave={() => setLargeImageVisible(false)}
-        >
-          <div className={styles.portfolio}>
-            {images.map((row, rowIndex) => (
-              <div key={rowIndex} className={styles.row}>
-                {row.map((image) => (
-                  <div
-                    key={image.id}
-                    style={image.expanded ? boxExpanded : box}
-                    onMouseEnter={() => showLargeImage(image.id)}
-                  >
-                    <img
-                      // src={require("../images/02-small.png")}
-                      src={require(`../../images/${image.small}`)}
-                      style={{
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "cover",
-                      }}
-                      alt={image.alt}
-                    />
-                  </div>
-                ))}
-              </div>
-            ))}
-          </div>
-          {largeImageVisible && (
-            <div style={largeImageProps.divStyle}>
-              <img
-                src={largeImageProps.src}
-                style={largeImageProps.imageStyle}
-                alt={largeImageProps.alt}
-              />
+        {!smallScreen && (
+          <div
+            className={styles.content}
+            onMouseLeave={() => setLargeImageVisible(false)}
+          >
+            <div className={styles.portfolio}>
+              {images.map((row, rowIndex) => (
+                <div key={rowIndex} className={styles.row}>
+                  {row.map((image) => (
+                    <div
+                      key={image.id}
+                      style={image.expanded ? boxExpanded : box}
+                      onMouseEnter={() => showLargeImage(image.id)}
+                    >
+                      <img
+                        // src={require("../images/02-small.png")}
+                        src={require(`../../images/${image.small}`)}
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "cover",
+                        }}
+                        alt={image.alt}
+                      />
+                    </div>
+                  ))}
+                </div>
+              ))}
             </div>
-          )}
-        </div>
+            {largeImageVisible && (
+              <div style={largeImageProps.divStyle}>
+                <img
+                  src={largeImageProps.src}
+                  style={largeImageProps.imageStyle}
+                  alt={largeImageProps.alt}
+                />
+              </div>
+            )}
+          </div>
+        )}
+        {smallScreen && (
+          <div className={styles.mobile__section}>
+            <div className={styles.mobile__portfolio}>
+              {mobileImages.map((image) => (
+                <div
+                  key={image.id}
+                  // style={image.expanded ? boxExpanded : box}
+                  // onMouseEnter={() => showLargeImage(image.id)}
+                >
+                  <img
+                    // src={require("../images/02-small.png")}
+                    src={require(`../../images/portfolio/${image.black}`)}
+                    style={{
+                      // width: "603px",
+                      // height: "422px",
+                      width: (image.width * imageMultiplier).toString() + "px",
+                      height:
+                        (image.height * imageMultiplier).toString() + "px",
+                      objectFit: "cover",
+                    }}
+                    alt={image.alt}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
         <div className={styles.visible__area}>
           <div className={styles.text__content}>
             <div className={styles.text}>
