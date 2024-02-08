@@ -5,10 +5,11 @@
   height: 550px;
   position: relative;
   z-index: 1;
-  overflow-x: auto;
+
   // background-color: green;
 
   @include small-screen {
+    overflow-x: auto;
     height: 450px;
   }
 
