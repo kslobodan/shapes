@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./Options.module.scss";
-import TitleWithText from "./TitleWithText";
+import TitleWithText from "../TitleWithText";
 import { useTranslation } from "react-i18next";
-import { Option } from "../translations/Types";
+import { Option } from "../../translations/Types";
 
-const Options = () => {
+const OptionsMobile = () => {
   const [translate] = useTranslation("global");
   const middleElipseStyle = {
     position: "absolute",
@@ -35,8 +35,7 @@ const Options = () => {
         <div className={styles.content__box}>
           <div className={styles.part}>
             <div className={styles.group}>
-              <div className={styles.svg1}>
-                <svg
+              {/* <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="80"
                   height="69"
@@ -47,8 +46,12 @@ const Options = () => {
                     d="M0.5 0V29.5309H30.0309V0H0.5ZM39.8746 0V9.84364H79.2491V0H39.8746ZM39.8746 19.6873V29.5309H69.4055V19.6873H39.8746ZM0.5 39.3746V68.9055H30.0309V39.3746H0.5ZM39.8746 39.3746V49.2182H79.2491V39.3746H39.8746ZM39.8746 59.0619V68.9055H69.4055V59.0619H39.8746Z"
                     fill="#5F5F5F"
                   />
-                </svg>
-              </div>
+                </svg> */}
+              <img
+                className={styles.svg1}
+                src={require(`../../../src/images/Option1.png`)}
+                alt="instagram"
+              />
               <div
                 className={styles.elipse}
                 style={{ position: "absolute", top: "0", left: "0" }}
@@ -170,4 +173,4 @@ const Options = () => {
   );
 };
 
-export default Options;
+export default OptionsMobile;
