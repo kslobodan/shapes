@@ -81,3 +81,13 @@
   flex-direction: row;
   gap: 5px;
 }
+
+.image {
+  height: 100%;
+  @include x-small-screen {
+    height: 90%;
+  }
+  @include xx-small-screen {
+    height: 80%;
+  }
+}

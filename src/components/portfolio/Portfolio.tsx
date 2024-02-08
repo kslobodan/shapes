@@ -8,6 +8,7 @@ import {
   ExpandType,
   smallSize,
   largeSize,
+  MobileImage,
 } from "./utils";
 import { useTranslation } from "react-i18next";
 import { useAppContext } from "../../customHooks/useAppContext";
@@ -54,8 +55,10 @@ const Portfolio = () => {
     alt: "test1",
   });
   const [imageMultiplier, setImageMultiplier] = useState(1);
-
+  const [mobileImageList, setMobileImageList] =
+    useState<MobileImage[]>(mobileImages);
   useEffect(() => {
+    console.log(screenSize);
     if (screenSize === "x-small-screen") setImageMultiplier(0.9);
     else if (screenSize === "xx-small-screen") setImageMultiplier(0.8);
     else setImageMultiplier(1);
@@ -118,6 +121,16 @@ const Portfolio = () => {
     if (image != null) moveImage(image.expandType, id);
   };
 
+  const activeteImage = (id: number) => {
+    const updatedImageList = mobileImageList.map((item) => {
+      if (item.id === id) {
+        return { ...item, active: !item.active };
+      }
+      return item;
+    });
+    setMobileImageList(updatedImageList);
+  };
+
   return (
     <section
       id="portfolio"
@@ -173,21 +186,26 @@ const Portfolio = () => {
         {smallScreen && (
           <div className={styles.mobile__section}>
             <div className={styles.mobile__portfolio}>
-              {mobileImages.map((image) => (
+              {mobileImageList.map((image) => (
                 <div
                   key={image.id}
                   // style={image.expanded ? boxExpanded : box}
-                  // onMouseEnter={() => showLargeImage(image.id)}
+                  onClick={() => activeteImage(image.id)}
                 >
                   <img
                     // src={require("../images/02-small.png")}
-                    src={require(`../../images/portfolio/${image.black}`)}
+                    src={
+                      image.active
+                        ? require(`../../images/portfolio/${image.color}`)
+                        : require(`../../images/portfolio/${image.black}`)
+                    }
+                    className={styles.image}
                     style={{
-                      // width: "603px",
-                      // height: "422px",
-                      width: (image.width * imageMultiplier).toString() + "px",
-                      height:
-                        (image.height * imageMultiplier).toString() + "px",
+                      width: image.width + "px",
+                      height: image.height + "px",
+                      // width: (image.width * imageMultiplier).toString() + "px",
+                      // height:
+                      //   (image.height * imageMultiplier).toString() + "px",
                       objectFit: "cover",
                     }}
                     alt={image.alt}
