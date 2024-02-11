@@ -27,6 +27,32 @@
         "optionTitle": "Kreator dizajna",
         "optionText": "Kreira vizuale koje Vaš brend čine nezaboravnim."
       }
+    ],
+    "optionListMobile": [
+      {
+        "optionTitle": ["Čarobnjak", "pisanja"],
+        "optionText": ["Oblikuje", "reči koje", "čine čuda", "za Vaš", "brend."]
+      },
+      {
+        "optionTitle": ["Majstor", "kodiranja"],
+        "optionText": [
+          "Pretvara",
+          "ideje u",
+          "besprekorna",
+          "digitalna",
+          "iskustva."
+        ]
+      },
+      {
+        "optionTitle": ["Kreator", "dizajna"],
+        "optionText": [
+          "Kreira",
+          "vizuale",
+          "koje Vaš",
+          "brend čine",
+          "nezaboravnim."
+        ]
+      }
     ]
   },
   "portfolio": {

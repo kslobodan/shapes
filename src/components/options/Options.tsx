@@ -6,7 +6,7 @@ import { Option } from "../../translations/Types";
 
 const Options = () => {
   const [translate] = useTranslation("global");
-  const middleElipseStyle = {
+  const middleEllipseStyle = {
     position: "absolute",
     bottom: "0",
     left: 202 / 2 - 137 / 2 - 5 + "px",
@@ -50,7 +50,7 @@ const Options = () => {
                 </svg>
               </div>
               <div
-                className={styles.elipse}
+                className={styles.ellipse}
                 style={{ position: "absolute", top: "0", left: "0" }}
               />
               <div
@@ -98,7 +98,7 @@ const Options = () => {
                   />
                 </svg>
               </div>
-              <div className={styles.elipse} style={middleElipseStyle} />
+              <div className={styles.ellipse} style={middleEllipseStyle} />
               <div
                 className={styles.circle}
                 style={{
@@ -137,7 +137,7 @@ const Options = () => {
                 </svg>
               </div>
               <div
-                className={styles.elipse}
+                className={styles.ellipse}
                 style={{ position: "absolute", top: "0", right: "0" }}
               />
               <div

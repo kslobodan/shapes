@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import { Footer, FooterMobile } from "../components/footer";
 import Portfolio from "../components/portfolio/Portfolio";
 import Options from "../components/options/Options";
@@ -8,6 +7,7 @@ import ThreeMinds from "../components/ThreeMinds";
 import Statement from "../components/statement/Statement";
 import Arrow from "../components/Arrow";
 import { useAppContext } from "../customHooks/useAppContext";
+import OptionsMobile from "../components/options/OptionsMobile";
 
 const Home = () => {
   const { screenSize } = useAppContext();
@@ -18,7 +18,7 @@ const Home = () => {
       <div style={{ overflow: "hidden" }}>
         <Header />
         <ThreeMinds />
-        <Options />
+        {screenSize !== "small-screen" ? <Options /> : <OptionsMobile />}
         <Portfolio />
         <Statement />
         <Testimonials />

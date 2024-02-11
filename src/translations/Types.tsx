@@ -12,6 +12,7 @@ export interface Translation {
     subtitle: string;
     text: string[];
     optionList: Option[];
+    optionListMobile: OptionMobile[];
   };
   portfolio: {
     title: string;
@@ -63,6 +64,11 @@ export interface Translation {
 export type Option = {
   optionTitle: string;
   optionText: string;
+};
+
+export type OptionMobile = {
+  optionTitle: string[];
+  optionText: string[];
 };
 
 export type Testimonial = {

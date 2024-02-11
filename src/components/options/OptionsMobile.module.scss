@@ -2,41 +2,16 @@
 @import "../../styles/functions";
 @import "../../styles/mixins";
 
-$circle-width: 202px;
-$ellipse-width: 137px;
-$svg1-width: 78.749px;
+$circle-width: 145px;
+$ellipse-width: 88px;
+$svg1-width: 50px;
 $distance1: distance-in-ellipse($ellipse-width, $svg1-width);
-$svg2-width: 78.749px;
+$svg2-width: 50px;
 $distance2: distance-in-ellipse($circle-width, $svg2-width);
-$svg3-width: 68.847px;
+$svg3-width: 44px;
 $distance3: distance-in-ellipse($ellipse-width, $svg3-width);
-$title-move: 210px;
 $text-move: 55px;
 $extended-ellipse-width: 370px;
-
-%move-circle-title {
-  .circle__title {
-    top: $title-move;
-  }
-
-  .circle__title2 {
-    bottom: 220px;
-  }
-
-  .circle__title3 {
-    top: $title-move;
-  }
-}
-
-%move-circle-text {
-  .circle__text__content {
-    bottom: $text-move;
-  }
-
-  .circle__text__content2 {
-    top: $text-move;
-  }
-}
 
 %text {
   color: $color-grey;
@@ -56,71 +31,64 @@ $extended-ellipse-width: 370px;
   margin-top: 100px;
   margin-bottom: 50px;
   overflow: hidden;
-  //   background-color: green;
+  // background-color: green;
 }
 
 .content__box {
-  width: 100%;
+  // width: 600px;
   height: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  gap: 180px;
+  // justify-content: center;
+  gap: 60px;
   // background-color: blue;
   align-items: center;
+  overflow-x: auto;
 }
 
 .part {
   margin-top: -50px;
-  width: 255px;
+  width: 175px;
   height: 438px;
   // background-color: red;
+  position: relative;
 }
 
 .part2 {
-  margin-top: 40px;
-  width: 202px;
+  margin-top: -170px;
+  width: 145px;
   height: 538px;
-  //   background-color: red;
-  display: flex;
-  flex-direction: column;
-}
-
-.group {
-  width: 100%;
-  height: 343px;
-  //   background-color: yellow;
   position: relative;
-
-  &:hover > .circle {
-    height: $extended-ellipse-width;
-  }
-
-  &:hover {
-    @extend %move-circle-title;
-    @extend %move-circle-text;
-  }
 }
 
-.frame {
-  width: 100%;
-  height: 95px;
+.part3 {
+  margin-top: -50px;
+  width: 175px;
+  height: 438px;
+  // background-color: red;
+  // position: relative;
 }
 
-.frame2 {
-  width: 100%;
-  height: 145px;
-}
+// .group {
+//   width: 100%;
+//   height: 343px;
+//   background-color: yellow;
+//   position: relative;
+
+//   &:hover > .circle {
+//     height: $extended-ellipse-width;
+//   }
+// }
 
 .circle {
   width: $circle-width;
-  height: $circle-width;
+  height: 250px;
   flex-shrink: 0;
   border-radius: 100px;
   background: $color-neon;
   z-index: 4;
-  cursor: pointer;
-  transition: height $transition ease-in-out;
+  // cursor: pointer;
+  // transition: height $transition ease-in-out;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -128,48 +96,23 @@ $extended-ellipse-width: 370px;
 }
 
 .circle__title {
-  width: 44%;
+  width: 80%;
   color: #fff;
   text-align: center;
   font-style: normal;
   font-weight: 900;
-  transition: top $transition ease;
   position: absolute;
   z-index: 10;
-  left: 95px;
-  top: 190px;
-}
-
-.circle__title2 {
-  width: 60%;
-  color: #fff;
-  text-align: center;
-  font-style: normal;
-  font-weight: 900;
-  transition: bottom $transition ease;
-  position: absolute;
-  z-index: 10;
-  left: 55px;
-  bottom: 190px;
   @include center-content(x);
-}
-
-.circle__title3 {
-  width: 44%;
-  color: #fff;
-  text-align: center;
-  font-style: normal;
-  font-weight: 900;
-  transition: top $transition ease;
-  position: absolute;
-  z-index: 10;
-  right: 95px;
-  top: 190px;
+  // left: 25px;
+  top: 30px;
+  font-size: 20px;
+  // background-color: blue;
 }
 
 .ellipse {
   width: $ellipse-width;
-  height: 245px;
+  height: 158px;
   flex-shrink: 0;
 
   border-radius: 764.98px 764.98px 764.977px 764.977px;
@@ -185,42 +128,41 @@ $extended-ellipse-width: 370px;
 
 .svg1 {
   width: $svg1-width;
-  height: 68.905px;
+  height: 44px;
   flex-shrink: 0;
   //   background-color: aqua;
-  position: absolute;
+  position: relative;
   left: $distance1;
   top: $distance1 + 5px;
 }
 
 .svg2 {
   width: $svg2-width;
-  height: 68.905px;
+  height: 44px;
   flex-shrink: 0;
   //   background-color: aqua;
-  position: absolute;
+  position: relative;
   left: $distance2;
-  bottom: $distance2 - 20px;
+  // bottom: $distance2 - 20px;
+  top: 450px;
 }
 
 .svg3 {
   width: $svg3-width;
-  height: 68.905px;
+  height: 44px;
   flex-shrink: 0;
   //   background-color: aqua;
-  position: absolute;
-  right: $distance3;
+  position: relative;
+  right: -78px;
   top: $distance3;
 }
 
 .circle__text__content {
-  position: absolute;
-  bottom: -370px;
+  // position: absolute;
+  // bottom: -370px;
   right: 0;
   width: $circle-width;
   // background-color: pink;
-  color: $color-grey;
-  transition: bottom $transition ease, color 500ms ease-out;
   @extend %text;
 }
 
@@ -237,6 +179,7 @@ $extended-ellipse-width: 370px;
 
 .circle__text {
   text-align: center;
-  padding-left: 25%;
-  padding-right: 25%;
+  margin-top: 40px;
+  font-size: 15px;
+  line-height: 20px;
 }
