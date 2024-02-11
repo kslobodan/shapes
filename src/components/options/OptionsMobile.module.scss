@@ -43,6 +43,14 @@ $extended-ellipse-width: 370px;
   // background-color: blue;
   align-items: center;
   overflow-x: auto;
+
+  @include x-small-screen {
+    gap: 48px;
+  }
+
+  @include xx-small-screen {
+    gap: 20px;
+  }
 }
 
 .part {
@@ -50,6 +58,14 @@ $extended-ellipse-width: 370px;
   width: 175px;
   height: 438px;
   position: relative;
+
+  @include x-small-screen {
+    transform: scale(0.9);
+  }
+
+  @include xx-small-screen {
+    transform: scale(0.8);
+  }
 }
 
 .part2 {
@@ -57,6 +73,14 @@ $extended-ellipse-width: 370px;
   width: 145px;
   height: 538px;
   position: relative;
+
+  @include x-small-screen {
+    transform: scale(0.9);
+  }
+
+  @include xx-small-screen {
+    transform: scale(0.8);
+  }
 }
 
 .part3 {
@@ -64,6 +88,14 @@ $extended-ellipse-width: 370px;
   width: 175px;
   height: 438px;
   position: relative;
+
+  @include x-small-screen {
+    transform: scale(0.9);
+  }
+
+  @include xx-small-screen {
+    transform: scale(0.8);
+  }
 }
 
 .circle {
