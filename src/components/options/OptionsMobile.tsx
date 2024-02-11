@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styles from "./OptionsMobile.module.scss";
 import TitleWithText from "../TitleWithText";
 import { useTranslation } from "react-i18next";
@@ -11,6 +11,14 @@ const OptionsMobile = () => {
     top: "310px",
     left: 202 / 2 - 137 / 2 - 5 + "px",
   } as const;
+  const contentRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (contentRef.current) {
+      const container = contentRef.current;
+      const scrollLeft = container.scrollWidth / 2 - container.clientWidth / 2;
+      container.scrollLeft = scrollLeft;
+    }
+  }, []);
 
   const text: string[] =
     translate("options.text", { returnObjects: true }) || [];
@@ -22,7 +30,10 @@ const OptionsMobile = () => {
   console.log(ellipse[0].optionTitle);
 
   return (
-    <section id="options" style={{ position: "relative" }}>
+    <section
+      id="options"
+      style={{ position: "relative", marginBottom: "-50px" }}
+    >
       <div style={{ marginBottom: "-160px" }}>
         <TitleWithText
           title={translate("options.title")}
@@ -32,7 +43,7 @@ const OptionsMobile = () => {
         />
       </div>
       <div className={styles.content}>
-        <div className={styles.content__box}>
+        <div className={styles.content__box} ref={contentRef}>
           <div className={styles.part}>
             <img
               className={styles.svg1}

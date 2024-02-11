@@ -25,17 +25,16 @@ $extended-ellipse-width: 370px;
 
 .content {
   width: 100%;
-  height: 650px;
+  height: 530px;
   position: relative;
   z-index: 1;
-  margin-top: 100px;
+  padding-top: 100px;
   margin-bottom: 50px;
   overflow: hidden;
   // background-color: green;
 }
 
 .content__box {
-  // width: 600px;
   height: 100%;
   display: flex;
   flex-direction: row;
@@ -50,7 +49,6 @@ $extended-ellipse-width: 370px;
   margin-top: -50px;
   width: 175px;
   height: 438px;
-  // background-color: red;
   position: relative;
 }
 
@@ -65,20 +63,8 @@ $extended-ellipse-width: 370px;
   margin-top: -50px;
   width: 175px;
   height: 438px;
-  // background-color: red;
-  // position: relative;
+  position: relative;
 }
-
-// .group {
-//   width: 100%;
-//   height: 343px;
-//   background-color: yellow;
-//   position: relative;
-
-//   &:hover > .circle {
-//     height: $extended-ellipse-width;
-//   }
-// }
 
 .circle {
   width: $circle-width;
@@ -87,8 +73,6 @@ $extended-ellipse-width: 370px;
   border-radius: 100px;
   background: $color-neon;
   z-index: 4;
-  // cursor: pointer;
-  // transition: height $transition ease-in-out;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -104,7 +88,6 @@ $extended-ellipse-width: 370px;
   position: absolute;
   z-index: 10;
   @include center-content(x);
-  // left: 25px;
   top: 30px;
   font-size: 20px;
   // background-color: blue;
@@ -143,7 +126,6 @@ $extended-ellipse-width: 370px;
   //   background-color: aqua;
   position: relative;
   left: $distance2;
-  // bottom: $distance2 - 20px;
   top: 450px;
 }
 
@@ -159,7 +141,6 @@ $extended-ellipse-width: 370px;
 
 .circle__text__content {
   // position: absolute;
-  // bottom: -370px;
   right: 0;
   width: $circle-width;
   // background-color: pink;
