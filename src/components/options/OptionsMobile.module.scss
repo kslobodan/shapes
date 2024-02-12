@@ -196,3 +196,39 @@ $extended-ellipse-width: 370px;
   font-size: 15px;
   line-height: 20px;
 }
+
+.title {
+  @include small-screen {
+    width: 230px;
+  }
+  @include x-small-screen {
+    width: 220px;
+  }
+  @include xx-small-screen {
+    width: 170px;
+  }
+}
+
+.subtitle {
+  @include small-screen {
+    font-size: 20px;
+  }
+  @include xx-small-screen {
+    font-size: 14px;
+  }
+}
+
+.text {
+  padding-top: 50px;
+  text-align: center;
+  font-size: 20px;
+  line-height: 35px;
+  margin-bottom: -30px;
+
+  @include xx-small-screen {
+    padding-top: 30px;
+    font-size: 16px;
+    line-height: 28px;
+    margin-bottom: -80px;
+  }
+}

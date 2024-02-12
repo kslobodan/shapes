@@ -9,13 +9,16 @@ export interface Translation {
   };
   options: {
     title: string;
+    titleMobile: string[];
     subtitle: string;
     text: string[];
+    textMobile: string[];
     optionList: Option[];
     optionListMobile: OptionMobile[];
   };
   portfolio: {
     title: string;
+    titleMobile: string[];
     subtitle: string;
     text: string[];
     textMobile: string[];

@@ -96,27 +96,38 @@
   margin-top: 20px;
 }
 
-.text__mobile__content {
-  padding-top: 30px;
-  padding-bottom: 30px;
+.title {
+  @include small-screen {
+    width: 230px;
+  }
+  @include x-small-screen {
+    width: 220px;
+  }
+  @include xx-small-screen {
+    width: 170px;
+  }
+}
+
+.subtitle {
+  @include small-screen {
+    font-size: 20px;
+  }
+  @include xx-small-screen {
+    font-size: 14px;
+  }
 }
 
 .text__mobile {
-  color: var(--majabo-dark-gray);
+  padding-top: 50px;
   text-align: center;
-  font-family: Raleway;
   font-size: 20px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 35px; /* 200% */
-
-  @include x-small-screen {
-    font-size: 18px;
-    line-height: 30px;
-  }
+  line-height: 35px;
+  margin-bottom: 50px;
 
   @include xx-small-screen {
+    padding-top: 30px;
     font-size: 16px;
-    line-height: 26px;
+    line-height: 28px;
+    margin-bottom: 30px;
   }
 }

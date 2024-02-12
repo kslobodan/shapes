@@ -9,10 +9,22 @@
   },
   "options": {
     "title": "Be honest with yourself,",
+    "titleMobile": ["Be honest", "with yourself"],
     "subtitle": "SELECT YOUR MAJABO",
     "text": [
       "We blend design, code, and copywriting, turning imperfections into innovative authentic brand stories.",
       "With MAJABO your brand will transcend boundaries and define a compelling narrative that deeply resonates with your target audience."
+    ],
+    "textMobile": [
+      "We blend design, code,",
+      "and copywriting, turning",
+      "imperfections into innovative",
+      "authentic brand stories.",
+      "With MAJABO your brand",
+      "will transcend boundaries",
+      "and define a compelling narrative",
+      "that deeply resonates with",
+      "your target audience."
     ],
     "optionList": [
       {
@@ -63,6 +75,7 @@
   },
   "portfolio": {
     "title": "This is the Majabo way",
+    "titleMobile": ["This is the", "Majabo way"],
     "subtitle": "TO DO IT!",
     "text": [
       "Unleashing the full spectrum of Creative Excellence! MAJABO is your business partner for Complete Marketing Solution.",

@@ -1,11 +1,12 @@
 import React, { useEffect, useRef } from "react";
 import styles from "./OptionsMobile.module.scss";
-import TitleWithText from "../TitleWithText";
 import { useTranslation } from "react-i18next";
 import { Option, OptionMobile } from "../../translations/Types";
+import { useAppContext } from "../../customHooks/useAppContext";
 
 const OptionsMobile = () => {
   const [translate] = useTranslation("global");
+  const { smallScreen } = useAppContext();
   const middleellipseStyle = {
     position: "relative",
     top: "310px",
@@ -21,26 +22,28 @@ const OptionsMobile = () => {
   }, []);
 
   const text: string[] =
-    translate("options.text", { returnObjects: true }) || [];
-  const splitedText = text.join("\n");
+    translate("options.textMobile", { returnObjects: true }) || [];
 
   const ellipse: OptionMobile[] =
     translate("options.optionListMobile", { returnObjects: true }) || [];
-
-  console.log(ellipse[0].optionTitle);
 
   return (
     <section
       id="options"
       style={{ position: "relative", marginBottom: "-50px" }}
     >
-      <div style={{ marginBottom: "-160px" }}>
-        <TitleWithText
-          title={translate("options.title")}
-          underTitle={translate("options.subtitle")}
-          text={splitedText}
-          lineHeight="40px"
-        />
+      <div className="titles__mobile" style={{ marginTop: "25px" }}>
+        <div className={styles.title}>
+          <h2>{translate("options.title")}</h2>
+        </div>
+        <p className="title__mobile__green__small">
+          <div className={styles.subtitle}>{translate("options.subtitle")}</div>
+        </p>
+      </div>
+      <div className={styles.text}>
+        {text.map((row, index) => (
+          <div key={index}>{row}</div>
+        ))}
       </div>
       <div className={styles.content}>
         <div className={styles.content__box} ref={contentRef}>
@@ -89,7 +92,6 @@ const OptionsMobile = () => {
               style={{
                 position: "relative",
                 bottom: "70px",
-                // marginRight: "53px",
               }}
             >
               <div className={styles.circle__text__content}>

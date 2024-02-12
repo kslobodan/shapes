@@ -9,10 +9,22 @@
   },
   "options": {
     "title": "Budite iskreni prema sebi,",
+    "titleMobile": ["Budite iskreni", "prema sebi"],
     "subtitle": "ODABERITE SVOJ MAJABO",
     "text": [
       "Mi uklapamo dizajn, kodiranje i pisani sadržaj, pretvarajući nesavršenosti u inovativne, autentične, brendirane priče. Sa MAJABO-m",
       "Vaša kompanija će prevazići granice očekivanog i definisati novu uzbudljivu priču koja duboko rezonuje sa Vašom ciljnom publikom."
+    ],
+    "textMobile": [
+      "Mi uklapamo dizajn, kodiranje",
+      "i pisani sadržaj, pretvarajući",
+      "nesavršenosti u inovativne,",
+      "autentične, brendirane priče.",
+      "Sa MAJABO-m Vaša kompanija",
+      "će prevazići granice očekivanog",
+      "i definisati novu uzbudljivu priču",
+      "koja duboko rezonuje sa",
+      "Vašom ciljnom publikom."
     ],
     "optionList": [
       {
@@ -57,6 +69,7 @@
   },
   "portfolio": {
     "title": "Ovo je Majabo način",
+    "titleMobile": ["Ovo je", "Majabo način"],
     "subtitle": "DA SE TO URADI!",
     "text": [
       "Otkrivanje raznolikosti kreativne perfekcije! MAJABO je vaš poslovni partner za celokupno marketinško rešenje. ",

@@ -58,7 +58,6 @@ const Portfolio = () => {
   const [mobileImageList, setMobileImageList] =
     useState<MobileImage[]>(mobileImages);
   useEffect(() => {
-    console.log(screenSize);
     if (screenSize === "x-small-screen") setImageMultiplier(0.9);
     else if (screenSize === "xx-small-screen") setImageMultiplier(0.8);
     else setImageMultiplier(1);
@@ -67,6 +66,9 @@ const Portfolio = () => {
   const text: string[] =
     translate("portfolio.text", { returnObjects: true }) || [];
   const splitedText = text.join("\n");
+
+  const textMobile: string[] =
+    translate("portfolio.textMobile", { returnObjects: true }) || [];
 
   const kairon: string[] =
     translate("portfolio.kairon", { returnObjects: true }) || [];
@@ -134,23 +136,38 @@ const Portfolio = () => {
   const textList: string[] =
     translate("portfolio.textMobile", { returnObjects: true }) || [];
 
+  const titleMobile: string[] =
+    translate("portfolio.titleMobile", { returnObjects: true }) || [];
+
   return (
     <section
       id="portfolio"
       style={{ marginTop: "-20px", marginBottom: "-100px" }}
     >
-      <TitleWithText
-        title={translate("portfolio.title")}
-        underTitle={translate("portfolio.subtitle")}
-        text={smallScreen ? "" : splitedText}
-        lineHeight="40px"
-      />
+      {!smallScreen && (
+        <TitleWithText
+          title={translate("portfolio.title")}
+          underTitle={translate("portfolio.subtitle")}
+          text={smallScreen ? "" : splitedText}
+          lineHeight="40px"
+        />
+      )}
       {smallScreen && (
-        <div className={styles.text__mobile__content}>
-          {textList.map((row, index) => (
-            <div key={index} className={styles.text__mobile}>
-              {row}
+        <div className="titles__mobile" style={{ marginTop: "25px" }}>
+          <div className={styles.title}>
+            <h2>{translate("options.title")}</h2>
+          </div>
+          <p className="title__mobile__green__small">
+            <div className={styles.subtitle}>
+              {translate("options.subtitle")}
             </div>
+          </p>
+        </div>
+      )}
+      {smallScreen && (
+        <div className={styles.text__mobile}>
+          {textMobile.map((row, index) => (
+            <div key={index}>{row}</div>
           ))}
         </div>
       )}
