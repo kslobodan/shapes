@@ -2,6 +2,7 @@ export interface Translation {
   header: { subtitle: string; choose: string };
   threeMinds: {
     title: string;
+    subtitleMobile: string[];
     subtitle: string;
     beyond1: string;
     beyond2: string;

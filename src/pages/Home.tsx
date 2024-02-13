@@ -8,6 +8,7 @@ import Statement from "../components/statement/Statement";
 import Arrow from "../components/Arrow";
 import { useAppContext } from "../customHooks/useAppContext";
 import OptionsMobile from "../components/options/OptionsMobile";
+import ThreeMindsMobile from "../components/ThreeMindsMobile";
 
 const Home = () => {
   const { screenSize } = useAppContext();
@@ -17,7 +18,7 @@ const Home = () => {
       {/* {screenSize !== "small-screen" && ( */}
       <div style={{ overflow: "hidden" }}>
         <Header />
-        <ThreeMinds />
+        {screenSize !== "small-screen" ? <ThreeMinds /> : <ThreeMindsMobile />}
         {screenSize !== "small-screen" ? <Options /> : <OptionsMobile />}
         <Portfolio />
         <Statement />
