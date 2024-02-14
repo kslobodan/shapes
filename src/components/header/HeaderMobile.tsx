@@ -1,46 +1,52 @@
 import React, { CSSProperties, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import styles from "./Header.module.scss";
+import styles from "./HeaderMobile.module.scss";
 import { letters } from "./Letters";
 import SvgList from "./SvgList";
 import { Language, useAppContext } from "../../customHooks/useAppContext";
 import Arrow from "./ArrowSVG";
 import Circle from "./Circle";
 
-const Header = () => {
+const HeaderMobile = () => {
   const [translate, i18n] = useTranslation("global");
   const { language, setLanguage } = useAppContext();
-  const [elipseWidth, setElipseWidth] = useState("332px");
-  const [elipseLeft, setElipseLeft] = useState("calc(50% - ( 332px/2))");
-  const [elipseTop, setElipseTop] = useState("-200px");
-  const [shapeTop, setShapeTop] = useState("700px");
+  const [ellipseWidth, setEllipseWidth] = useState("170px");
+  const [ellipseLeft, setEllipseLeft] = useState("calc(50% - ( 170px/2))");
+  const [ellipseTop, setEllipseTop] = useState("-350px");
+  const [shapeTop, setShapeTop] = useState("500px");
   const [shapeWidth, setShapeWidth] = useState("238px");
   const [shapeHeight, setShapeHeight] = useState("238px");
-  const [rectangleWidth, setRectangleWidth] = useState("30px");
-  const [rectangleHeight, setRectangleHeight] = useState("300px");
+  const [rectangleWidth, setRectangleWidth] = useState("16px");
+  const [rectangleHeight, setRectangleHeight] = useState("160px");
   const [rectangleTransform, setrectangleTransform] = useState("");
   const [rectangleColor, setRectangleColor] = useState("white");
 
   const [circle, setCircle] = useState({
     D: "M11.6528 20.1196C16.3287 20.1196 20.1193 16.329 20.1193 11.6531C20.1193 6.97718 16.3287 3.18661 11.6528 3.18661C6.97693 3.18661 3.18636 6.97718 3.18636 11.6531C3.18636 16.329 6.97693 20.1196 11.6528 20.1196ZM11.6528 23.0003C17.9197 23.0003 23 17.92 23 11.6531C23 5.38621 17.9197 0.305908 11.6528 0.305908C5.38597 0.305908 0.305664 5.38621 0.305664 11.6531C0.305664 17.92 5.38597 23.0003 11.6528 23.0003Z",
-    Widht: "23px",
+    Widht: "20px",
     ViewBox: "0 0 23 23",
     Fill: "#C3D400",
   });
 
   const [boxWidth, setBoxWidth] = useState("100%");
-  const [boxHeight, setBoxHeight] = useState("1200px");
+  const [boxHeight, setBoxHeight] = useState("800px");
 
-  const [logoTop, setLogoTop] = useState("480px");
+  const [logoTop, setLogoTop] = useState("200px");
   const [logoGap, setLogoGap] = useState("2vh");
   const [logoBox, setLogoBox] = useState("100px");
   const [logoVisible, setLogoVisible] = useState(false);
 
-  const [chooseMarginTop, setChooseMarginTop] = useState("550px");
+  const [chooseMarginTop, setChooseMarginTop] = useState("400px");
   const [chooseColor, setChooseColor] = useState("#5F5F5F");
   const [chooseFontSize, setChooseFontSize] = useState("48px");
   const [chooseLineHeight, setChooseLineHeight] = useState("34px");
   const [languagesOpacity, setLanguagesOpacity] = useState("0");
+  const [circleTransform, setCircleTransform] = useState("scale(0.5)");
+
+  const [lettersStyle, setLettersStyle] = useState({
+    width: "259px",
+    height: "51px",
+  });
 
   useEffect(() => {
     const timeout1 = setTimeout(() => {
@@ -84,8 +90,9 @@ const Header = () => {
   };
   const transformStyle: CSSProperties = {
     width: logoBox,
-    transition: `all width 500ms ease-out `,
+    transition: `all 500ms ease-out `,
   };
+
   const chooseStyle: CSSProperties = {
     top: chooseMarginTop,
     color: chooseColor,
@@ -105,16 +112,16 @@ const Header = () => {
   };
 
   const secondChange = () => {
-    setElipseWidth("217px");
-    setElipseLeft("calc(50% - ( 217px/2))");
-    setElipseTop("-680px");
-    setShapeTop("800px");
+    setEllipseWidth("92px");
+    setEllipseLeft("calc(50% - ( 92px/2))");
+    setEllipseTop("-650px");
+    setShapeTop("670px");
     setShapeWidth("150px");
     setShapeHeight("150px");
 
     setRectangleWidth("15px");
     setRectangleHeight("165px");
-    setrectangleTransform("rotate(90deg)");
+    setrectangleTransform("rotate(90deg) scale(0.45)");
     setRectangleColor("#C3D400");
 
     setCircle({
@@ -124,21 +131,32 @@ const Header = () => {
       ViewBox: editSVG(10, -20, 150, 150),
       Fill: "white",
     });
+    setCircleTransform("scale(0.45)");
 
-    setBoxWidth("975px");
-    setBoxHeight("700px");
+    setBoxWidth("80vw");
+    setBoxHeight("350px");
     editLogo(true);
     setLogoVisible(true);
-    setChooseMarginTop("750px");
-    setChooseFontSize("28.8px");
+    setChooseMarginTop("670px");
+    setChooseFontSize("20px");
     setChooseColor("rgba(95, 95, 95, 0.50)");
-    setChooseLineHeight("20.4px");
+    setChooseLineHeight("13px");
+
+    setLettersStyle({
+      width: "590px",
+      height: "76px",
+    });
   };
 
   const thirdChange = () => {
     editLogo(false);
     setChooseColor("transparent");
     setLanguagesOpacity("1");
+
+    setLettersStyle({
+      width: "259px",
+      height: "51px",
+    });
   };
 
   const editSVG = (
@@ -154,7 +172,7 @@ const Header = () => {
     if (bigger) {
       setLogoBox("700px");
     } else {
-      setLogoTop("360px");
+      setLogoTop("100px");
       setLogoGap("4vh");
       setLogoBox("450px");
     }
@@ -181,8 +199,8 @@ const Header = () => {
           style={{ width: boxWidth, height: boxHeight }}
         ></div>
         <div
-          className={styles.elipse}
-          style={{ width: elipseWidth, left: elipseLeft, top: elipseTop }}
+          className={styles.ellipse}
+          style={{ width: ellipseWidth, left: ellipseLeft, top: ellipseTop }}
         >
           <button
             className={styles.languages}
@@ -200,7 +218,7 @@ const Header = () => {
               viewBox={circle.ViewBox}
               d={circle.D}
               fill={circle.Fill}
-              transform=""
+              transform={circleTransform}
             />
             <div className={styles.rectangle} style={rectangleStyle} />
           </div>
@@ -208,6 +226,11 @@ const Header = () => {
         <div className={styles.logo} style={logoStyle}>
           <div className={styles.logo__text} style={transformStyle}>
             <SvgList sVGs={letters} />
+            {/* <img
+              style={lettersStyle}
+              src={require(`../../../src/images/MAJABO_small.png`)}
+              alt="majabo"
+            /> */}
           </div>
           <div className={styles.description}>
             {translate("header.subtitle")}
@@ -221,4 +244,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HeaderMobile;
