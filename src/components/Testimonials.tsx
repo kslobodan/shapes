@@ -13,7 +13,7 @@ const Testimonials = () => {
   return (
     <section
       id="testimonials"
-      style={{ marginBottom: "150px", marginTop: "150px" }}
+      style={{ marginBottom: "150px", marginTop: "80px" }}
     >
       <div>
         <TitleWithText
