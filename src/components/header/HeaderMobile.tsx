@@ -13,11 +13,11 @@ const HeaderMobile = () => {
   const [ellipseWidth, setEllipseWidth] = useState("170px");
   const [ellipseLeft, setEllipseLeft] = useState("calc(50% - ( 170px/2))");
   const [ellipseTop, setEllipseTop] = useState("-350px");
-  const [shapeTop, setShapeTop] = useState("500px");
+  const [shapeTop, setShapeTop] = useState("580px");
   const [shapeWidth, setShapeWidth] = useState("238px");
   const [shapeHeight, setShapeHeight] = useState("238px");
   const [rectangleWidth, setRectangleWidth] = useState("16px");
-  const [rectangleHeight, setRectangleHeight] = useState("160px");
+  const [rectangleHeight, setRectangleHeight] = useState("150px");
   const [rectangleTransform, setrectangleTransform] = useState("");
   const [rectangleColor, setRectangleColor] = useState("white");
 
@@ -36,10 +36,10 @@ const HeaderMobile = () => {
   const [logoBox, setLogoBox] = useState("100px");
   const [logoVisible, setLogoVisible] = useState(false);
 
-  const [chooseMarginTop, setChooseMarginTop] = useState("400px");
+  const [chooseMarginTop, setChooseMarginTop] = useState("580px");
   const [chooseColor, setChooseColor] = useState("#5F5F5F");
-  const [chooseFontSize, setChooseFontSize] = useState("48px");
-  const [chooseLineHeight, setChooseLineHeight] = useState("34px");
+  const [chooseFontSize, setChooseFontSize] = useState("20px");
+  const [chooseLineHeight, setChooseLineHeight] = useState("12px");
   const [languagesOpacity, setLanguagesOpacity] = useState("0");
   const [circleTransform, setCircleTransform] = useState("scale(0.5)");
 
@@ -138,7 +138,7 @@ const HeaderMobile = () => {
     editLogo(true);
     setLogoVisible(true);
     setChooseMarginTop("670px");
-    setChooseFontSize("20px");
+    setChooseFontSize("12px");
     setChooseColor("rgba(95, 95, 95, 0.50)");
     setChooseLineHeight("13px");
 
@@ -170,7 +170,7 @@ const HeaderMobile = () => {
 
   const editLogo = (bigger: boolean) => {
     if (bigger) {
-      setLogoBox("700px");
+      setLogoBox("650px");
     } else {
       setLogoTop("100px");
       setLogoGap("4vh");
@@ -189,10 +189,7 @@ const HeaderMobile = () => {
   };
 
   return (
-    <section
-      id="header"
-      style={{ paddingBottom: "50px", position: "relative" }}
-    >
+    <section id="header" style={{ position: "relative" }}>
       <div className={styles.content}>
         <div
           className={styles.box}
