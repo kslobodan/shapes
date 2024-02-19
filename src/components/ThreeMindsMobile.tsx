@@ -29,13 +29,13 @@ const ThreeMindsMobile = () => {
         <div className={styles.title}>
           <h2>{translate("threeMinds.title")}</h2>
         </div>
-        <p className="title__mobile__green__small">
+        <div className="title__mobile__green__small">
           <div className={styles.subtitle}>
             {subtitle.map((row, index) => (
               <div key={index}>{row}</div>
             ))}
           </div>
-        </p>
+        </div>
       </div>
       <div className={styles.box}>
         <div className={styles.content}>

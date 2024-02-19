@@ -36,9 +36,9 @@ const OptionsMobile = () => {
         <div className={styles.title}>
           <h2>{translate("options.title")}</h2>
         </div>
-        <p className="title__mobile__green__small">
+        <div className="title__mobile__green__small">
           <div className={styles.subtitle}>{translate("options.subtitle")}</div>
-        </p>
+        </div>
       </div>
       <div className={styles.text}>
         {text.map((row, index) => (
