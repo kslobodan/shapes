@@ -31,8 +31,8 @@ const Statement = () => {
       <div className={styles.content}>
         {smallScreen &&
           descriptionList.map((row, index) => (
-            <div className={styles.text__mobile}>
-              <div key={index}>{row}</div>
+            <div key={index} className={styles.text__mobile}>
+              <div>{row}</div>
             </div>
           ))}
         <div className={styles.text}>
