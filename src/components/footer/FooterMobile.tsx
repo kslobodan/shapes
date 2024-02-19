@@ -32,7 +32,6 @@ export const FooterMobile = () => {
   const [showEmail, setShowEmail] = useState(false);
   const [footerHeight, setFooterHeight] = useState("380px");
   const [boxHeight, setBoxHeight] = useState("500px");
-  const [logoBottom, setLogoBottom] = useState("100px");
   const [rightsBottom, setRightsBottom] = useState("50px");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -237,7 +236,7 @@ export const FooterMobile = () => {
 
         <div
           className={` ${styles.logo} ${showEmail ? styles.rotated : ""}`}
-          style={{ position: "absolute", bottom: logoBottom }}
+          style={{ position: "absolute" }}
         >
           <Logo />
         </div>

@@ -33,12 +33,15 @@ footer {
   align-items: center;
   background-clip: padding-box;
 }
+
 .title {
+  width: 300px;
+
   @include small-screen {
     width: 231px;
   }
   @include x-small-screen {
-    width: 200px;
+    width: 220px;
   }
   @include xx-small-screen {
     width: 180px;
@@ -78,6 +81,14 @@ footer {
 .logo {
   position: absolute;
   transition: transform 500ms linear;
+  bottom: 100px;
+
+  @include x-small-screen {
+    bottom: 110px;
+  }
+  @include xx-small-screen {
+    bottom: 110px;
+  }
 }
 
 .rotated {
@@ -97,6 +108,10 @@ footer {
   font-style: normal;
   font-weight: 500;
   line-height: 20px;
+
+  @include xx-small-screen {
+    font-size: 10px;
+  }
 }
 
 .email {
