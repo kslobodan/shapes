@@ -133,12 +133,6 @@ const Portfolio = () => {
     setMobileImageList(updatedImageList);
   };
 
-  const textList: string[] =
-    translate("portfolio.textMobile", { returnObjects: true }) || [];
-
-  const titleMobile: string[] =
-    translate("portfolio.titleMobile", { returnObjects: true }) || [];
-
   return (
     <section
       id="portfolio"

@@ -1,8 +1,10 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useAppContext } from "./useAppContext";
 
 const useWindowResize = () => {
   const { setScreenSize } = useAppContext();
+  const [initialLoad, setInitialLoad] = useState(true);
+
   useEffect(() => {
     const handleResize = () => {
       const screenWidth = window.innerWidth;
@@ -15,12 +17,17 @@ const useWindowResize = () => {
       else if (screenWidth < 350) setScreenSize("xx-small-screen");
     };
 
+    if (initialLoad) {
+      handleResize();
+      setInitialLoad(false);
+    }
+
     window.addEventListener("resize", handleResize);
 
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, [setScreenSize]);
+  }, [setScreenSize, initialLoad]);
 };
 
 export default useWindowResize;
