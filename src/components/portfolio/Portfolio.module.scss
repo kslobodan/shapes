@@ -24,40 +24,57 @@
   margin: 20px 0 10px 0;
 }
 
-$multiplier: 0.743;
+$box-transition: all 150ms linear;
 
-.box1 {
+%box-small {
   position: absolute;
   height: 314px;
   width: 314px;
-  transition: all 250ms linear;
+  transition: $box-transition;
   z-index: 1;
+}
+
+$multiplier: 0.743;
+
+.box1 {
+  // position: absolute;
+  // height: 314px;
+  // width: 314px;
+  // transition: all 250ms linear;
+  // z-index: 1;
+
+  @extend %box-small;
 
   left: 0;
   top: 0;
 
   &:hover {
-    width: calc(869px * $multiplier);
-    height: calc(574px * $multiplier);
-    transition: all 250ms linear;
-    z-index: 10;
+    @include box-hover(869px, 574px, $multiplier, $transition);
+    // width: calc(869px * $multiplier);
+    // height: calc(574px * $multiplier);
+    // transition: all 250ms linear;
+    // z-index: 10;
   }
 }
 
 .box2 {
-  position: absolute;
   @include center-content(x);
   top: 0;
-  height: 314px;
-  width: 314px;
-  transition: all 250ms linear;
-  z-index: 1;
+
+  @extend %box-small;
+
+  // position: absolute;
+  // height: 314px;
+  // width: 314px;
+  // transition: all 250ms linear;
+  // z-index: 1;
 
   &:hover {
-    width: calc(574px * $multiplier);
-    height: calc(869px * $multiplier);
-    transition: all 250ms linear;
-    z-index: 10;
+    @include box-hover(574px, 869px, $multiplier, $transition);
+    // width: calc(574px * $multiplier);
+    // height: calc(869px * $multiplier);
+    // transition: all 250ms linear;
+    // z-index: 10;
   }
 }
 

@@ -50,3 +50,10 @@
     transform: translateY(-50%);
   }
 }
+
+@mixin box-hover($width, $height, $multiplier, $transition) {
+  width: calc($width * $multiplier);
+  height: calc($height * $multiplier);
+  transition: $transition;
+  z-index: 10;
+}
