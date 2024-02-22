@@ -51,9 +51,9 @@
   }
 }
 
-@mixin box-hover($width, $height, $multiplier, $transition) {
+@mixin box-hover($width, $height, $multiplier) {
   width: calc($width * $multiplier);
   height: calc($height * $multiplier);
-  transition: $transition;
+  transition: all 300ms linear;
   z-index: 10;
 }

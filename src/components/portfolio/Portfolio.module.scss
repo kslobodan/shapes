@@ -24,7 +24,7 @@
   margin: 20px 0 10px 0;
 }
 
-$box-transition: all 150ms linear;
+$box-transition: all 300ms linear;
 
 %box-small {
   position: absolute;
@@ -37,356 +37,207 @@ $box-transition: all 150ms linear;
 $multiplier: 0.743;
 
 .box1 {
-  // position: absolute;
-  // height: 314px;
-  // width: 314px;
-  // transition: all 250ms linear;
-  // z-index: 1;
-
   @extend %box-small;
-
   left: 0;
   top: 0;
 
   &:hover {
-    @include box-hover(869px, 574px, $multiplier, $transition);
-    // width: calc(869px * $multiplier);
-    // height: calc(574px * $multiplier);
-    // transition: all 250ms linear;
-    // z-index: 10;
+    @include box-hover(869px, 574px, $multiplier);
   }
 }
 
 .box2 {
+  @extend %box-small;
   @include center-content(x);
   top: 0;
 
-  @extend %box-small;
-
-  // position: absolute;
-  // height: 314px;
-  // width: 314px;
-  // transition: all 250ms linear;
-  // z-index: 1;
-
   &:hover {
-    @include box-hover(574px, 869px, $multiplier, $transition);
-    // width: calc(574px * $multiplier);
-    // height: calc(869px * $multiplier);
-    // transition: all 250ms linear;
-    // z-index: 10;
+    @include box-hover(574px, 869px, $multiplier);
   }
 }
 
 .box3 {
-  position: absolute;
+  @extend %box-small;
   right: 0;
   top: 0;
-  height: 314px;
-  width: 314px;
-  transition: all 250ms linear;
-  z-index: 1;
 
   &:hover {
-    width: calc(1038px * $multiplier);
-    height: calc(422px * $multiplier);
-    transition: all 250ms linear;
-    z-index: 10;
+    @include box-hover(1038px, 422px, $multiplier);
   }
 }
 
 $second-row-top: 310px;
 
 .box4 {
-  position: absolute;
-  height: 314px;
-  width: 314px;
-  transition: all 250ms linear;
-  z-index: 1;
-
+  @extend %box-small;
   left: 0;
   top: $second-row-top;
 
   &:hover {
     top: 140px;
-    width: calc(617px * $multiplier);
-    height: calc(869px * $multiplier);
-    transition: all 250ms linear;
-    z-index: 10;
+    @include box-hover(617px, 869px, $multiplier);
   }
 }
 
 .box5 {
-  position: absolute;
-  height: 314px;
-  width: 314px;
-  transition: all 250ms linear;
-  z-index: 1;
-
+  @extend %box-small;
   @include center-content(x);
   top: $second-row-top;
 
   &:hover {
     top: 230px;
-    width: calc(869px * $multiplier);
-    height: calc(634px * $multiplier);
-    transition: all 250ms linear;
-    z-index: 10;
+    @include box-hover(869px, 634px, $multiplier);
   }
 }
 
 .box6 {
-  position: absolute;
-  height: 314px;
-  width: 314px;
-  transition: all 250ms linear;
-  z-index: 1;
-
+  @extend %box-small;
   right: 0;
   top: $second-row-top;
 
   &:hover {
     top: 135px;
-    width: calc(921px * $multiplier);
-    height: calc(869px * $multiplier);
-    transition: all 250ms linear;
-    z-index: 10;
+    @include box-hover(921px, 869px, $multiplier);
   }
 }
 
 $third-row-top: 620px;
 
 .box7 {
-  position: absolute;
-  height: 314px;
-  width: 314px;
-  transition: all 250ms linear;
-  z-index: 1;
-
+  @extend %box-small;
   left: 0;
   top: $third-row-top;
 
   &:hover {
     top: 597px;
-    width: calc(869px * $multiplier);
-    height: calc(485px * $multiplier);
-    transition: all 250ms linear;
-    z-index: 10;
+    @include box-hover(869px, 485px, $multiplier);
   }
 }
 
 .box8 {
-  position: absolute;
-  height: 314px;
-  width: 314px;
-  transition: all 250ms linear;
-  z-index: 1;
-
+  @extend %box-small;
   @include center-content(x);
   top: $third-row-top;
 
   &:hover {
     top: 560px;
-    width: calc(869px * $multiplier);
-    height: calc(581px * $multiplier);
-    transition: all 250ms linear;
-    z-index: 10;
+    @include box-hover(869px, 581px, $multiplier);
   }
 }
 
 .box9 {
-  position: absolute;
-  height: 314px;
-  width: 314px;
-  transition: all 250ms linear;
-  z-index: 1;
-
+  @extend %box-small;
   right: 0;
   top: $third-row-top;
 
   &:hover {
     top: 570px;
-    width: calc(869px * $multiplier);
-    height: calc(493px * $multiplier);
-    transition: all 250ms linear;
-    z-index: 10;
+    @include box-hover(869px, 581px, $multiplier);
   }
 }
 
 $third-row-top: 930px;
 
 .box10 {
-  position: absolute;
-  height: 314px;
-  width: 314px;
-  transition: all 250ms linear;
-  z-index: 1;
-
+  @extend %box-small;
   left: 0;
   top: $third-row-top;
 
   &:hover {
     top: 903px;
-    width: calc(869px * $multiplier);
-    height: calc(493px * $multiplier);
-    transition: all 250ms linear;
-    z-index: 10;
+    @include box-hover(869px, 493px, $multiplier);
   }
 }
 
 .box11 {
-  position: absolute;
-  height: 314px;
-  width: 314px;
-  transition: all 250ms linear;
-  z-index: 1;
-
+  @extend %box-small;
   @include center-content(x);
   top: $third-row-top;
 
   &:hover {
     top: 870px;
-    width: calc(869px * $multiplier);
-    height: calc(579px * $multiplier);
-    transition: all 250ms linear;
-    z-index: 10;
+    @include box-hover(869px, 579px, $multiplier);
   }
 }
 
 .box12 {
-  position: absolute;
-  height: 314px;
-  width: 314px;
-  transition: all 250ms linear;
-  z-index: 1;
-
+  @extend %box-small;
   right: 0;
   top: $third-row-top;
 
   &:hover {
     top: 830px;
-    width: calc(869px * $multiplier);
-    height: calc(694px * $multiplier);
-    transition: all 250ms linear;
-    z-index: 10;
+    @include box-hover(869px, 694px, $multiplier);
   }
 }
 
 $fourth-row-top: 1240px;
 
 .box13 {
-  position: absolute;
-  height: 314px;
-  width: 314px;
-  transition: all 250ms linear;
-  z-index: 1;
-
+  @extend %box-small;
   left: 0;
   top: $fourth-row-top;
 
   &:hover {
     top: 1237px;
-    width: calc(1034px * $multiplier);
-    height: calc(433px * $multiplier);
-    transition: all 250ms linear;
-    z-index: 10;
+    @include box-hover(1034px, 433px, $multiplier);
   }
 }
 
 .box14 {
-  position: absolute;
-  height: 314px;
-  width: 314px;
-  transition: all 250ms linear;
-  z-index: 1;
-
+  @extend %box-small;
   @include center-content(x);
   top: $fourth-row-top;
 
   &:hover {
     top: 1180px;
-    width: calc(1013px * $multiplier);
-    height: calc(581px * $multiplier);
-    transition: all 250ms linear;
-    z-index: 10;
+    @include box-hover(1013px, 581px, $multiplier);
   }
 }
 
 .box15 {
-  position: absolute;
-  height: 314px;
-  width: 314px;
-  transition: all 250ms linear;
-  z-index: 1;
-
+  @extend %box-small;
   right: 0;
   top: $fourth-row-top;
 
   &:hover {
     top: 1180px;
-    width: calc(869px * $multiplier);
-    height: calc(581px * $multiplier);
-    transition: all 250ms linear;
-    z-index: 10;
+    @include box-hover(869px, 581px, $multiplier);
   }
 }
 
 $fifth-row-top: 1550px;
 
 .box16 {
-  position: absolute;
-  height: 314px;
-  width: 314px;
-  transition: all 250ms linear;
-  z-index: 1;
-
+  @extend %box-small;
   left: 0;
   top: $fifth-row-top;
 
   &:hover {
     top: 1386px;
-    width: calc(869px * $multiplier);
-    height: calc(646px * $multiplier);
-    transition: all 250ms linear;
-    z-index: 10;
+    @include box-hover(869px, 646px, $multiplier);
   }
 }
 
 .box17 {
-  position: absolute;
-  height: 314px;
-  width: 314px;
-  transition: all 250ms linear;
-  z-index: 1;
-
+  @extend %box-small;
   @include center-content(x);
   top: $fifth-row-top;
 
   &:hover {
     top: 1411px;
-    width: calc(913px * $multiplier);
-    height: calc(609px * $multiplier);
-    transition: all 250ms linear;
-    z-index: 10;
+    @include box-hover(913px, 609px, $multiplier);
   }
 }
 
 .box18 {
-  position: absolute;
-  height: 314px;
-  width: 314px;
-  transition: all 250ms linear;
-  z-index: 1;
-
+  @extend %box-small;
   right: 0;
   top: $fifth-row-top;
 
   &:hover {
     top: 1504px;
-    width: calc(869px * $multiplier);
-    height: calc(488px * $multiplier);
-    transition: all 250ms linear;
-    z-index: 10;
+    @include box-hover(869px, 488px, $multiplier);
   }
 }
 
