@@ -16,6 +16,7 @@ export interface Image {
   alt: string;
   expandType: ExpandType;
   expanded: boolean;
+  largImageSize: { width: string; height: string };
 }
 
 export const images: Image[][] = [
@@ -27,6 +28,7 @@ export const images: Image[][] = [
       alt: "test1",
       expandType: "topLeft",
       expanded: false,
+      largImageSize: { width: "314px", height: "314px" },
     },
     {
       id: 2,
@@ -35,6 +37,7 @@ export const images: Image[][] = [
       alt: "test2",
       expandType: "top",
       expanded: false,
+      largImageSize: { width: "314px", height: "314px" },
     },
     {
       id: 3,
@@ -43,6 +46,7 @@ export const images: Image[][] = [
       alt: "test3",
       expandType: "topRight",
       expanded: false,
+      largImageSize: { width: "314px", height: "314px" },
     },
   ],
   [
@@ -53,6 +57,7 @@ export const images: Image[][] = [
       alt: "test4",
       expandType: "left",
       expanded: false,
+      largImageSize: { width: "314px", height: "314px" },
     },
     {
       id: 5,
@@ -61,6 +66,7 @@ export const images: Image[][] = [
       alt: "test5",
       expandType: "center",
       expanded: false,
+      largImageSize: { width: "314px", height: "314px" },
     },
     {
       id: 6,
@@ -69,6 +75,7 @@ export const images: Image[][] = [
       alt: "test6",
       expandType: "right",
       expanded: false,
+      largImageSize: { width: "314px", height: "314px" },
     },
   ],
   [
@@ -79,6 +86,7 @@ export const images: Image[][] = [
       alt: "test7",
       expandType: "bottomLeft",
       expanded: false,
+      largImageSize: { width: "314px", height: "314px" },
     },
     {
       id: 8,
@@ -87,6 +95,7 @@ export const images: Image[][] = [
       alt: "test8",
       expandType: "bottom",
       expanded: false,
+      largImageSize: { width: "314px", height: "314px" },
     },
     {
       id: 9,
@@ -95,6 +104,7 @@ export const images: Image[][] = [
       alt: "test9",
       expandType: "bottomRight",
       expanded: false,
+      largImageSize: { width: "314px", height: "314px" },
     },
   ],
 ];
