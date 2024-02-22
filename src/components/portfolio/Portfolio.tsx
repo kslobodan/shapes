@@ -1,15 +1,7 @@
 import React, { CSSProperties, useEffect, useState } from "react";
 import styles from "./Portfolio.module.scss";
 import TitleWithText from "../TitleWithText";
-import {
-  images,
-  mobileImages,
-  Image,
-  ExpandType,
-  smallSize,
-  largeSize,
-  MobileImage,
-} from "./utils";
+import { mobileImages, MobileImage } from "./utils";
 import { useTranslation } from "react-i18next";
 import { useAppContext } from "../../customHooks/useAppContext";
 
@@ -26,22 +18,10 @@ const largeImageStyle: CSSProperties = {
   objectFit: "cover",
 };
 
-const box: CSSProperties = {
-  width: "314px",
-  height: "314px",
-};
-
-const boxExpanded: CSSProperties = {
-  position: "absolute",
-  width: "645px",
-  height: "430px",
-};
-
 const Portfolio = () => {
   const { smallScreen, screenSize } = useAppContext();
   const [translate] = useTranslation("global");
   const [largeImageVisible, setLargeImageVisible] = useState<boolean>(false);
-  const [currentId, setCurrentId] = useState<number>(0);
   const [largeImageDivStyle, setLargeImageDivStyle] = useState<CSSProperties>({
     position: "absolute",
     width: "645px",
@@ -54,14 +34,9 @@ const Portfolio = () => {
     src: require(`../../images/1-large.png`),
     alt: "test1",
   });
-  const [imageMultiplier, setImageMultiplier] = useState(1);
   const [mobileImageList, setMobileImageList] =
     useState<MobileImage[]>(mobileImages);
-  useEffect(() => {
-    if (screenSize === "x-small-screen") setImageMultiplier(0.9);
-    else if (screenSize === "xx-small-screen") setImageMultiplier(0.8);
-    else setImageMultiplier(1);
-  }, [screenSize]);
+
   const [isHovered1, setIsHovered1] = useState(false);
   const [isHovered2, setIsHovered2] = useState(false);
   const [isHovered3, setIsHovered3] = useState(false);
@@ -90,56 +65,6 @@ const Portfolio = () => {
 
   const kairon: string[] =
     translate("portfolio.kairon", { returnObjects: true }) || [];
-
-  const moveImage = (expandType: ExpandType, id: number) => {
-    if (currentId === id) return;
-    setCurrentId(id);
-
-    setLargeImageDivStyle((prevStyle) => {
-      const updatedStyle = {
-        ...prevStyle,
-        top: smallSize[expandType][0], // || "-100px"
-        left: smallSize[expandType][1],
-        width: smallSize[expandType][2],
-        height: smallSize[expandType][3],
-        zIndex: "10",
-        transition: "all 0.5s, 0.5s",
-      };
-
-      setLargeImageProps((prevProps) => ({
-        ...prevProps,
-        divStyle: updatedStyle,
-        src: require(`../../images/${id}-large.png`),
-      }));
-
-      return updatedStyle;
-    });
-
-    setLargeImageDivStyle((prevStyle) => {
-      const updatedStyle = {
-        ...prevStyle,
-        top: largeSize[expandType][0], // || "-100px"
-        left: largeSize[expandType][1],
-        width: largeSize[expandType][2],
-        height: largeSize[expandType][3],
-        zIndex: "10",
-        // transition: "all 0.5s, 0.5s",
-      };
-
-      setLargeImageProps((prevProps) => ({
-        ...prevProps,
-        divStyle: updatedStyle,
-      }));
-
-      return updatedStyle;
-    });
-  };
-
-  const showLargeImage = (id: number) => {
-    const image: Image | undefined = images.flat().find((img) => img.id === id);
-    setLargeImageVisible(true);
-    if (image != null) moveImage(image.expandType, id);
-  };
 
   const activeteImage = (id: number) => {
     const updatedImageList = mobileImageList.map((item) => {
@@ -206,11 +131,7 @@ const Portfolio = () => {
                         ? require("../../images/1-large.png")
                         : require("../../images/1-small.png")
                     }
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                    }}
+                    className={styles.img__style}
                     alt=""
                   />
                 </div>
@@ -229,11 +150,7 @@ const Portfolio = () => {
                         ? require("../../images/2-large.png")
                         : require("../../images/2-small.png")
                     }
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                    }}
+                    className={styles.img__style}
                     alt=""
                   />
                 </div>
@@ -252,11 +169,7 @@ const Portfolio = () => {
                         ? require("../../images/3-large.png")
                         : require("../../images/3-small.png")
                     }
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                    }}
+                    className={styles.img__style}
                     alt=""
                   />
                 </div>
@@ -278,11 +191,7 @@ const Portfolio = () => {
                         ? require("../../images/4-large.png")
                         : require("../../images/4-small.png")
                     }
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                    }}
+                    className={styles.img__style}
                     alt=""
                   />
                 </div>
@@ -301,11 +210,7 @@ const Portfolio = () => {
                         ? require("../../images/5-large.png")
                         : require("../../images/5-small.png")
                     }
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                    }}
+                    className={styles.img__style}
                     alt=""
                   />
                 </div>
@@ -324,11 +229,7 @@ const Portfolio = () => {
                         ? require("../../images/6-large.png")
                         : require("../../images/6-small.png")
                     }
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                    }}
+                    className={styles.img__style}
                     alt=""
                   />
                 </div>
@@ -350,11 +251,7 @@ const Portfolio = () => {
                         ? require("../../images/7-large.png")
                         : require("../../images/7-small.png")
                     }
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                    }}
+                    className={styles.img__style}
                     alt=""
                   />
                 </div>
@@ -373,11 +270,7 @@ const Portfolio = () => {
                         ? require("../../images/8-large.png")
                         : require("../../images/8-small.png")
                     }
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                    }}
+                    className={styles.img__style}
                     alt=""
                   />
                 </div>
@@ -396,11 +289,7 @@ const Portfolio = () => {
                         ? require("../../images/9-large.png")
                         : require("../../images/9-small.png")
                     }
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                    }}
+                    className={styles.img__style}
                     alt=""
                   />
                 </div>
@@ -422,11 +311,7 @@ const Portfolio = () => {
                         ? require("../../images/10-large.png")
                         : require("../../images/10-small.png")
                     }
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                    }}
+                    className={styles.img__style}
                     alt=""
                   />
                 </div>
@@ -445,11 +330,7 @@ const Portfolio = () => {
                         ? require("../../images/11-large.png")
                         : require("../../images/11-small.png")
                     }
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                    }}
+                    className={styles.img__style}
                     alt=""
                   />
                 </div>
@@ -468,11 +349,7 @@ const Portfolio = () => {
                         ? require("../../images/12-large.png")
                         : require("../../images/12-small.png")
                     }
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                    }}
+                    className={styles.img__style}
                     alt=""
                   />
                 </div>
@@ -494,11 +371,7 @@ const Portfolio = () => {
                         ? require("../../images/13-large.png")
                         : require("../../images/13-small.png")
                     }
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                    }}
+                    className={styles.img__style}
                     alt=""
                   />
                 </div>
@@ -517,11 +390,7 @@ const Portfolio = () => {
                         ? require("../../images/14-large.png")
                         : require("../../images/14-small.png")
                     }
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                    }}
+                    className={styles.img__style}
                     alt=""
                   />
                 </div>
@@ -540,11 +409,7 @@ const Portfolio = () => {
                         ? require("../../images/15-large.png")
                         : require("../../images/15-small.png")
                     }
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                    }}
+                    className={styles.img__style}
                     alt=""
                   />
                 </div>
@@ -566,11 +431,7 @@ const Portfolio = () => {
                         ? require("../../images/16-large.png")
                         : require("../../images/16-small.png")
                     }
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                    }}
+                    className={styles.img__style}
                     alt=""
                   />
                 </div>
@@ -589,11 +450,7 @@ const Portfolio = () => {
                         ? require("../../images/17-large.png")
                         : require("../../images/17-small.png")
                     }
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                    }}
+                    className={styles.img__style}
                     alt=""
                   />
                 </div>
@@ -612,11 +469,7 @@ const Portfolio = () => {
                         ? require("../../images/18-large.png")
                         : require("../../images/18-small.png")
                     }
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                    }}
+                    className={styles.img__style}
                     alt=""
                   />
                 </div>
