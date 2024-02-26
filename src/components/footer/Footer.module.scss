@@ -17,7 +17,7 @@ footer {
 
 .box {
   height: 500px;
-  width: 50%;
+  width: 975px;
   opacity: 0.5;
   background: $header-color;
   box-shadow: -52.719px 0px 55.355px 0px rgba(0, 0, 0, 0.1) inset,
@@ -28,7 +28,15 @@ footer {
   transition: all 500ms linear;
 
   @include x-large-screen {
-    height: 340px;
+    width: 780px;
+  }
+
+  @include large-screen {
+    width: 458px;
+  }
+
+  @include medium-screen {
+    width: 350px;
   }
 }
 
@@ -53,15 +61,36 @@ footer {
   flex-direction: row;
   gap: 40px;
   font-size: 50px;
+  // background-color: red;
+
+  > img {
+    width: 74.3px;
+    height: 74.3px;
+  }
 
   @include x-large-screen {
     margin-top: 40px;
+
+    > img {
+      width: 59px;
+      height: 59px;
+    }
+  }
+
+  @include large-screen {
+    margin-top: 40px;
+
+    > img {
+      width: 41.6px;
+      height: 41.6px;
+    }
   }
 }
 
 .logo {
   position: absolute;
   transition: transform 500ms linear;
+  // background-color: red;
 }
 
 .rotated {
@@ -73,14 +102,28 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
 
-.small__text > p {
-  margin: 0;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 20px;
+  > p {
+    margin: 0;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+  }
+
+  @include x-large-screen {
+    > p {
+      font-size: 9.8px;
+      line-height: 16px;
+    }
+  }
+
+  @include large-screen {
+    > p {
+      font-size: 6.72px;
+      line-height: 11.2px;
+    }
+  }
 }
 
 .email {
@@ -187,4 +230,12 @@ div {
   > img {
     cursor: pointer;
   }
+}
+
+.titles__style {
+  margin-top: 25px;
+}
+
+.titles__email__style {
+  margin-top: 30px;
 }

@@ -1,7 +1,8 @@
-import React, { CSSProperties, ChangeEvent, useState } from "react";
+import React, { CSSProperties, ChangeEvent, useEffect, useState } from "react";
 import styles from "./Footer.module.scss";
 import Logo from "./Logo";
 import { useTranslation } from "react-i18next";
+import { useAppContext } from "../../customHooks/useAppContext";
 
 const inputStyle: CSSProperties = {
   borderWidth: "0px",
@@ -25,6 +26,21 @@ const textAreaStyle: CSSProperties = {
 const textAreaMaxLength = 1000;
 
 export const Footer = () => {
+  const { screenSize } = useAppContext();
+
+  useEffect(() => {
+    console.log("testing: ", screenSize);
+    setNewBoxHeight();
+  }, [screenSize]);
+
+  const setNewBoxHeight = () => {
+    console.log("1: ", screenSize);
+    if (screenSize === "xx-large-screen") setBoxHeight("500px");
+    else if (screenSize === "x-large-screen") setBoxHeight("400px");
+    else if (screenSize === "large-screen") setBoxHeight("300px");
+    else if (screenSize === "medium-screen") setBoxHeight("250px");
+  };
+
   const [translate] = useTranslation("global");
   const [showEmail, setShowEmail] = useState(false);
   const [boxHeight, setBoxHeight] = useState("500px");
@@ -88,7 +104,7 @@ export const Footer = () => {
       <div className={styles.box} style={{ height: boxHeight }} />
       <div className={styles.content} style={{ height: boxHeight }}>
         {!showEmail && (
-          <div className="titles" style={{ marginTop: "25px" }}>
+          <div className={`titles ${styles.titles__style}`}>
             <h2>{translate("footer.title")}</h2>
             <p className="title__green__small">
               {translate("footer.subtitle")}
@@ -96,7 +112,7 @@ export const Footer = () => {
           </div>
         )}
         {emailFormVisible && (
-          <div className="titles" style={{ marginTop: "30px" }}>
+          <div className={`titles ${styles.titles__email__style}`}>
             <h2>{translate("email.title")}</h2>
             <p className="title__green__small">{translate("email.subtitle")}</p>
           </div>
