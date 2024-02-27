@@ -4,17 +4,6 @@ import Logo from "./Logo";
 import { useTranslation } from "react-i18next";
 import { useAppContext } from "../../customHooks/useAppContext";
 
-const textAreaStyle: CSSProperties = {
-  marginTop: "10px",
-  width: "100%",
-  borderWidth: "0px",
-  height: "200px",
-  textAlign: "left",
-  resize: "none",
-  overflowY: "auto",
-  fontSize: "16px",
-};
-
 const textAreaMaxLength = 1000;
 
 export const Footer = () => {
@@ -28,7 +17,7 @@ export const Footer = () => {
   const setDefaultBoxHeight = () => {
     if (screenSize === "xx-large-screen") setBoxHeight("500px");
     else if (screenSize === "x-large-screen") setBoxHeight("420px");
-    else if (screenSize === "large-screen") setBoxHeight("340px");
+    else if (screenSize === "large-screen") setBoxHeight("350px");
     else if (screenSize === "medium-screen") setBoxHeight("290px");
   };
 
@@ -36,7 +25,7 @@ export const Footer = () => {
     if (screenSize === "xx-large-screen") setBoxHeight("650px");
     else if (screenSize === "x-large-screen") setBoxHeight("550px");
     else if (screenSize === "large-screen") setBoxHeight("450px");
-    else if (screenSize === "medium-screen") setBoxHeight("400px");
+    else if (screenSize === "medium-screen") setBoxHeight("370px");
   };
 
   const [translate] = useTranslation("global");
@@ -158,8 +147,7 @@ export const Footer = () => {
             </div>
 
             <textarea
-              className="text"
-              style={textAreaStyle}
+              className={`text  ${styles.text__area}`}
               placeholder={translate("email.text")}
               value={text}
               onChange={handleTextChange}
@@ -176,7 +164,7 @@ export const Footer = () => {
                 {translate("email.buttonSend")}
               </button>
               {text.length > 0 && (
-                <div style={{ marginTop: "-10px" }}>
+                <div className={styles.text__count}>
                   {text.length}/{textAreaMaxLength}
                 </div>
               )}
