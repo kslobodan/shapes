@@ -4,14 +4,6 @@ import Logo from "./Logo";
 import { useTranslation } from "react-i18next";
 import { useAppContext } from "../../customHooks/useAppContext";
 
-const inputStyle: CSSProperties = {
-  borderWidth: "0px",
-  height: "20px",
-  textAlign: "start",
-  flex: "1",
-  fontSize: "16px",
-};
-
 const textAreaStyle: CSSProperties = {
   marginTop: "10px",
   width: "100%",
@@ -30,15 +22,21 @@ export const Footer = () => {
 
   useEffect(() => {
     console.log("testing: ", screenSize);
-    setNewBoxHeight();
+    setDefaultBoxHeight();
   }, [screenSize]);
 
-  const setNewBoxHeight = () => {
-    console.log("1: ", screenSize);
+  const setDefaultBoxHeight = () => {
     if (screenSize === "xx-large-screen") setBoxHeight("500px");
     else if (screenSize === "x-large-screen") setBoxHeight("420px");
     else if (screenSize === "large-screen") setBoxHeight("340px");
     else if (screenSize === "medium-screen") setBoxHeight("290px");
+  };
+
+  const setEmailBoxHeight = () => {
+    if (screenSize === "xx-large-screen") setBoxHeight("650px");
+    else if (screenSize === "x-large-screen") setBoxHeight("550px");
+    else if (screenSize === "large-screen") setBoxHeight("450px");
+    else if (screenSize === "medium-screen") setBoxHeight("400px");
   };
 
   const [translate] = useTranslation("global");
@@ -56,13 +54,13 @@ export const Footer = () => {
   const handleShowMail = (show: boolean) => {
     setShowEmail(show);
     if (show) {
-      setBoxHeight("650px");
+      setEmailBoxHeight();
       setTimeout(() => {
         setEmailFormVisible(true);
       }, 400);
     } else {
       setEmailFormVisible(false);
-      setBoxHeight("500px");
+      setDefaultBoxHeight();
     }
   };
 
@@ -139,9 +137,8 @@ export const Footer = () => {
             <div className={styles.field}>
               <label className={styles.label}>{translate("email.name")}:</label>
               <input
-                type="email"
-                className="text"
-                style={inputStyle}
+                type="text"
+                className={`text ${styles.input}`}
                 value={name}
                 onChange={handleNameChange}
                 maxLength={50}
@@ -152,9 +149,8 @@ export const Footer = () => {
                 {translate("email.email")}:
               </label>
               <input
-                type="text"
-                className="text"
-                style={inputStyle}
+                type="email"
+                className={`text ${styles.input}`}
                 value={email}
                 onChange={handleEmailChange}
                 maxLength={50}

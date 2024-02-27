@@ -150,7 +150,7 @@ footer {
 }
 
 .email {
-  width: 70%;
+  width: 700px;
   margin-left: 15%;
   margin-right: 15%;
   margin-top: 20px;
@@ -159,6 +159,18 @@ footer {
   gap: 5px;
   opacity: 0;
   transition: opacity 500ms ease;
+
+  @include x-large-screen {
+    width: 560px;
+  }
+
+  @include large-screen {
+    width: 329px;
+  }
+
+  @include medium-screen {
+    width: 251px;
+  }
 }
 
 .visibleDiv {
@@ -170,9 +182,21 @@ footer {
   flex-direction: row;
   justify-content: start;
   align-items: center;
-  width: 100.3%;
+  width: 703px;
   gap: 10px;
   // background-color: red;
+
+  @include x-large-screen {
+    width: 563px;
+  }
+
+  @include large-screen {
+    width: 332px;
+  }
+
+  @include medium-screen {
+    width: 254px;
+  }
 }
 
 .label {
@@ -185,19 +209,40 @@ footer {
   line-height: 40px; /* 200% */
   width: 100px;
   text-align: start;
+
+  @include x-large-screen {
+    width: 80px;
+    font-size: 19px;
+  }
+  @include large-screen {
+    width: 60px;
+    font-size: 15px;
+  }
+  @include medium-screen {
+    width: 40px;
+    font-size: 12px;
+  }
 }
 
 .input {
   border-width: 0px;
-  height: 20px;
-  flex: 1;
-  color: $color-grey;
-  text-align: center;
-  font-family: Raleway;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
   text-align: start;
+  flex: 1;
+  height: 20px;
+  font-size: 16px;
+
+  @include x-large-screen {
+    height: 18.5px;
+    font-size: 15px;
+  }
+  @include large-screen {
+    height: 16px;
+    font-size: 12.5px;
+  }
+  @include medium-screen {
+    height: 14px;
+    font-size: 11px;
+  }
 }
 
 .text__area {
