@@ -53,6 +53,7 @@ export const FooterMobile = () => {
       }, 400);
     } else {
       setEmailFormVisible(false);
+      clearFields();
       setBoxHeight("500px");
       setFooterHeight("380px");
     }
@@ -82,11 +83,15 @@ export const FooterMobile = () => {
     if (useRefPopup.current) useRefPopup.current.focus();
   };
 
-  const handleOKClick = () => {
-    setPopupVisible(false);
+  const clearFields = () => {
     setName("");
     setEmail("");
     setText("");
+  };
+
+  const handleOKClick = () => {
+    setPopupVisible(false);
+    clearFields();
     handleShowMail(false);
   };
 

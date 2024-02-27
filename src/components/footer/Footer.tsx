@@ -49,6 +49,7 @@ export const Footer = () => {
       }, 400);
     } else {
       setEmailFormVisible(false);
+      clearFields();
       setDefaultBoxHeight();
     }
   };
@@ -76,11 +77,15 @@ export const Footer = () => {
     setPopupVisible(true);
   };
 
-  const handleOKClick = () => {
-    setPopupVisible(false);
+  const clearFields = () => {
     setName("");
     setEmail("");
     setText("");
+  };
+
+  const handleOKClick = () => {
+    setPopupVisible(false);
+    clearFields();
     handleShowMail(false);
   };
 
