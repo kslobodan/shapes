@@ -36,16 +36,14 @@ export const Footer = () => {
   const setNewBoxHeight = () => {
     console.log("1: ", screenSize);
     if (screenSize === "xx-large-screen") setBoxHeight("500px");
-    else if (screenSize === "x-large-screen") setBoxHeight("400px");
-    else if (screenSize === "large-screen") setBoxHeight("300px");
-    else if (screenSize === "medium-screen") setBoxHeight("250px");
+    else if (screenSize === "x-large-screen") setBoxHeight("420px");
+    else if (screenSize === "large-screen") setBoxHeight("340px");
+    else if (screenSize === "medium-screen") setBoxHeight("290px");
   };
 
   const [translate] = useTranslation("global");
   const [showEmail, setShowEmail] = useState(false);
   const [boxHeight, setBoxHeight] = useState("500px");
-  const [logoBottom, setLogoBottom] = useState("100px");
-  const [rightsBottom, setRightsBottom] = useState("50px");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [text, setText] = useState("");
@@ -214,11 +212,11 @@ export const Footer = () => {
 
         <div
           className={` ${styles.logo} ${showEmail ? styles.rotated : ""}`}
-          style={{ position: "absolute", bottom: logoBottom }}
+          style={{ position: "absolute" }}
         >
           <Logo />
         </div>
-        <div className={styles.small__text} style={{ bottom: rightsBottom }}>
+        <div className={styles.small__text}>
           <p>{translate("footer.madeBy")}</p>
           <p>{translate("footer.rightsReserved")}</p>
         </div>

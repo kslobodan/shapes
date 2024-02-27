@@ -91,6 +91,22 @@ footer {
   position: absolute;
   transition: transform 500ms linear;
   // background-color: red;
+  bottom: 100px;
+
+  @include x-large-screen {
+    bottom: 80px;
+    transform: scale(0.95);
+  }
+
+  @include large-screen {
+    bottom: 60px;
+    transform: scale(0.8);
+  }
+
+  @include medium-screen {
+    bottom: 40px;
+    transform: scale(0.7);
+  }
 }
 
 .rotated {
@@ -102,6 +118,7 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  bottom: 50px;
 
   > p {
     margin: 0;
@@ -112,6 +129,7 @@ footer {
   }
 
   @include x-large-screen {
+    bottom: 40px;
     > p {
       font-size: 9.8px;
       line-height: 16px;
@@ -119,10 +137,15 @@ footer {
   }
 
   @include large-screen {
+    bottom: 30px;
     > p {
       font-size: 6.72px;
       line-height: 11.2px;
     }
+  }
+
+  @include medium-screen {
+    bottom: 20px;
   }
 }
 
