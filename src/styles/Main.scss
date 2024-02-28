@@ -58,6 +58,9 @@ h4 {
   }
 
   @include x-large-screen {
+    font-size: 32px;
+    line-height: 27.2px;
+
     &__small {
       font-size: 26px;
       line-height: 30px;
@@ -66,6 +69,9 @@ h4 {
   }
 
   @include large-screen {
+    font-size: 22.4px;
+    line-height: 19px;
+
     &__small {
       font-size: 15.5px;
       line-height: 18.5px;
@@ -74,6 +80,8 @@ h4 {
   }
 
   @include medium-screen {
+    font-size: 16px;
+    line-height: 12px;
     &__small {
       font-size: 12px;
       line-height: 15px;
@@ -205,21 +213,33 @@ section {
 }
 
 @include x-large-screen {
+  h1 {
+    font-size: 44px;
+    line-height: 40px;
+  }
   h2 {
     font-size: 30px;
-    line-height: 27.2px;
+    line-height: 28px;
   }
 }
 @include large-screen {
+  h1 {
+    font-size: 31px;
+    line-height: 28px;
+  }
   h2 {
     font-size: 17.8px;
-    line-height: 21px;
+    line-height: 16px;
   }
 }
 @include medium-screen {
+  h1 {
+    font-size: 26px;
+    line-height: 23px;
+  }
   h2 {
     font-size: 14px;
-    line-height: 12.5px;
+    line-height: 13px;
   }
 }
 

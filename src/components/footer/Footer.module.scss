@@ -13,6 +13,14 @@ footer {
   @include x-large-screen {
     height: 380px;
   }
+
+  @include large-screen {
+    height: 340px;
+  }
+
+  @include medium-screen {
+    height: 300px;
+  }
 }
 
 .box {
