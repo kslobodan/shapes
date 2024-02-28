@@ -5,11 +5,11 @@
   height: 550px;
   position: relative;
   z-index: 1;
+  overflow-x: auto;
 
   // background-color: green;
 
   @include small-screen {
-    overflow-x: auto;
     height: 450px;
   }
 
@@ -31,6 +31,18 @@
   // background-color: blue;
   align-items: center;
 
+  @include x-large-screen {
+    width: 1800px;
+  }
+
+  @include large-screen {
+    width: 1700px;
+  }
+
+  @include medium-screen {
+    width: 1600px;
+  }
+
   @include small-screen {
     width: 1400px;
   }
@@ -51,6 +63,24 @@
   position: relative;
   margin-left: -10px;
   margin-right: -10px;
+
+  @include x-large-screen {
+    transform: scale(0.96);
+    margin-left: -14px;
+    margin-right: -14px;
+  }
+
+  @include large-screen {
+    transform: scale(0.92);
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+
+  @include medium-screen {
+    transform: scale(0.87);
+    margin-left: -25px;
+    margin-right: -25px;
+  }
 
   @include small-screen {
     transform: scale(0.85);

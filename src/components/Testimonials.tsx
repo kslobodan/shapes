@@ -1,10 +1,26 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styles from "./Testimonials.module.scss";
 import TitleWithText from "./TitleWithText";
 import { useTranslation } from "react-i18next";
 import { Testimonial } from "../translations/Types";
+import { useAppContext } from "../customHooks/useAppContext";
 
 const Testimonials = () => {
+  const { smallScreen } = useAppContext();
+  const contentRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (contentRef.current) {
+      if (!smallScreen) {
+        const container = contentRef.current;
+        const scrollLeft =
+          container.scrollWidth / 2 - container.clientWidth / 2;
+        container.scrollLeft = scrollLeft;
+      }
+    }
+  }, [smallScreen]);
+
+  console.log("mali ekran:", smallScreen);
+
   const [translate] = useTranslation("global");
 
   const testimonials: Testimonial[] =
@@ -21,7 +37,7 @@ const Testimonials = () => {
           underTitle={translate("testimonials.subtitleMobile")}
         />
       </div>
-      <div className={styles.content}>
+      <div className={styles.content} ref={contentRef}>
         <div className={styles.content__box}>
           {testimonials &&
             testimonials.length === 4 &&
