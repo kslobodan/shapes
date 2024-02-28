@@ -27,10 +27,7 @@ const Testimonials = () => {
     translate("testimonials.testimonialList", { returnObjects: true }) || [];
 
   return (
-    <section
-      id="testimonials"
-      style={{ marginBottom: "150px", marginTop: "80px" }}
-    >
+    <section id="testimonials" className={styles.testimonials}>
       <div>
         <TitleWithText
           title={translate("testimonials.titleMobile")}
