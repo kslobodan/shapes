@@ -6,12 +6,21 @@
   display: flex;
   justify-content: center;
   // background-color: blue;
+
+  @include x-large-screen {
+    height: 1670px;
+    margin-top: -150px;
+  }
 }
 
 .portfolio {
   margin-top: 0px;
   // background-color: red;
   width: 976px;
+
+  @include x-large-screen {
+    width: 780px;
+  }
 }
 
 .row {
@@ -22,6 +31,10 @@
   justify-content: space-between;
   flex-wrap: wrap;
   margin: 20px 0 10px 0;
+
+  // @include x-large-screen {
+  //   margin: -46px 0 0 0;
+  // }
 }
 
 $box-transition: all 300ms linear;
@@ -32,9 +45,15 @@ $box-transition: all 300ms linear;
   width: 314px;
   transition: $box-transition;
   z-index: 1;
+
+  @include x-large-screen {
+    height: 251px;
+    width: 251px;
+  }
 }
 
 $multiplier: 0.743;
+$multiplier-x-large: 0.594;
 
 .box1 {
   @extend %box-small;
@@ -43,6 +62,10 @@ $multiplier: 0.743;
 
   &:hover {
     @include box-hover(869px, 574px, $multiplier);
+
+    @include x-large-screen {
+      @include box-hover(869px, 574px, $multiplier-x-large);
+    }
   }
 }
 
@@ -53,6 +76,10 @@ $multiplier: 0.743;
 
   &:hover {
     @include box-hover(574px, 869px, $multiplier);
+
+    @include x-large-screen {
+      @include box-hover(574px, 869px, $multiplier-x-large);
+    }
   }
 }
 
@@ -63,10 +90,15 @@ $multiplier: 0.743;
 
   &:hover {
     @include box-hover(1038px, 422px, $multiplier);
+
+    @include x-large-screen {
+      @include box-hover(1038px, 422px, $multiplier-x-large);
+    }
   }
 }
 
 $second-row-top: 310px;
+$second-row-top-x-large: 244px;
 
 .box4 {
   @extend %box-small;
@@ -76,6 +108,15 @@ $second-row-top: 310px;
   &:hover {
     top: 140px;
     @include box-hover(617px, 869px, $multiplier);
+
+    @include x-large-screen {
+      top: 117px;
+      @include box-hover(617px, 869px, $multiplier-x-large);
+    }
+  }
+
+  @include x-large-screen {
+    top: $second-row-top-x-large;
   }
 }
 
@@ -87,6 +128,15 @@ $second-row-top: 310px;
   &:hover {
     top: 230px;
     @include box-hover(869px, 634px, $multiplier);
+
+    @include x-large-screen {
+      top: 182px;
+      @include box-hover(869px, 634px, $multiplier-x-large);
+    }
+  }
+
+  @include x-large-screen {
+    top: $second-row-top-x-large;
   }
 }
 
@@ -98,10 +148,20 @@ $second-row-top: 310px;
   &:hover {
     top: 135px;
     @include box-hover(921px, 869px, $multiplier);
+
+    @include x-large-screen {
+      top: 110px;
+      @include box-hover(921px, 869px, $multiplier-x-large);
+    }
+  }
+
+  @include x-large-screen {
+    top: $second-row-top-x-large;
   }
 }
 
 $third-row-top: 620px;
+$third-row-top-x-large: 488px;
 
 .box7 {
   @extend %box-small;
@@ -111,6 +171,15 @@ $third-row-top: 620px;
   &:hover {
     top: 597px;
     @include box-hover(869px, 485px, $multiplier);
+
+    @include x-large-screen {
+      top: 468px;
+      @include box-hover(869px, 485px, $multiplier-x-large);
+    }
+  }
+
+  @include x-large-screen {
+    top: $third-row-top-x-large;
   }
 }
 
@@ -122,6 +191,15 @@ $third-row-top: 620px;
   &:hover {
     top: 560px;
     @include box-hover(869px, 581px, $multiplier);
+
+    @include x-large-screen {
+      top: 440px;
+      @include box-hover(869px, 581px, $multiplier-x-large);
+    }
+  }
+
+  @include x-large-screen {
+    top: $third-row-top-x-large;
   }
 }
 
@@ -133,111 +211,204 @@ $third-row-top: 620px;
   &:hover {
     top: 570px;
     @include box-hover(869px, 581px, $multiplier);
+
+    @include x-large-screen {
+      top: 440px;
+      @include box-hover(869px, 581px, $multiplier-x-large);
+    }
+  }
+
+  @include x-large-screen {
+    top: $third-row-top-x-large;
   }
 }
 
-$third-row-top: 930px;
+$fourth-row-top: 930px;
+$fourth-row-top-x-large: 732px;
 
 .box10 {
   @extend %box-small;
   left: 0;
-  top: $third-row-top;
+  top: $fourth-row-top;
 
   &:hover {
     top: 903px;
     @include box-hover(869px, 493px, $multiplier);
+
+    @include x-large-screen {
+      top: 712px;
+      @include box-hover(869px, 493px, $multiplier-x-large);
+    }
+  }
+
+  @include x-large-screen {
+    top: $fourth-row-top-x-large;
   }
 }
 
 .box11 {
   @extend %box-small;
   @include center-content(x);
-  top: $third-row-top;
+  top: $fourth-row-top;
 
   &:hover {
     top: 870px;
     @include box-hover(869px, 579px, $multiplier);
+
+    @include x-large-screen {
+      top: 688px;
+      @include box-hover(869px, 579px, $multiplier-x-large);
+    }
+  }
+
+  @include x-large-screen {
+    top: $fourth-row-top-x-large;
   }
 }
 
 .box12 {
   @extend %box-small;
   right: 0;
-  top: $third-row-top;
+  top: $fourth-row-top;
 
   &:hover {
     top: 830px;
     @include box-hover(869px, 694px, $multiplier);
+
+    @include x-large-screen {
+      top: 648px;
+      @include box-hover(869px, 694px, $multiplier-x-large);
+    }
+  }
+
+  @include x-large-screen {
+    top: $fourth-row-top-x-large;
   }
 }
 
-$fourth-row-top: 1240px;
+$fifth-row-top: 1240px;
+$fifth-row-top-x-large: 976px;
 
 .box13 {
   @extend %box-small;
   left: 0;
-  top: $fourth-row-top;
+  top: $fifth-row-top;
 
   &:hover {
     top: 1237px;
     @include box-hover(1034px, 433px, $multiplier);
+
+    @include x-large-screen {
+      top: 973px;
+      @include box-hover(1034px, 433px, $multiplier-x-large);
+    }
+  }
+
+  @include x-large-screen {
+    top: $fifth-row-top-x-large;
   }
 }
 
 .box14 {
   @extend %box-small;
   @include center-content(x);
-  top: $fourth-row-top;
+  top: $fifth-row-top;
 
   &:hover {
     top: 1180px;
     @include box-hover(1013px, 581px, $multiplier);
+
+    @include x-large-screen {
+      top: 928px;
+      @include box-hover(1013px, 581px, $multiplier-x-large);
+    }
+  }
+
+  @include x-large-screen {
+    top: $fifth-row-top-x-large;
   }
 }
 
 .box15 {
   @extend %box-small;
   right: 0;
-  top: $fourth-row-top;
+  top: $fifth-row-top;
 
   &:hover {
     top: 1180px;
     @include box-hover(869px, 581px, $multiplier);
+
+    @include x-large-screen {
+      top: 928px;
+      @include box-hover(869px, 581px, $multiplier-x-large);
+    }
+  }
+
+  @include x-large-screen {
+    top: $fifth-row-top-x-large;
   }
 }
 
-$fifth-row-top: 1550px;
+$sixth-row-top: 1550px;
+$sixth-row-top-x-large: 1220px;
 
 .box16 {
   @extend %box-small;
   left: 0;
-  top: $fifth-row-top;
+  top: $sixth-row-top;
 
   &:hover {
     top: 1386px;
     @include box-hover(869px, 646px, $multiplier);
+
+    @include x-large-screen {
+      top: 1088px;
+      @include box-hover(869px, 646px, $multiplier-x-large);
+    }
+  }
+
+  @include x-large-screen {
+    top: $sixth-row-top-x-large;
   }
 }
 
 .box17 {
   @extend %box-small;
   @include center-content(x);
-  top: $fifth-row-top;
+  top: $sixth-row-top;
 
   &:hover {
     top: 1411px;
     @include box-hover(913px, 609px, $multiplier);
+
+    @include x-large-screen {
+      top: 1110px;
+      @include box-hover(913px, 609px, $multiplier-x-large);
+    }
+  }
+
+  @include x-large-screen {
+    top: $sixth-row-top-x-large;
   }
 }
 
 .box18 {
   @extend %box-small;
   right: 0;
-  top: $fifth-row-top;
+  top: $sixth-row-top;
 
   &:hover {
     top: 1504px;
     @include box-hover(869px, 488px, $multiplier);
+
+    @include x-large-screen {
+      top: 1182px;
+      @include box-hover(869px, 488px, $multiplier-x-large);
+    }
+  }
+
+  @include x-large-screen {
+    top: $sixth-row-top-x-large;
   }
 }
 
