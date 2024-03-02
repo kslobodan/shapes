@@ -9,7 +9,10 @@
 
   @include x-large-screen {
     height: 1670px;
-    margin-top: -150px;
+  }
+
+  @include large-screen {
+    height: 1010px;
   }
 }
 
@@ -19,7 +22,13 @@
   width: 976px;
 
   @include x-large-screen {
+    // background-color: blue;
     width: 780px;
+  }
+
+  @include large-screen {
+    // background-color: green;
+    width: 457px;
   }
 }
 
@@ -50,10 +59,16 @@ $box-transition: all 300ms linear;
     height: 251px;
     width: 251px;
   }
+
+  @include large-screen {
+    height: 147px;
+    width: 147px;
+  }
 }
 
 $multiplier: 0.743;
 $multiplier-x-large: 0.594;
+$multiplier-large: 0.3474;
 
 .box1 {
   @extend %box-small;
@@ -65,6 +80,10 @@ $multiplier-x-large: 0.594;
 
     @include x-large-screen {
       @include box-hover(869px, 574px, $multiplier-x-large);
+    }
+
+    @include large-screen {
+      @include box-hover(869px, 574px, $multiplier-large);
     }
   }
 }
@@ -80,6 +99,10 @@ $multiplier-x-large: 0.594;
     @include x-large-screen {
       @include box-hover(574px, 869px, $multiplier-x-large);
     }
+
+    @include large-screen {
+      @include box-hover(574px, 869px, $multiplier-large);
+    }
   }
 }
 
@@ -94,11 +117,16 @@ $multiplier-x-large: 0.594;
     @include x-large-screen {
       @include box-hover(1038px, 422px, $multiplier-x-large);
     }
+
+    @include large-screen {
+      @include box-hover(1038px, 422px, $multiplier-large);
+    }
   }
 }
 
 $second-row-top: 310px;
 $second-row-top-x-large: 244px;
+$second-row-top-large: 135px;
 
 .box4 {
   @extend %box-small;
@@ -113,10 +141,17 @@ $second-row-top-x-large: 244px;
       top: 117px;
       @include box-hover(617px, 869px, $multiplier-x-large);
     }
+    @include large-screen {
+      top: 60px;
+      @include box-hover(617px, 869px, $multiplier-large);
+    }
   }
 
   @include x-large-screen {
     top: $second-row-top-x-large;
+  }
+  @include large-screen {
+    top: $second-row-top-large;
   }
 }
 
@@ -133,10 +168,17 @@ $second-row-top-x-large: 244px;
       top: 182px;
       @include box-hover(869px, 634px, $multiplier-x-large);
     }
+    @include large-screen {
+      top: 98px;
+      @include box-hover(869px, 634px, $multiplier-large);
+    }
   }
 
   @include x-large-screen {
     top: $second-row-top-x-large;
+  }
+  @include large-screen {
+    top: $second-row-top-large;
   }
 }
 
@@ -153,15 +195,23 @@ $second-row-top-x-large: 244px;
       top: 110px;
       @include box-hover(921px, 869px, $multiplier-x-large);
     }
+    @include large-screen {
+      top: 56px;
+      @include box-hover(921px, 869px, $multiplier-large);
+    }
   }
 
   @include x-large-screen {
     top: $second-row-top-x-large;
   }
+  @include large-screen {
+    top: $second-row-top-large;
+  }
 }
 
 $third-row-top: 620px;
 $third-row-top-x-large: 488px;
+$third-row-top-large: 270px;
 
 .box7 {
   @extend %box-small;
@@ -176,10 +226,17 @@ $third-row-top-x-large: 488px;
       top: 468px;
       @include box-hover(869px, 485px, $multiplier-x-large);
     }
+    @include large-screen {
+      top: 258px;
+      @include box-hover(869px, 485px, $multiplier-large);
+    }
   }
 
   @include x-large-screen {
     top: $third-row-top-x-large;
+  }
+  @include large-screen {
+    top: $third-row-top-large;
   }
 }
 
@@ -196,10 +253,17 @@ $third-row-top-x-large: 488px;
       top: 440px;
       @include box-hover(869px, 581px, $multiplier-x-large);
     }
+    @include large-screen {
+      top: 242px;
+      @include box-hover(869px, 581px, $multiplier-large);
+    }
   }
 
   @include x-large-screen {
     top: $third-row-top-x-large;
+  }
+  @include large-screen {
+    top: $third-row-top-large;
   }
 }
 
@@ -216,15 +280,23 @@ $third-row-top-x-large: 488px;
       top: 440px;
       @include box-hover(869px, 581px, $multiplier-x-large);
     }
+    @include large-screen {
+      top: 242px;
+      @include box-hover(869px, 581px, $multiplier-large);
+    }
   }
 
   @include x-large-screen {
     top: $third-row-top-x-large;
   }
+  @include large-screen {
+    top: $third-row-top-large;
+  }
 }
 
 $fourth-row-top: 930px;
 $fourth-row-top-x-large: 732px;
+$fourth-row-top-large: 405px;
 
 .box10 {
   @extend %box-small;
@@ -239,10 +311,17 @@ $fourth-row-top-x-large: 732px;
       top: 712px;
       @include box-hover(869px, 493px, $multiplier-x-large);
     }
+    @include large-screen {
+      top: 394px;
+      @include box-hover(869px, 493px, $multiplier-large);
+    }
   }
 
   @include x-large-screen {
     top: $fourth-row-top-x-large;
+  }
+  @include large-screen {
+    top: $fourth-row-top-large;
   }
 }
 
@@ -259,10 +338,17 @@ $fourth-row-top-x-large: 732px;
       top: 688px;
       @include box-hover(869px, 579px, $multiplier-x-large);
     }
+    @include large-screen {
+      top: 378px;
+      @include box-hover(869px, 579px, $multiplier-large);
+    }
   }
 
   @include x-large-screen {
     top: $fourth-row-top-x-large;
+  }
+  @include large-screen {
+    top: $fourth-row-top-large;
   }
 }
 
@@ -279,15 +365,23 @@ $fourth-row-top-x-large: 732px;
       top: 648px;
       @include box-hover(869px, 694px, $multiplier-x-large);
     }
+    @include large-screen {
+      top: 354px;
+      @include box-hover(869px, 694px, $multiplier-large);
+    }
   }
 
   @include x-large-screen {
     top: $fourth-row-top-x-large;
   }
+  @include large-screen {
+    top: $fourth-row-top-large;
+  }
 }
 
 $fifth-row-top: 1240px;
 $fifth-row-top-x-large: 976px;
+$fifth-row-top-large: 540px;
 
 .box13 {
   @extend %box-small;
@@ -302,10 +396,17 @@ $fifth-row-top-x-large: 976px;
       top: 973px;
       @include box-hover(1034px, 433px, $multiplier-x-large);
     }
+    @include large-screen {
+      top: 538px;
+      @include box-hover(1034px, 433px, $multiplier-large);
+    }
   }
 
   @include x-large-screen {
     top: $fifth-row-top-x-large;
+  }
+  @include large-screen {
+    top: $fifth-row-top-large;
   }
 }
 
@@ -322,10 +423,17 @@ $fifth-row-top-x-large: 976px;
       top: 928px;
       @include box-hover(1013px, 581px, $multiplier-x-large);
     }
+    @include large-screen {
+      top: 512px;
+      @include box-hover(1013px, 581px, $multiplier-large);
+    }
   }
 
   @include x-large-screen {
     top: $fifth-row-top-x-large;
+  }
+  @include large-screen {
+    top: $fifth-row-top-large;
   }
 }
 
@@ -342,15 +450,23 @@ $fifth-row-top-x-large: 976px;
       top: 928px;
       @include box-hover(869px, 581px, $multiplier-x-large);
     }
+    @include large-screen {
+      top: 510px;
+      @include box-hover(869px, 581px, $multiplier-large);
+    }
   }
 
   @include x-large-screen {
     top: $fifth-row-top-x-large;
   }
+  @include large-screen {
+    top: $fifth-row-top-large;
+  }
 }
 
 $sixth-row-top: 1550px;
 $sixth-row-top-x-large: 1220px;
+$sixth-row-top-large: 675px;
 
 .box16 {
   @extend %box-small;
@@ -365,10 +481,17 @@ $sixth-row-top-x-large: 1220px;
       top: 1088px;
       @include box-hover(869px, 646px, $multiplier-x-large);
     }
+    @include large-screen {
+      top: 598px;
+      @include box-hover(869px, 646px, $multiplier-large);
+    }
   }
 
   @include x-large-screen {
     top: $sixth-row-top-x-large;
+  }
+  @include large-screen {
+    top: $sixth-row-top-large;
   }
 }
 
@@ -385,10 +508,17 @@ $sixth-row-top-x-large: 1220px;
       top: 1110px;
       @include box-hover(913px, 609px, $multiplier-x-large);
     }
+    @include large-screen {
+      top: 611px;
+      @include box-hover(913px, 609px, $multiplier-large);
+    }
   }
 
   @include x-large-screen {
     top: $sixth-row-top-x-large;
+  }
+  @include large-screen {
+    top: $sixth-row-top-large;
   }
 }
 
@@ -405,10 +535,17 @@ $sixth-row-top-x-large: 1220px;
       top: 1182px;
       @include box-hover(869px, 488px, $multiplier-x-large);
     }
+    @include large-screen {
+      top: 653px;
+      @include box-hover(869px, 488px, $multiplier-large);
+    }
   }
 
   @include x-large-screen {
     top: $sixth-row-top-x-large;
+  }
+  @include large-screen {
+    top: $sixth-row-top-large;
   }
 }
 
