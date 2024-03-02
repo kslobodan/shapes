@@ -38,7 +38,11 @@ const Statement = () => {
         <div className={styles.text}>
           {!smallScreen && <p>{translate("statement.description")}</p>}
         </div>
-        {!smallScreen && <StatermentTop />}
+        {!smallScreen && (
+          <div className={styles.statement__top}>
+            <StatermentTop />
+          </div>
+        )}
         {smallScreen && (
           <div className={styles.pointer__down}>
             <img src={require(`../../images/PointerDownMobile.png`)} alt="" />
@@ -60,7 +64,11 @@ const Statement = () => {
             </p>
           </div>
         </div>
-        {!smallScreen && <StatementBottom />}
+        {!smallScreen && (
+          <div className={styles.statement__bottom}>
+            <StatementBottom />
+          </div>
+        )}
         {smallScreen && (
           <div className={styles.pointer__up}>
             <img src={require(`../../images/PointerUpMobile.png`)} alt="" />

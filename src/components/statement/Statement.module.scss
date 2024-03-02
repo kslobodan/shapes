@@ -5,10 +5,20 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @include x-large-screen {
+    margin-bottom: -10px;
+  }
+  @include large-screen {
+    margin-bottom: -50px;
+  }
+  @include medium-screen {
+    margin-bottom: -70px;
+  }
 }
 
 .text {
-  width: 1200px;
+  width: 1296px;
   margin-bottom: 80px;
   > p {
     color: var(--majabo-dark-gray, #5f5f5f);
@@ -18,6 +28,33 @@
     font-style: normal;
     font-weight: 500;
     line-height: 40px; /* 200% */
+  }
+
+  @include x-large-screen {
+    width: 1036px;
+
+    > p {
+      font-size: 16px;
+      line-height: 32px;
+    }
+  }
+
+  @include large-screen {
+    width: 518px;
+
+    > p {
+      font-size: 12px;
+      line-height: 22px;
+    }
+  }
+
+  @include medium-screen {
+    width: 420px;
+
+    > p {
+      font-size: 10px;
+      line-height: 18px;
+    }
   }
 }
 
@@ -46,10 +83,27 @@
   flex-direction: column;
   align-items: center;
   margin-top: 40px;
+  line-height: 50px;
   //   line-height: 10px;
 
   > h2 {
     margin: 0;
+  }
+
+  @include x-large-screen {
+    > h2 {
+      line-height: 40px;
+    }
+  }
+  @include large-screen {
+    > h2 {
+      line-height: 25px;
+    }
+  }
+  @include medium-screen {
+    > h2 {
+      line-height: 20px;
+    }
   }
 }
 
@@ -72,19 +126,53 @@
   flex-shrink: 0;
 }
 
+.statement__top {
+  @include x-large-screen {
+    transform: scale(0.85);
+    margin-bottom: -10px;
+    margin-top: -20px;
+  }
+  @include large-screen {
+    transform: scale(0.6);
+    margin-bottom: -50px;
+    margin-top: -60px;
+  }
+  @include medium-screen {
+    transform: scale(0.5);
+    margin-bottom: -60px;
+    margin-top: -70px;
+  }
+}
+
+.statement__bottom {
+  @include x-large-screen {
+    transform: scale(0.85);
+    margin-top: -10px;
+  }
+  @include large-screen {
+    transform: scale(0.6);
+    margin-top: -40px;
+  }
+  @include medium-screen {
+    transform: scale(0.5);
+    margin-top: -50px;
+  }
+}
+
 .pointer__top {
   width: 115.344px;
   height: 57.672px;
-  flex-shrink: 0;
   position: absolute;
-  margin-top: -115px;
+  margin-top: -76px;
+  margin-left: 126px;
 }
 .pointer__bottom {
   width: 115.344px;
   height: 57.672px;
   flex-shrink: 0;
   position: absolute;
-  margin-top: 600px;
+  margin-top: -166px;
+  margin-left: 127px;
 }
 
 .pointer__down,
