@@ -108,7 +108,14 @@ const Portfolio = () => {
           ))}
         </div>
       )}
-      <div className="section__content">
+      <div
+        className="section__content"
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          textAlign: "center",
+        }}
+      >
         {!smallScreen && (
           <div
             className={styles.content}

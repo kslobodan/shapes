@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./TitleWithText.module.scss";
 
 interface TitleWithTextProps {
   title: string;
@@ -19,19 +20,7 @@ const TitleWithText: React.FC<TitleWithTextProps> = ({
         <h1>{title}</h1>
         <p className="title__green">{underTitle}</p>
       </div>
-      {text && (
-        <pre
-          className="text"
-          style={{
-            marginTop: "8vh",
-            marginBottom: "20vh",
-            lineHeight: lineHeight,
-            textAlign: "center",
-          }}
-        >
-          {text}
-        </pre>
-      )}
+      {text && <pre className={`text ${styles.text__style}`}>{text}</pre>}
     </div>
   );
 };

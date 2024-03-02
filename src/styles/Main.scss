@@ -210,6 +210,18 @@ section {
   font-size: 20px;
   font-style: normal;
   font-weight: 500;
+
+  @include x-large-screen {
+    font-size: 16px;
+  }
+
+  @include large-screen {
+    font-size: 11px;
+  }
+
+  @include medium-screen {
+    font-size: 9px;
+  }
 }
 
 @include x-large-screen {

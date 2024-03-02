@@ -1,0 +1,23 @@
+@import "../styles/mixins";
+
+.text__style {
+  margin-top: 8vh;
+  margin-bottom: 20vh;
+  line-height: 40px;
+  text-align: center;
+
+  @include x-large-screen {
+    line-height: 32px;
+    margin-top: 7vh;
+  }
+
+  @include large-screen {
+    margin-top: 6vh;
+    line-height: 22px;
+  }
+
+  @include medium-screen {
+    margin-top: 5vh;
+    line-height: 16px;
+  }
+}
