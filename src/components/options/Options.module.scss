@@ -49,14 +49,31 @@ $extended-ellipse-width: 370px;
 }
 
 .content {
-  width: 100%;
+  width: 1293px;
   height: 650px;
+  left: 50%;
+  transform: translateX(-50%);
   position: relative;
   z-index: 1;
   margin-top: 100px;
   margin-bottom: 50px;
   overflow: hidden;
-  //   background-color: green;
+  // background-color: green;
+
+  @include x-large-screen {
+    height: 580px;
+    width: 1034px;
+  }
+
+  @include large-screen {
+    height: 400px;
+    width: 756px;
+  }
+
+  @include medium-screen {
+    height: 280px;
+    // width: 500px;
+  }
 }
 
 .content__box {
@@ -68,6 +85,17 @@ $extended-ellipse-width: 370px;
   gap: 180px;
   // background-color: blue;
   align-items: center;
+
+  @include x-large-screen {
+    gap: 120px;
+  }
+
+  @include large-screen {
+    gap: 20px;
+  }
+
+  @include medium-screen {
+  }
 }
 
 .part {
@@ -75,15 +103,41 @@ $extended-ellipse-width: 370px;
   width: 255px;
   height: 438px;
   // background-color: red;
+
+  @include x-large-screen {
+    transform: scale(0.85);
+  }
+
+  @include large-screen {
+    transform: scale(0.6);
+  }
+
+  @include medium-screen {
+    transform: scale(0.45);
+  }
 }
 
 .part2 {
   margin-top: 40px;
   width: 202px;
   height: 538px;
-  //   background-color: red;
+  // background-color: red;
   display: flex;
   flex-direction: column;
+
+  @include x-large-screen {
+    transform: scale(0.85);
+  }
+
+  @include large-screen {
+    transform: scale(0.6);
+  }
+
+  @include medium-screen {
+    transform: scale(0.45);
+    margin-left: -80px;
+    margin-right: -80px;
+  }
 }
 
 .group {
