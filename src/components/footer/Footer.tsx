@@ -10,7 +10,6 @@ export const Footer = () => {
   const { screenSize } = useAppContext();
 
   useEffect(() => {
-    console.log("testing: ", screenSize);
     setDefaultBoxHeight();
   }, [screenSize]);
 

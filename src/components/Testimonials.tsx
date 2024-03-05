@@ -19,8 +19,6 @@ const Testimonials = () => {
     }
   }, [smallScreen]);
 
-  console.log("mali ekran:", smallScreen);
-
   const [translate] = useTranslation("global");
 
   const testimonials: Testimonial[] =
