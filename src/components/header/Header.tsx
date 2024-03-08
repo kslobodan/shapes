@@ -10,9 +10,7 @@ import Circle from "./Circle";
 const Header = () => {
   const [translate, i18n] = useTranslation("global");
   const { language, setLanguage } = useAppContext();
-  const [elipseWidth, setElipseWidth] = useState("332px");
-  const [elipseLeft, setElipseLeft] = useState("calc(50% - ( 332px/2))");
-  const [elipseTop, setElipseTop] = useState("-200px");
+  const [ellipseLoaded, setEllipseLoaded] = useState(false);
   const [shapeTop, setShapeTop] = useState("700px");
   const [shapeWidth, setShapeWidth] = useState("238px");
   const [shapeHeight, setShapeHeight] = useState("238px");
@@ -99,9 +97,7 @@ const Header = () => {
   };
 
   const secondChange = () => {
-    setElipseWidth("217px");
-    setElipseLeft("calc(50% - ( 217px/2))");
-    setElipseTop("-680px");
+    setEllipseLoaded(true);
     setShapeTop("800px");
     setShapeWidth("150px");
     setShapeHeight("150px");
@@ -179,8 +175,7 @@ const Header = () => {
           style={{ width: boxWidth, height: boxHeight }}
         ></div>
         <div
-          className={styles.elipse}
-          style={{ width: elipseWidth, left: elipseLeft, top: elipseTop }}
+          className={ellipseLoaded ? styles.ellipse__loaded : styles.ellipse}
         >
           <button
             className={styles.languages}

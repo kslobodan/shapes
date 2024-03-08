@@ -9,7 +9,7 @@
   z-index: 1;
 }
 
-.elipse {
+%ellipse-style {
   height: 1000px;
   flex-shrink: 0;
   border-radius: 500px;
@@ -24,6 +24,20 @@
   justify-content: center;
   position: absolute;
   z-index: 2;
+}
+
+.ellipse {
+  @extend %ellipse-style;
+  width: 332px;
+  left: calc(50% - (332px / 2));
+  top: -200px;
+}
+
+.ellipse__loaded {
+  @extend %ellipse-style;
+  width: 217px;
+  left: calc(50% - (217px / 2));
+  top: -680px;
 }
 
 .box {
@@ -61,27 +75,26 @@
   background-color: white;
 }
 
-.logo {
+%logo-style {
   position: absolute;
   z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2vh;
-  top: 480px;
   transition: all 1s;
   // background-color: green;
 }
 
+.logo {
+  @extend %logo-style;
+  gap: 2vh;
+  top: 480px;
+}
+
 .logo__loaded {
-  position: absolute;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @extend %logo-style;
   gap: 4vh;
   top: 360px;
-  transition: all 1s;
 
   @include x-large-screen {
     gap: 3vh;
