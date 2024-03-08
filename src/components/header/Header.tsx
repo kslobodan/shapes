@@ -7,12 +7,15 @@ import { Language, useAppContext } from "../../customHooks/useAppContext";
 import Arrow from "./ArrowSVG";
 import Circle from "./Circle";
 
+type LoadType = "InitialLoad" | "FirstLoad" | "SecondLoad";
+
 const Header = () => {
   const [translate, i18n] = useTranslation("global");
   const { language, setLanguage } = useAppContext();
   const [ellipseLoaded, setEllipseLoaded] = useState(false);
   const [shapeLoaded, setShapeLoaded] = useState(false);
   const [rectangleLoaded, setRectangleLoaded] = useState(false);
+  const [loadingType, setLoadingType] = useState<LoadType>("InitialLoad");
 
   const [circle, setCircle] = useState({
     D: "M11.6528 20.1196C16.3287 20.1196 20.1193 16.329 20.1193 11.6531C20.1193 6.97718 16.3287 3.18661 11.6528 3.18661C6.97693 3.18661 3.18636 6.97718 3.18636 11.6531C3.18636 16.329 6.97693 20.1196 11.6528 20.1196ZM11.6528 23.0003C17.9197 23.0003 23 17.92 23 11.6531C23 5.38621 17.9197 0.305908 11.6528 0.305908C5.38597 0.305908 0.305664 5.38621 0.305664 11.6531C0.305664 17.92 5.38597 23.0003 11.6528 23.0003Z",
@@ -21,8 +24,6 @@ const Header = () => {
     Fill: "#C3D400",
   });
 
-  const [boxWidth, setBoxWidth] = useState("100%");
-  const [boxHeight, setBoxHeight] = useState("1200px");
   const [logoBox, setLogoBox] = useState("100px");
   const [logoLoaded, setLogoLoaded] = useState(false);
   const [logoVisible, setLogoVisible] = useState(false);
@@ -75,7 +76,7 @@ const Header = () => {
       ViewBox: "0 0 238 238",
     });
 
-    setBoxWidth("80%");
+    setLoadingType("FirstLoad");
   };
 
   const secondChange = () => {
@@ -91,13 +92,8 @@ const Header = () => {
       Fill: "white",
     });
 
-    if (window.innerWidth >= 1920) setBoxWidth("975px");
-    else if (window.innerWidth >= 1280) setBoxWidth("780px");
-    else if (window.innerWidth >= 720) setBoxWidth("458px");
-    else setBoxWidth("300px");
+    setLoadingType("SecondLoad");
 
-    // setBoxWidth("975px");
-    setBoxHeight("700px");
     editLogo(true);
     setLogoVisible(true);
     setChooseMarginTop("750px");
@@ -147,9 +143,14 @@ const Header = () => {
     >
       <div className={styles.content}>
         <div
-          className={styles.box}
-          style={{ width: boxWidth, height: boxHeight }}
-        ></div>
+          className={
+            loadingType === "InitialLoad"
+              ? styles.box
+              : loadingType === "FirstLoad"
+              ? styles.box__first__load
+              : styles.box__second__load
+          }
+        />
         <div
           className={ellipseLoaded ? styles.ellipse__loaded : styles.ellipse}
         >
