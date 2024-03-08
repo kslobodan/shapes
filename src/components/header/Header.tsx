@@ -117,10 +117,7 @@ const Header = () => {
   };
 
   return (
-    <section
-      id="header"
-      style={{ paddingBottom: "50px", position: "relative" }}
-    >
+    <section id="header" className={styles.header__style}>
       <div className={styles.content}>
         <div
           className={
