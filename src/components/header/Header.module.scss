@@ -24,6 +24,18 @@
   justify-content: center;
   position: absolute;
   z-index: 2;
+
+  @include x-large-screen {
+    transform: scale(0.75);
+  }
+
+  @include large-screen {
+    transform: scale(0.48);
+  }
+
+  @include medium-screen {
+    transform: scale(0.45);
+  }
 }
 
 .ellipse {
@@ -31,6 +43,10 @@
   width: 332px;
   left: calc(50% - (332px / 2));
   top: -200px;
+
+  @include x-large-screen {
+    top: -210px;
+  }
 }
 
 .ellipse__loaded {
@@ -38,6 +54,18 @@
   width: 217px;
   left: calc(50% - (217px / 2));
   top: -680px;
+
+  @include x-large-screen {
+    top: -650px;
+  }
+
+  @include large-screen {
+    top: -600px;
+  }
+
+  @include medium-screen {
+    top: -605px;
+  }
 }
 
 %box-style {
@@ -71,14 +99,17 @@
 
   @include x-large-screen {
     width: 780px;
+    height: 480px;
   }
 
   @include large-screen {
-    width: 458px;
+    width: 560px;
+    height: 320px;
   }
 
   @include medium-screen {
-    width: 300px;
+    width: 380px;
+    height: 245px;
   }
 }
 
@@ -101,7 +132,7 @@
 
 .shape__loaded {
   @extend %shape-style;
-  top: 800px;
+  top: 820px;
   width: 150px;
   height: 150px;
 }
@@ -150,15 +181,21 @@
   top: 360px;
 
   @include x-large-screen {
-    gap: 3vh;
+    gap: 2.8vh;
+    top: 230px;
+    transform: scale(0.85);
   }
 
   @include large-screen {
-    gap: 2vh;
+    gap: 1.8vh;
+    top: 110px;
+    transform: scale(0.65);
   }
 
   @include medium-screen {
-    gap: 1vh;
+    gap: 0.1vh;
+    top: 85px;
+    transform: scale(0.62);
   }
 }
 
@@ -274,6 +311,10 @@
   color: transparent;
   font-size: 28.8px;
   line-height: 20.4px;
+
+  @include medium-screen {
+    top: 770px;
+  }
 }
 
 .languages {
@@ -298,5 +339,9 @@
   &:hover {
     background-color: $color-neon;
     cursor: pointer;
+  }
+
+  @include medium-screen {
+    top: 765px;
   }
 }
