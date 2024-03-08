@@ -11,13 +11,8 @@ const Header = () => {
   const [translate, i18n] = useTranslation("global");
   const { language, setLanguage } = useAppContext();
   const [ellipseLoaded, setEllipseLoaded] = useState(false);
-  const [shapeTop, setShapeTop] = useState("700px");
-  const [shapeWidth, setShapeWidth] = useState("238px");
-  const [shapeHeight, setShapeHeight] = useState("238px");
-  const [rectangleWidth, setRectangleWidth] = useState("30px");
-  const [rectangleHeight, setRectangleHeight] = useState("300px");
-  const [rectangleTransform, setrectangleTransform] = useState("");
-  const [rectangleColor, setRectangleColor] = useState("white");
+  const [shapeLoaded, setShapeLoaded] = useState(false);
+  const [rectangleLoaded, setRectangleLoaded] = useState(false);
 
   const [circle, setCircle] = useState({
     D: "M11.6528 20.1196C16.3287 20.1196 20.1193 16.329 20.1193 11.6531C20.1193 6.97718 16.3287 3.18661 11.6528 3.18661C6.97693 3.18661 3.18636 6.97718 3.18636 11.6531C3.18636 16.329 6.97693 20.1196 11.6528 20.1196ZM11.6528 23.0003C17.9197 23.0003 23 17.92 23 11.6531C23 5.38621 17.9197 0.305908 11.6528 0.305908C5.38597 0.305908 0.305664 5.38621 0.305664 11.6531C0.305664 17.92 5.38597 23.0003 11.6528 23.0003Z",
@@ -28,11 +23,9 @@ const Header = () => {
 
   const [boxWidth, setBoxWidth] = useState("100%");
   const [boxHeight, setBoxHeight] = useState("1200px");
-
-  const [logoLoaded, setLogoLoaded] = useState(false);
   const [logoBox, setLogoBox] = useState("100px");
+  const [logoLoaded, setLogoLoaded] = useState(false);
   const [logoVisible, setLogoVisible] = useState(false);
-
   const [chooseMarginTop, setChooseMarginTop] = useState("550px");
   const [chooseColor, setChooseColor] = useState("#5F5F5F");
   const [chooseFontSize, setChooseFontSize] = useState("48px");
@@ -63,17 +56,6 @@ const Header = () => {
 
   const languateText = language === "en" ? "EN/SR" : "SR/EN";
 
-  const rectangleStyle: CSSProperties = {
-    width: rectangleWidth,
-    height: rectangleHeight,
-    transform: rectangleTransform,
-    backgroundColor: rectangleColor,
-  };
-  const shapeStyle: CSSProperties = {
-    top: shapeTop,
-    width: shapeWidth,
-    height: shapeHeight,
-  };
   const transformStyle: CSSProperties = {
     width: logoBox,
     transition: `all width 500ms ease-out `,
@@ -98,14 +80,8 @@ const Header = () => {
 
   const secondChange = () => {
     setEllipseLoaded(true);
-    setShapeTop("800px");
-    setShapeWidth("150px");
-    setShapeHeight("150px");
-
-    setRectangleWidth("15px");
-    setRectangleHeight("165px");
-    setrectangleTransform("rotate(90deg)");
-    setRectangleColor("#C3D400");
+    setShapeLoaded(true);
+    setRectangleLoaded(true);
 
     setCircle({
       ...circle,
@@ -187,7 +163,7 @@ const Header = () => {
           <div className={styles.choose} style={chooseStyle}>
             {translate("header.choose")}
           </div>
-          <div className={styles.shape} style={shapeStyle}>
+          <div className={shapeLoaded ? styles.shape__loaded : styles.shape}>
             <Circle
               circleWidth={circle.Widht}
               viewBox={circle.ViewBox}
@@ -195,7 +171,11 @@ const Header = () => {
               fill={circle.Fill}
               transform=""
             />
-            <div className={styles.rectangle} style={rectangleStyle} />
+            <div
+              className={
+                rectangleLoaded ? styles.rectangle__loaded : styles.rectangle
+              }
+            />
           </div>
         </div>
         <div

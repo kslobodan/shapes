@@ -55,24 +55,50 @@
   transition: width 1s, height 1s;
 }
 
-.shape {
-  // transform: rotate(90deg);
+%shape-style {
   flex-shrink: 0;
   position: absolute;
   transition: left 1s, top 1s, transform 1s;
-  // top: 100px;
-  // left: calc(50% - 118.171px / 2 - 20px);
   display: flex;
   justify-content: center;
   align-items: center;
+  // background-color: red;
 }
 
-.rectangle {
+.shape {
+  @extend %shape-style;
+  top: 700px;
+  width: 238px;
+  height: 238px;
+}
+
+.shape__loaded {
+  @extend %shape-style;
+  top: 800px;
+  width: 150px;
+  height: 150px;
+}
+
+%rectangle-style {
   flex-shrink: 0;
   position: absolute;
   transition: left 1s, top 1s, transform 1s, background-color 1s;
-  // background-color: #c3d400;
+}
+
+.rectangle {
+  @extend %rectangle-style;
+  width: 30px;
+  height: 300px;
+  transform: none;
   background-color: white;
+}
+
+.rectangle__loaded {
+  @extend %rectangle-style;
+  width: 15px;
+  height: 165px;
+  transform: rotate(90deg);
+  background-color: #c3d400;
 }
 
 %logo-style {
