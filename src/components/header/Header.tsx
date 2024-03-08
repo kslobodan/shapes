@@ -1,4 +1,4 @@
-import React, { CSSProperties, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import styles from "./Header.module.scss";
 import { letters } from "./Letters";
@@ -7,7 +7,8 @@ import { Language, useAppContext } from "../../customHooks/useAppContext";
 import Arrow from "./ArrowSVG";
 import Circle from "./Circle";
 
-type LoadType = "InitialLoad" | "FirstLoad" | "SecondLoad";
+type LoadType = "InitialLoad" | "FirstLoad" | "SecondLoad" | "ThirthLoad";
+type LogoTextChange = "Initial" | "FirstChange" | "SecondChange";
 
 const Header = () => {
   const [translate, i18n] = useTranslation("global");
@@ -16,6 +17,10 @@ const Header = () => {
   const [shapeLoaded, setShapeLoaded] = useState(false);
   const [rectangleLoaded, setRectangleLoaded] = useState(false);
   const [loadingType, setLoadingType] = useState<LoadType>("InitialLoad");
+  const [textChange, setTextChange] = useState<LogoTextChange>("Initial");
+  const [logoLoaded, setLogoLoaded] = useState(false);
+  const [logoVisible, setLogoVisible] = useState(false);
+  const [languagesOpacity, setLanguagesOpacity] = useState("0");
 
   const [circle, setCircle] = useState({
     D: "M11.6528 20.1196C16.3287 20.1196 20.1193 16.329 20.1193 11.6531C20.1193 6.97718 16.3287 3.18661 11.6528 3.18661C6.97693 3.18661 3.18636 6.97718 3.18636 11.6531C3.18636 16.329 6.97693 20.1196 11.6528 20.1196ZM11.6528 23.0003C17.9197 23.0003 23 17.92 23 11.6531C23 5.38621 17.9197 0.305908 11.6528 0.305908C5.38597 0.305908 0.305664 5.38621 0.305664 11.6531C0.305664 17.92 5.38597 23.0003 11.6528 23.0003Z",
@@ -23,15 +28,6 @@ const Header = () => {
     ViewBox: "0 0 23 23",
     Fill: "#C3D400",
   });
-
-  const [logoBox, setLogoBox] = useState("100px");
-  const [logoLoaded, setLogoLoaded] = useState(false);
-  const [logoVisible, setLogoVisible] = useState(false);
-  const [chooseMarginTop, setChooseMarginTop] = useState("550px");
-  const [chooseColor, setChooseColor] = useState("#5F5F5F");
-  const [chooseFontSize, setChooseFontSize] = useState("48px");
-  const [chooseLineHeight, setChooseLineHeight] = useState("34px");
-  const [languagesOpacity, setLanguagesOpacity] = useState("0");
 
   useEffect(() => {
     const timeout1 = setTimeout(() => {
@@ -56,17 +52,6 @@ const Header = () => {
   }, []);
 
   const languateText = language === "en" ? "EN/SR" : "SR/EN";
-
-  const transformStyle: CSSProperties = {
-    width: logoBox,
-    transition: `all width 500ms ease-out `,
-  };
-  const chooseStyle: CSSProperties = {
-    top: chooseMarginTop,
-    color: chooseColor,
-    fontSize: chooseFontSize,
-    lineHeight: chooseLineHeight,
-  };
 
   const firstChange = () => {
     setCircle({
@@ -93,18 +78,13 @@ const Header = () => {
     });
 
     setLoadingType("SecondLoad");
-
     editLogo(true);
     setLogoVisible(true);
-    setChooseMarginTop("750px");
-    setChooseFontSize("28.8px");
-    setChooseColor("rgba(95, 95, 95, 0.50)");
-    setChooseLineHeight("20.4px");
   };
 
   const thirdChange = () => {
     editLogo(false);
-    setChooseColor("transparent");
+    setLoadingType("ThirthLoad");
     setLanguagesOpacity("1");
   };
 
@@ -119,10 +99,10 @@ const Header = () => {
 
   const editLogo = (bigger: boolean) => {
     if (bigger) {
-      setLogoBox("700px");
+      setTextChange("FirstChange");
     } else {
       setLogoLoaded(true);
-      setLogoBox("450px");
+      setTextChange("SecondChange");
     }
   };
 
@@ -161,7 +141,15 @@ const Header = () => {
           >
             {languateText}
           </button>
-          <div className={styles.choose} style={chooseStyle}>
+          <div
+            className={
+              loadingType === "InitialLoad" || loadingType === "FirstLoad"
+                ? styles.choose
+                : loadingType === "SecondLoad"
+                ? styles.choose__second__load
+                : styles.choose__thirth__load
+            }
+          >
             {translate("header.choose")}
           </div>
           <div className={shapeLoaded ? styles.shape__loaded : styles.shape}>
@@ -183,7 +171,15 @@ const Header = () => {
           className={logoLoaded ? styles.logo__loaded : styles.logo}
           style={{ visibility: logoVisible ? "visible" : "hidden" }}
         >
-          <div className={styles.logo__text} style={transformStyle}>
+          <div
+            className={
+              textChange === "Initial"
+                ? styles.logo__text
+                : textChange === "FirstChange"
+                ? styles.logo__text__first__change
+                : styles.logo__text__second__change
+            }
+          >
             <SvgList sVGs={letters} />
           </div>
           <div className={styles.description}>
