@@ -45,7 +45,7 @@
   top: -200px;
 
   @include x-large-screen {
-    top: -210px;
+    top: -340px;
   }
 }
 
@@ -173,6 +173,16 @@
   @extend %logo-style;
   gap: 2vh;
   top: 480px;
+
+  @include x-large-screen {
+    top: 270px;
+  }
+  @include large-screen {
+    top: 120px;
+  }
+  @include medium-screen {
+    top: 70px;
+  }
 }
 
 .logo__loaded {
@@ -258,6 +268,7 @@
 
   @include medium-screen {
     transform: scale(0.52);
+    letter-spacing: 17px;
   }
 }
 
