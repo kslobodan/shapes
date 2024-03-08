@@ -31,8 +31,7 @@ const Header = () => {
   const [boxWidth, setBoxWidth] = useState("100%");
   const [boxHeight, setBoxHeight] = useState("1200px");
 
-  const [logoTop, setLogoTop] = useState("480px");
-  const [logoGap, setLogoGap] = useState("2vh");
+  const [logoLoaded, setLogoLoaded] = useState(false);
   const [logoBox, setLogoBox] = useState("100px");
   const [logoVisible, setLogoVisible] = useState(false);
 
@@ -66,11 +65,6 @@ const Header = () => {
 
   const languateText = language === "en" ? "EN/SR" : "SR/EN";
 
-  const logoStyle: CSSProperties = {
-    top: logoTop,
-    visibility: logoVisible ? "visible" : "hidden",
-    gap: logoGap,
-  };
   const rectangleStyle: CSSProperties = {
     width: rectangleWidth,
     height: rectangleHeight,
@@ -125,7 +119,12 @@ const Header = () => {
       Fill: "white",
     });
 
-    setBoxWidth("975px");
+    if (window.innerWidth >= 1920) setBoxWidth("975px");
+    else if (window.innerWidth >= 1280) setBoxWidth("780px");
+    else if (window.innerWidth >= 720) setBoxWidth("458px");
+    else setBoxWidth("300px");
+
+    // setBoxWidth("975px");
     setBoxHeight("700px");
     editLogo(true);
     setLogoVisible(true);
@@ -154,8 +153,7 @@ const Header = () => {
     if (bigger) {
       setLogoBox("700px");
     } else {
-      setLogoTop("360px");
-      setLogoGap("4vh");
+      setLogoLoaded(true);
       setLogoBox("450px");
     }
   };
@@ -205,7 +203,10 @@ const Header = () => {
             <div className={styles.rectangle} style={rectangleStyle} />
           </div>
         </div>
-        <div className={styles.logo} style={logoStyle}>
+        <div
+          className={logoLoaded ? styles.logo__loaded : styles.logo}
+          style={{ visibility: logoVisible ? "visible" : "hidden" }}
+        >
           <div className={styles.logo__text} style={transformStyle}>
             <SvgList sVGs={letters} />
           </div>

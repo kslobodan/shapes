@@ -1,4 +1,5 @@
 @import "../../styles/variables";
+@import "../../styles/mixins";
 
 .content {
   display: flex;
@@ -63,13 +64,36 @@
 .logo {
   position: absolute;
   z-index: 2;
-  top: 380px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  // gap: 4vh;
+  gap: 2vh;
+  top: 480px;
   transition: all 1s;
   // background-color: green;
+}
+
+.logo__loaded {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4vh;
+  top: 360px;
+  transition: all 1s;
+
+  @include x-large-screen {
+    gap: 3vh;
+  }
+
+  @include large-screen {
+    gap: 2vh;
+  }
+
+  @include medium-screen {
+    gap: 1vh;
+  }
 }
 
 .logo__text {
@@ -84,6 +108,18 @@
   // filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.5));
   transition: all 1s;
   transform: scale(1.2);
+
+  @include x-large-screen {
+    transform: scale(1);
+  }
+
+  @include large-screen {
+    transform: scale(0.8);
+  }
+
+  @include medium-screen {
+    transform: scale(0.6);
+  }
 }
 
 .description {
@@ -93,8 +129,20 @@
   font-size: 28.8px;
   font-style: normal;
   font-weight: 400;
-  line-height: 20.4px; /* 70.833% */
+  line-height: 20.4px;
   letter-spacing: 20px;
+
+  @include x-large-screen {
+    transform: scale(0.86);
+  }
+
+  @include large-screen {
+    transform: scale(0.68);
+  }
+
+  @include medium-screen {
+    transform: scale(0.52);
+  }
 }
 
 .arrow {
@@ -102,6 +150,18 @@
   height: 57.673px;
   flex-shrink: 0;
   fill: #c3d400;
+
+  @include x-large-screen {
+    transform: scale(0.86);
+  }
+
+  @include large-screen {
+    transform: scale(0.64);
+  }
+
+  @include medium-screen {
+    transform: scale(0.48);
+  }
 }
 
 .choose {
