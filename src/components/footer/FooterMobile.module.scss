@@ -34,6 +34,18 @@ footer {
   background-clip: padding-box;
 }
 
+.titles {
+  margin-top: 20px;
+
+  @include x-small-screen {
+    margin-top: 15px;
+  }
+
+  @include xx-small-screen {
+    margin-top: 10px;
+  }
+}
+
 .title {
   width: 300px;
 
@@ -124,6 +136,14 @@ footer {
   gap: 5px;
   opacity: 0;
   transition: opacity 500ms ease;
+
+  @include x-small-screen {
+    margin-top: 30px;
+  }
+
+  @include xx-small-screen {
+    margin-top: 20px;
+  }
 }
 
 .visibleDiv {
@@ -136,7 +156,6 @@ footer {
   justify-content: start;
   align-items: start;
   width: 100.3%;
-  gap: 10px;
   // background-color: red;
 }
 
@@ -144,40 +163,60 @@ footer {
   color: $color-grey;
   text-align: center;
   font-family: Raleway;
-  font-size: 20px;
+  font-size: px;
   font-style: normal;
   font-weight: 500;
-  line-height: 40px; /* 200% */
+  line-height: 35px;
   width: 100px;
   text-align: start;
 
   @include x-small-screen {
-    font-size: 18px;
+    font-size: 15px;
+    line-height: 32px;
   }
 
   @include xx-small-screen {
-    font-size: 16px;
+    font-size: 14px;
+    line-height: 30px;
   }
 }
 
-.input {
+.input__style {
   border-width: 0px;
-  height: 20px;
-  flex: 1;
-  color: $color-grey;
-  text-align: center;
-  font-family: Raleway;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
   text-align: start;
+  padding-left: 3%;
+  font-size: 14px;
+  width: 100%;
+
+  @include x-small-screen {
+    font-size: 12.7px;
+  }
+
+  @include xx-small-screen {
+    font-size: 11px;
+  }
 }
 
 .text__area {
   margin-top: 10px;
   width: 100%;
   border-width: 0px;
-  height: 200px;
+  height: 100px;
+  text-align: left;
+  resize: none;
+  overflow-y: auto;
+  font-size: 12px;
+  padding-left: 3%;
+
+  @include x-small-screen {
+    font-size: 11.5px;
+    height: 90px;
+  }
+
+  @include xx-small-screen {
+    font-size: 11px;
+    height: 80px;
+  }
 }
 
 .buttons {
@@ -186,6 +225,14 @@ footer {
   flex-direction: row;
   justify-content: space-between;
   margin-top: 25px;
+
+  @include x-small-screen {
+    margin-top: 20px;
+  }
+
+  @include xx-small-screen {
+    margin-top: 15px;
+  }
 }
 
 %button {
@@ -252,11 +299,11 @@ div {
   // background-color: red;
 
   @include x-small-screen {
-    transform: scale(0.9);
+    transform: scale(0.85);
   }
 
   @include xx-small-screen {
-    transform: scale(0.8);
+    transform: scale(0.7);
   }
 }
 

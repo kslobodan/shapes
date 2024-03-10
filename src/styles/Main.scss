@@ -167,6 +167,34 @@ h4 {
       padding-bottom: 10px;
     }
   }
+
+  @include x-small-screen {
+    gap: 12px;
+    &__small {
+      gap: 8.5px;
+    }
+
+    > p {
+      margin: 0;
+      &__small {
+        padding-bottom: 7.5px;
+      }
+    }
+
+    > p {
+      margin: 0;
+      &__small {
+        padding-bottom: 5px;
+      }
+    }
+  }
+
+  @include xx-small-screen {
+    gap: 8px;
+    &__small {
+      gap: 5px;
+    }
+  }
 }
 
 .title__mobile__green,

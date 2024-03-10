@@ -3,26 +3,6 @@ import styles from "./FooterMobile.module.scss";
 import Logo from "./Logo";
 import { useTranslation } from "react-i18next";
 
-const inputStyle: CSSProperties = {
-  borderWidth: "0px",
-  height: "20px",
-  textAlign: "start",
-  flex: "1",
-  fontSize: "14px",
-  width: "100%",
-};
-
-const textAreaStyle: CSSProperties = {
-  marginTop: "10px",
-  width: "100%",
-  borderWidth: "0px",
-  height: "200px",
-  textAlign: "left",
-  resize: "none",
-  overflowY: "auto",
-  fontSize: "14px",
-};
-
 const textAreaMaxLength = 1000;
 
 export const FooterMobile = () => {
@@ -103,7 +83,7 @@ export const FooterMobile = () => {
       <div className={styles.box} style={{ height: boxHeight }} />
       <div className={styles.content} style={{ height: boxHeight }}>
         {!showEmail && (
-          <div className="titles__mobile" style={{ marginTop: "25px" }}>
+          <div className={`titles__mobile ${styles.titles}`}>
             <div className={styles.title}>
               <h2>{translate("footer.title")}</h2>
             </div>
@@ -115,8 +95,7 @@ export const FooterMobile = () => {
         {emailFormVisible && (
           <div
             ref={useRefMailTitle}
-            className="titles__mobile"
-            style={{ marginTop: "30px" }}
+            className={`titles__mobile ${styles.titles}`}
           >
             <div className={styles.mail__title}>
               <div>{translate("email.title")}</div>
@@ -163,8 +142,7 @@ export const FooterMobile = () => {
               <label className={styles.label}>{translate("email.name")}:</label>
               <input
                 type="email"
-                className="text"
-                style={inputStyle}
+                className={`text ${styles.input__style}`}
                 value={name}
                 onChange={handleNameChange}
                 maxLength={50}
@@ -176,8 +154,7 @@ export const FooterMobile = () => {
               </label>
               <input
                 type="text"
-                className="text"
-                style={inputStyle}
+                className={`text ${styles.input__style}`}
                 value={email}
                 onChange={handleEmailChange}
                 maxLength={50}
@@ -188,8 +165,7 @@ export const FooterMobile = () => {
                 {translate("email.textMobile")}:
               </label>
               <textarea
-                className="text"
-                style={textAreaStyle}
+                className={`text ${styles.text__area}`}
                 value={text}
                 onChange={handleTextChange}
                 maxLength={textAreaMaxLength}
