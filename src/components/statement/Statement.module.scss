@@ -105,6 +105,23 @@
       line-height: 20px;
     }
   }
+  @include small-screen {
+    > h2 {
+      line-height: 45px;
+    }
+  }
+  @include x-small-screen {
+    > h2 {
+      line-height: 40px;
+      font-size: 30px;
+    }
+  }
+  @include xx-small-screen {
+    > h2 {
+      line-height: 36px;
+      font-size: 27px;
+    }
+  }
 }
 
 .title2 {
