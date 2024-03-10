@@ -19,11 +19,11 @@ const Options = () => {
   const optionList: Option[] =
     translate("options.optionList", { returnObjects: true }) || [];
 
-  const optionListPopulated = optionList && optionList.length == 3;
+  const optionListPopulated = optionList && optionList.length === 3;
 
   return (
     <section id="options" style={{ position: "relative" }}>
-      <div style={{ marginBottom: "-160px" }}>
+      <div className={styles.first__part}>
         <TitleWithText
           title={translate("options.title")}
           underTitle={translate("options.subtitle")}

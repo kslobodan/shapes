@@ -48,6 +48,22 @@ $extended-ellipse-width: 370px;
   line-height: 24px;
 }
 
+.first__part {
+  margin-bottom: -160px;
+
+  @include x-large-screen {
+    margin-bottom: -110px;
+  }
+
+  @include large-screen {
+    margin-bottom: -80px;
+  }
+
+  @include medium-screen {
+    margin-bottom: -50px;
+  }
+}
+
 .content {
   width: 1293px;
   height: 650px;
