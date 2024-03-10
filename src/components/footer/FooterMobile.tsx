@@ -10,9 +10,7 @@ export const FooterMobile = () => {
   const useRefPopup = useRef<HTMLDivElement>(null);
   const [translate] = useTranslation("global");
   const [showEmail, setShowEmail] = useState(false);
-  const [footerHeight, setFooterHeight] = useState("380px");
-  const [boxHeight, setBoxHeight] = useState("500px");
-  const [rightsBottom, setRightsBottom] = useState("50px");
+  const [emailShown, setEmailShown] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [text, setText] = useState("");
@@ -25,8 +23,7 @@ export const FooterMobile = () => {
   const handleShowMail = (show: boolean) => {
     setShowEmail(show);
     if (show) {
-      setFooterHeight("700px");
-      setBoxHeight("850px");
+      setEmailShown(true);
       setTimeout(() => {
         setEmailFormVisible(true);
         if (useRefMailTitle.current) useRefMailTitle.current.focus();
@@ -34,8 +31,7 @@ export const FooterMobile = () => {
     } else {
       setEmailFormVisible(false);
       clearFields();
-      setBoxHeight("500px");
-      setFooterHeight("380px");
+      setEmailShown(false);
     }
   };
 
@@ -78,10 +74,12 @@ export const FooterMobile = () => {
   return (
     <footer
       id="footer"
-      style={{ position: "absolute", zIndex: "100", height: footerHeight }}
+      className={
+        emailShown ? styles.footer__email : styles.footer___without__email
+      }
     >
-      <div className={styles.box} style={{ height: boxHeight }} />
-      <div className={styles.content} style={{ height: boxHeight }}>
+      <div className={styles.box} />
+      <div className={styles.content}>
         {!showEmail && (
           <div className={`titles__mobile ${styles.titles}`}>
             <div className={styles.title}>
@@ -215,13 +213,10 @@ export const FooterMobile = () => {
           </div>
         )}
 
-        <div
-          className={` ${styles.logo} ${showEmail ? styles.rotated : ""}`}
-          style={{ position: "absolute" }}
-        >
+        <div className={` ${styles.logo} ${showEmail ? styles.rotated : ""}`}>
           <Logo />
         </div>
-        <div className={styles.small__text} style={{ bottom: rightsBottom }}>
+        <div className={styles.small__text}>
           <p>{translate("footer.madeBy")}</p>
           <p>{translate("footer.rightsReserved")}</p>
         </div>

@@ -45,7 +45,7 @@ const Arrow = () => {
 
   const arrowStyle: CSSProperties = {
     position: "fixed",
-    bottom: "0",
+    bottom: "90px",
     right: rightValue(),
     transform: scaleValue(),
     transition: "opacity 0.5s",
