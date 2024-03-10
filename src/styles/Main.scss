@@ -197,19 +197,28 @@ h4 {
   }
 }
 
-.title__mobile__green,
-.title__mobile__green__small {
+%title-mobile-green-style {
   color: $color-neon;
   color: white;
   font-style: normal;
   font-weight: 900;
-  line-height: 20px; /* 85% */
+  line-height: 20px;
   letter-spacing: 4px;
   text-transform: uppercase;
+  background-color: green;
+}
+
+.title__mobile__green {
+  @extend %title-mobile-green-style;
 
   font-size: 20px;
-  &__small {
-    font-size: 20px;
+}
+
+title__mobile__green__small {
+  @extend %title-mobile-green-style;
+  font-size: 15px;
+  @include x-small-screen {
+    font-size: 12px;
   }
 }
 

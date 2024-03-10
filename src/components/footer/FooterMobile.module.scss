@@ -13,7 +13,11 @@
 
 .footer___without__email {
   @extend %footer-style;
-  height: 500px;
+  height: 470px;
+
+  @include x-small-screen {
+    height: 450px;
+  }
 }
 
 .footer__email {
@@ -128,6 +132,13 @@
 
 .rotated {
   transform: rotate(180deg);
+
+  @include x-small-screen {
+    transform: rotate(180deg) scale(0.85);
+  }
+  @include xx-small-screen {
+    transform: rotate(180deg) scale(0.75);
+  }
 }
 
 .small__text {

@@ -86,7 +86,9 @@ export const FooterMobile = () => {
               <h2>{translate("footer.title")}</h2>
             </div>
             <p className="title__mobile__green__small">
-              {translate("footer.subtitle")}
+              <div className={styles.mail__subtitle}>
+                {translate("footer.subtitle")}
+              </div>
             </p>
           </div>
         )}
