@@ -92,11 +92,11 @@ const Portfolio = () => {
       {smallScreen && (
         <div className="titles__mobile" style={{ marginTop: "25px" }}>
           <div className={styles.title}>
-            <h2>{translate("options.title")}</h2>
+            <h2>{translate("portfolio.title")}</h2>
           </div>
           <p className="title__mobile__green__small">
             <div className={styles.subtitle}>
-              {translate("options.subtitle")}
+              {translate("portfolio.subtitle")}
             </div>
           </p>
         </div>
