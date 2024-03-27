@@ -3,6 +3,7 @@ import styles from "./Footer.module.scss";
 import Logo from "./Logo";
 import { useTranslation } from "react-i18next";
 import { useAppContext } from "../../customHooks/useAppContext";
+import axios from "axios";
 
 const textAreaMaxLength = 1000;
 
@@ -83,6 +84,7 @@ export const Footer = () => {
   };
 
   const handleOKClick = () => {
+    // sendEmail();
     setPopupVisible(false);
     clearFields();
     handleShowMail(false);
@@ -211,4 +213,28 @@ export const Footer = () => {
       </div>
     </footer>
   );
+};
+
+const sendEmail = async () => {
+  try {
+    const response = await axios.post(
+      "https://api.mailgun.net/v3/Majabo/messages",
+      {
+        from: "kom.slobodan@gmail.com",
+        to: "k.slobodan@yahoo.com",
+        subject: "Test Email",
+        text: "This is a test email from React app with Mailgun!",
+      },
+      {
+        auth: {
+          username: "api",
+          password: "",
+        },
+      }
+    );
+
+    console.log("Email sent successfully:", response.data);
+  } catch (error) {
+    console.error("Error sending email:", error);
+  }
 };
