@@ -2,8 +2,16 @@
 @import "../styles/mixins";
 
 .testimonials {
-  margin-bottom: 150px;
+  margin-bottom: 200px;
   margin-top: 80px;
+
+  @include large-screen {
+    margin-bottom: 150px;
+  }
+
+  @include medium-screen {
+    margin-bottom: 100px;
+  }
 }
 
 .content {
