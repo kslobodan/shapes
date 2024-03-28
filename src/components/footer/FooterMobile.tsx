@@ -114,6 +114,9 @@ export const FooterMobile = () => {
               className={styles.social_button}
               src={require(`../../../src/images/insta.png`)}
               alt="instagram"
+              onClick={() =>
+                window.open("https://www.instagram.com/majabo_agency", "_blank")
+              }
             />
             <img
               className={styles.social_button}
@@ -124,6 +127,12 @@ export const FooterMobile = () => {
               className={styles.social_button}
               src={require(`../../../src/images/fb.png`)}
               alt="facebook"
+              onClick={() =>
+                window.open(
+                  "https://www.facebook.com/profile.php?id=61556562749713",
+                  "_blank"
+                )
+              }
             />
             <img
               className={styles.social_button}

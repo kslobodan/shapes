@@ -114,9 +114,21 @@ export const Footer = () => {
             <img
               src={require(`../../../src/images/insta.png`)}
               alt="instagram"
+              onClick={() =>
+                window.open("https://www.instagram.com/majabo_agency", "_blank")
+              }
             />
             <img src={require(`../../../src/images/yt.png`)} alt="youtube" />
-            <img src={require(`../../../src/images/fb.png`)} alt="facebook" />
+            <img
+              src={require(`../../../src/images/fb.png`)}
+              alt="facebook"
+              onClick={() =>
+                window.open(
+                  "https://www.facebook.com/profile.php?id=61556562749713",
+                  "_blank"
+                )
+              }
+            />
             <img
               src={require(`../../../src/images/message.png`)}
               alt="email"
