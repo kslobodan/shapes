@@ -3,13 +3,11 @@ import { useTranslation } from "react-i18next";
 import styles from "./HeaderMobile.module.scss";
 import { letters } from "./Letters";
 import SvgList from "./SvgList";
-import { Language, useAppContext } from "../../customHooks/useAppContext";
 import Arrow from "./ArrowSVG";
 import Circle from "./Circle";
 
 const HeaderMobile = () => {
   const [translate, i18n] = useTranslation("global");
-  const { language, setLanguage } = useAppContext();
   const [ellipseWidth, setEllipseWidth] = useState("170px");
   const [ellipseLeft, setEllipseLeft] = useState("calc(50% - ( 170px/2))");
   const [ellipseTop, setEllipseTop] = useState("-350px");
@@ -70,7 +68,7 @@ const HeaderMobile = () => {
     return () => clearTimeout(timeout1);
   }, []);
 
-  const languateText = language === "en" ? "EN/SR" : "SR/EN";
+  const languateText = i18n.language === "en" ? "EN/SR" : "SR/EN";
 
   const logoStyle: CSSProperties = {
     top: logoTop,
@@ -179,12 +177,12 @@ const HeaderMobile = () => {
   };
 
   const handleChangeLanguage = () => {
-    if (language === "en") {
-      setLanguage("sr" as Language);
+    if (i18n.language === "en") {
       i18n.changeLanguage("sr");
+      window.history.pushState({}, "", window.location.origin + "/sr");
     } else {
-      setLanguage("en" as Language);
       i18n.changeLanguage("en");
+      window.history.pushState({}, "", window.location.origin + "/en");
     }
   };
 

@@ -3,7 +3,6 @@ import { useTranslation } from "react-i18next";
 import styles from "./Header.module.scss";
 import { letters } from "./Letters";
 import SvgList from "./SvgList";
-import { Language, useAppContext } from "../../customHooks/useAppContext";
 import Arrow from "./ArrowSVG";
 import Circle from "./Circle";
 
@@ -12,7 +11,6 @@ type LogoTextChange = "Initial" | "FirstChange" | "SecondChange";
 
 const Header = () => {
   const [translate, i18n] = useTranslation("global");
-  const { language, setLanguage } = useAppContext();
   const [ellipseLoaded, setEllipseLoaded] = useState(false);
   const [shapeLoaded, setShapeLoaded] = useState(false);
   const [rectangleLoaded, setRectangleLoaded] = useState(false);
@@ -51,7 +49,7 @@ const Header = () => {
     return () => clearTimeout(timeout1);
   }, []);
 
-  const languateText = language === "en" ? "EN/SR" : "SR/EN";
+  const languateText = i18n.language === "en" ? "EN/SR" : "SR/EN";
 
   const firstChange = () => {
     setCircle({
