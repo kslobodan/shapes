@@ -107,12 +107,12 @@ const Header = () => {
   };
 
   const handleChangeLanguage = () => {
-    if (language === "en") {
-      setLanguage("sr" as Language);
+    if (i18n.language === "en") {
       i18n.changeLanguage("sr");
+      window.history.pushState({}, "", window.location.origin + "/sr");
     } else {
-      setLanguage("en" as Language);
       i18n.changeLanguage("en");
+      window.history.pushState({}, "", window.location.origin + "/en");
     }
   };
 
