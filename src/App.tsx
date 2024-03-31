@@ -22,6 +22,17 @@ function App() {
     } else i18n.changeLanguage(language);
   }, [i18n.language]);
 
+  useEffect(() => {
+    const metaDescription = document.getElementById("metaDescription");
+    if (metaDescription) {
+      metaDescription.setAttribute("content", translate("index.description"));
+    }
+  }, [i18n.language]);
+
+  useEffect(() => {
+    document.title = translate("index.title");
+  }, [i18n.language]);
+
   // return <Home />;
   return (
     <BrowserRouter>

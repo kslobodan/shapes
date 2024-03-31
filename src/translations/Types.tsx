@@ -1,4 +1,8 @@
 export interface Translation {
+  index: {
+    title: string;
+    description: string;
+  };
   header: { subtitle: string; choose: string };
   threeMinds: {
     title: string;
