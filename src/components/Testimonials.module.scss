@@ -232,28 +232,18 @@
   height: 124px;
   flex-shrink: 0;
   background-color: red;
+  background: lightgray -9px 0px / 158.974% 100% no-repeat;
   @include center-content(x);
 }
 
 .image1 {
   @extend %image;
-  background: lightgray -9px 0px / 158.974% 100% no-repeat;
   top: 28px;
   border-radius: 50px 50px 0px 0px;
 }
 
 .image2 {
   @extend %image;
-  background: url("../images/person2.png"),
-    lightgray -9px 0px / 158.974% 100% no-repeat;
   bottom: 28px;
   border-radius: 0px 0px 50px 50px;
-}
-
-.image3 {
-  @extend %image;
-  background: url("../images/person3.png"),
-    lightgray -9px 0px / 158.974% 100% no-repeat;
-  top: 28px;
-  border-radius: 50px 50px 0px 0px;
 }

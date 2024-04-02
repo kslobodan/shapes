@@ -75,10 +75,12 @@ const Testimonials = () => {
                 <div
                   key={index}
                   className={testimonial.odd ? styles.image1 : styles.image2}
-                  style={{
-                    background: `url(${require(`../images/${testimonial.url}`)}), lightgray -9px 0px / 158.974% 100% no-repeat`,
-                  }}
-                ></div>
+                >
+                  <img
+                    src={require(`../images/${testimonial.url}`)}
+                    alt={testimonial.title + " - " + testimonial.subtitle}
+                  />
+                </div>
               </div>
             ))}
         </div>
