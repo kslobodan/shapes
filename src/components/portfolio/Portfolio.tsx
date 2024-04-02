@@ -4,6 +4,7 @@ import TitleWithText from "../TitleWithText";
 import { mobileImages, MobileImage } from "./utils";
 import { useTranslation } from "react-i18next";
 import { useAppContext } from "../../customHooks/useAppContext";
+import ImageBox from "./ImageBox";
 
 interface largeImage {
   divStyle: CSSProperties;
@@ -36,25 +37,6 @@ const Portfolio = () => {
   });
   const [mobileImageList, setMobileImageList] =
     useState<MobileImage[]>(mobileImages);
-
-  const [isHovered1, setIsHovered1] = useState(false);
-  const [isHovered2, setIsHovered2] = useState(false);
-  const [isHovered3, setIsHovered3] = useState(false);
-  const [isHovered4, setIsHovered4] = useState(false);
-  const [isHovered5, setIsHovered5] = useState(false);
-  const [isHovered6, setIsHovered6] = useState(false);
-  const [isHovered7, setIsHovered7] = useState(false);
-  const [isHovered8, setIsHovered8] = useState(false);
-  const [isHovered9, setIsHovered9] = useState(false);
-  const [isHovered10, setIsHovered10] = useState(false);
-  const [isHovered11, setIsHovered11] = useState(false);
-  const [isHovered12, setIsHovered12] = useState(false);
-  const [isHovered13, setIsHovered13] = useState(false);
-  const [isHovered14, setIsHovered14] = useState(false);
-  const [isHovered15, setIsHovered15] = useState(false);
-  const [isHovered16, setIsHovered16] = useState(false);
-  const [isHovered17, setIsHovered17] = useState(false);
-  const [isHovered18, setIsHovered18] = useState(false);
 
   const text: string[] =
     translate("portfolio.text", { returnObjects: true }) || [];
@@ -123,363 +105,126 @@ const Portfolio = () => {
           >
             <div className={styles.portfolio}>
               <div className={styles.row}>
-                <div
-                  className={styles.box1}
-                  onMouseEnter={() => {
-                    setIsHovered1(true);
-                  }}
-                  onMouseLeave={() => {
-                    setIsHovered1(false);
-                  }}
-                >
-                  <img
-                    src={
-                      isHovered1
-                        ? require("../../images/1-large.png")
-                        : require("../../images/1-small.png")
-                    }
-                    className={styles.img__style}
-                    alt=""
-                  />
-                </div>
-                <div
-                  className={styles.box2}
-                  onMouseEnter={() => {
-                    setIsHovered2(true);
-                  }}
-                  onMouseLeave={() => {
-                    setIsHovered2(false);
-                  }}
-                >
-                  <img
-                    src={
-                      isHovered2
-                        ? require("../../images/2-large.png")
-                        : require("../../images/2-small.png")
-                    }
-                    className={styles.img__style}
-                    alt=""
-                  />
-                </div>
-                <div
-                  className={styles.box3}
-                  onMouseEnter={() => {
-                    setIsHovered3(true);
-                  }}
-                  onMouseLeave={() => {
-                    setIsHovered3(false);
-                  }}
-                >
-                  <img
-                    src={
-                      isHovered3
-                        ? require("../../images/3-large.png")
-                        : require("../../images/3-small.png")
-                    }
-                    className={styles.img__style}
-                    alt=""
-                  />
-                </div>
+                <ImageBox
+                  className="box1"
+                  smallImageUrl={"1-small.png"}
+                  largeImageUrl={"1-large.png"}
+                />
+
+                <ImageBox
+                  className="box2"
+                  smallImageUrl={"2-small.png"}
+                  largeImageUrl={"2-large.png"}
+                />
+
+                <ImageBox
+                  className="box3"
+                  smallImageUrl={"3-small.png"}
+                  largeImageUrl={"3-large.png"}
+                />
               </div>
 
               <div className={styles.row}>
-                <div
-                  className={styles.box4}
-                  onMouseEnter={() => {
-                    setIsHovered4(true);
-                  }}
-                  onMouseLeave={() => {
-                    setIsHovered4(false);
-                  }}
-                >
-                  <img
-                    src={
-                      isHovered4
-                        ? require("../../images/4-large.png")
-                        : require("../../images/4-small.png")
-                    }
-                    className={styles.img__style}
-                    alt=""
-                  />
-                </div>
-                <div
-                  className={styles.box5}
-                  onMouseEnter={() => {
-                    setIsHovered5(true);
-                  }}
-                  onMouseLeave={() => {
-                    setIsHovered5(false);
-                  }}
-                >
-                  <img
-                    src={
-                      isHovered5
-                        ? require("../../images/5-large.png")
-                        : require("../../images/5-small.png")
-                    }
-                    className={styles.img__style}
-                    alt=""
-                  />
-                </div>
-                <div
-                  className={styles.box6}
-                  onMouseEnter={() => {
-                    setIsHovered6(true);
-                  }}
-                  onMouseLeave={() => {
-                    setIsHovered6(false);
-                  }}
-                >
-                  <img
-                    src={
-                      isHovered6
-                        ? require("../../images/6-large.png")
-                        : require("../../images/6-small.png")
-                    }
-                    className={styles.img__style}
-                    alt=""
-                  />
-                </div>
+                <ImageBox
+                  className="box4"
+                  smallImageUrl={"4-small.png"}
+                  largeImageUrl={"4-large.png"}
+                />
+
+                <ImageBox
+                  className="box5"
+                  smallImageUrl={"5-small.png"}
+                  largeImageUrl={"5-large.png"}
+                />
+
+                <ImageBox
+                  className="box6"
+                  smallImageUrl={"6-small.png"}
+                  largeImageUrl={"6-large.png"}
+                />
               </div>
 
               <div className={styles.row}>
-                <div
-                  className={styles.box7}
-                  onMouseEnter={() => {
-                    setIsHovered7(true);
-                  }}
-                  onMouseLeave={() => {
-                    setIsHovered7(false);
-                  }}
-                >
-                  <img
-                    src={
-                      isHovered7
-                        ? require("../../images/7-large.png")
-                        : require("../../images/7-small.png")
-                    }
-                    className={styles.img__style}
-                    alt=""
-                  />
-                </div>
-                <div
-                  className={styles.box8}
-                  onMouseEnter={() => {
-                    setIsHovered8(true);
-                  }}
-                  onMouseLeave={() => {
-                    setIsHovered8(false);
-                  }}
-                >
-                  <img
-                    src={
-                      isHovered8
-                        ? require("../../images/8-large.png")
-                        : require("../../images/8-small.png")
-                    }
-                    className={styles.img__style}
-                    alt=""
-                  />
-                </div>
-                <div
-                  className={styles.box9}
-                  onMouseEnter={() => {
-                    setIsHovered9(true);
-                  }}
-                  onMouseLeave={() => {
-                    setIsHovered9(false);
-                  }}
-                >
-                  <img
-                    src={
-                      isHovered9
-                        ? require("../../images/9-large.png")
-                        : require("../../images/9-small.png")
-                    }
-                    className={styles.img__style}
-                    alt=""
-                  />
-                </div>
+                <ImageBox
+                  className="box7"
+                  smallImageUrl={"7-small.png"}
+                  largeImageUrl={"7-large.png"}
+                />
+
+                <ImageBox
+                  className="box8"
+                  smallImageUrl={"8-small.png"}
+                  largeImageUrl={"8-large.png"}
+                />
+
+                <ImageBox
+                  className="box9"
+                  smallImageUrl={"9-small.png"}
+                  largeImageUrl={"9-large.png"}
+                  alt="salsa.rs"
+                />
               </div>
 
               <div className={styles.row}>
-                <div
-                  className={styles.box10}
-                  onMouseEnter={() => {
-                    setIsHovered10(true);
-                  }}
-                  onMouseLeave={() => {
-                    setIsHovered10(false);
-                  }}
-                >
-                  <img
-                    src={
-                      isHovered10
-                        ? require("../../images/10-large.png")
-                        : require("../../images/10-small.png")
-                    }
-                    className={styles.img__style}
-                    alt=""
-                  />
-                </div>
-                <div
-                  className={styles.box11}
-                  onMouseEnter={() => {
-                    setIsHovered11(true);
-                  }}
-                  onMouseLeave={() => {
-                    setIsHovered11(false);
-                  }}
-                >
-                  <img
-                    src={
-                      isHovered11
-                        ? require("../../images/11-large.png")
-                        : require("../../images/11-small.png")
-                    }
-                    className={styles.img__style}
-                    alt=""
-                  />
-                </div>
-                <div
-                  className={styles.box12}
-                  onMouseEnter={() => {
-                    setIsHovered12(true);
-                  }}
-                  onMouseLeave={() => {
-                    setIsHovered12(false);
-                  }}
-                >
-                  <img
-                    src={
-                      isHovered12
-                        ? require("../../images/12-large.png")
-                        : require("../../images/12-small.png")
-                    }
-                    className={styles.img__style}
-                    alt=""
-                  />
-                </div>
+                <ImageBox
+                  className="box10"
+                  smallImageUrl={"10-small.png"}
+                  largeImageUrl={"10-large.png"}
+                />
+
+                <ImageBox
+                  className="box11"
+                  smallImageUrl={"11-small.png"}
+                  largeImageUrl={"11-large.png"}
+                />
+
+                <ImageBox
+                  className="box12"
+                  smallImageUrl={"12-small.png"}
+                  largeImageUrl={"12-large.png"}
+                />
               </div>
 
               <div className={styles.row}>
-                <div
-                  className={styles.box13}
-                  onMouseEnter={() => {
-                    setIsHovered13(true);
-                  }}
-                  onMouseLeave={() => {
-                    setIsHovered13(false);
-                  }}
-                >
-                  <img
-                    src={
-                      isHovered13
-                        ? require("../../images/13-large.png")
-                        : require("../../images/13-small.png")
-                    }
-                    className={styles.img__style}
-                    alt=""
-                  />
-                </div>
-                <div
-                  className={styles.box14}
-                  onMouseEnter={() => {
-                    setIsHovered14(true);
-                  }}
-                  onMouseLeave={() => {
-                    setIsHovered14(false);
-                  }}
-                >
-                  <img
-                    src={
-                      isHovered14
-                        ? require("../../images/14-large.png")
-                        : require("../../images/14-small.png")
-                    }
-                    className={styles.img__style}
-                    alt=""
-                  />
-                </div>
-                <div
-                  className={styles.box15}
-                  onMouseEnter={() => {
-                    setIsHovered15(true);
-                  }}
-                  onMouseLeave={() => {
-                    setIsHovered15(false);
-                  }}
-                >
-                  <img
-                    src={
-                      isHovered15
-                        ? require("../../images/15-large.png")
-                        : require("../../images/15-small.png")
-                    }
-                    className={styles.img__style}
-                    alt=""
-                  />
-                </div>
+                <ImageBox
+                  className="box13"
+                  smallImageUrl={"13-small.png"}
+                  largeImageUrl={"13-large.png"}
+                />
+
+                <ImageBox
+                  className="box14"
+                  smallImageUrl={"14-small.png"}
+                  largeImageUrl={"14-large.png"}
+                />
+
+                <ImageBox
+                  className="box15"
+                  smallImageUrl={"15-small.png"}
+                  largeImageUrl={"15-large.png"}
+                />
               </div>
 
               <div className={styles.row}>
-                <div
-                  className={styles.box16}
-                  onMouseEnter={() => {
-                    setIsHovered16(true);
-                  }}
-                  onMouseLeave={() => {
-                    setIsHovered16(false);
-                  }}
-                >
-                  <img
-                    src={
-                      isHovered16
-                        ? require("../../images/16-large.png")
-                        : require("../../images/16-small.png")
-                    }
-                    className={styles.img__style}
-                    alt=""
-                  />
-                </div>
-                <div
-                  className={styles.box17}
-                  onMouseEnter={() => {
-                    setIsHovered17(true);
-                  }}
-                  onMouseLeave={() => {
-                    setIsHovered17(false);
-                  }}
-                >
-                  <img
-                    src={
-                      isHovered17
-                        ? require("../../images/17-large.png")
-                        : require("../../images/17-small.png")
-                    }
-                    className={styles.img__style}
-                    alt=""
-                  />
-                </div>
-                <div
-                  className={styles.box18}
-                  onMouseEnter={() => {
-                    setIsHovered18(true);
-                  }}
-                  onMouseLeave={() => {
-                    setIsHovered18(false);
-                  }}
-                >
-                  <img
-                    src={
-                      isHovered18
-                        ? require("../../images/18-large.png")
-                        : require("../../images/18-small.png")
-                    }
-                    className={styles.img__style}
-                    alt=""
-                  />
-                </div>
+                <ImageBox
+                  className="box16"
+                  smallImageUrl={"16-small.png"}
+                  largeImageUrl={"16-large.png"}
+                />
+
+                <ImageBox
+                  className="box17"
+                  smallImageUrl={"17-small.png"}
+                  largeImageUrl={"17-large.png"}
+                  alt="inpaso.net"
+                  title="inpaso.net"
+                />
+
+                <ImageBox
+                  className="box18"
+                  smallImageUrl={"18-small.png"}
+                  largeImageUrl={"18-large.png"}
+                />
               </div>
             </div>
             {largeImageVisible && (
@@ -519,6 +264,7 @@ const Portfolio = () => {
                       objectFit: "cover",
                     }}
                     alt={image.alt}
+                    loading="lazy"
                   />
                 </div>
               ))}
