@@ -264,7 +264,6 @@ const Portfolio = () => {
                       objectFit: "cover",
                     }}
                     alt={image.alt}
-                    loading="lazy"
                   />
                 </div>
               ))}
