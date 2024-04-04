@@ -28,16 +28,19 @@ const ImageBox: React.FC<ImageBoxProps> = ({
         setIsHovered(true);
       }}
     >
-      <img
-        src={
-          isHovered
-            ? require(`../../images/${smallImageUrl}`)
-            : require(`../../images/${largeImageUrl}`)
-        }
-        className={styles.img__style}
-        alt={alt}
-        title={title}
-      />
+      <picture>
+        <source type="webp" />
+        <img
+          src={
+            isHovered
+              ? require(`../../images/${smallImageUrl}`)
+              : require(`../../images/${largeImageUrl}`)
+          }
+          className={styles.img__style}
+          alt={alt}
+          title={title}
+        />
+      </picture>
     </div>
   );
 };
