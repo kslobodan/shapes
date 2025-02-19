@@ -36,6 +36,9 @@ export const Footer = () => {
   const [text, setText] = useState("");
   const [emailFormVisible, setEmailFormVisible] = useState(false);
   const [popupVisible, setPopupVisible] = useState<boolean>(false);
+  const [data, setData] = useState<string>("");
+  const [error, setError] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(false);
 
   const sendbuttonEnabled =
     name.length > 0 && email.length > 0 && text.length > 0;
@@ -73,6 +76,9 @@ export const Footer = () => {
   };
 
   const handleSendEmail = () => {
+    console.log("before fatch");
+    fetchData();
+    console.log("after fatch: ", data);
     setEmailFormVisible(false);
     setPopupVisible(true);
   };
@@ -84,10 +90,26 @@ export const Footer = () => {
   };
 
   const handleOKClick = () => {
-    // sendEmail();
     setPopupVisible(false);
     clearFields();
     handleShowMail(false);
+  };
+
+  const fetchData = async () => {
+    setLoading(true);
+    const emailTitle = translate("email.emailTitle");
+    console.log("Email title: ", translate("email.emailTitle"));
+    const url = `https://majabo.net/api/testApi?email=${email}&subject=${emailTitle}&message=${text}`;
+    try {
+      console.log("params", email, text);
+      const response = await axios.get(url);
+
+      setData(response.data);
+    } catch (error: any) {
+      setError(error?.message || "An error occurred");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -230,7 +252,7 @@ export const Footer = () => {
 const sendEmail = async () => {
   try {
     const response = await axios.post(
-      "https://api.mailgun.net/v3/Majabo/messages",
+      "https://majabo.net/api/testApi?email=kom.slobodan@gmail.com&subject=some title&message=some message",
       {
         from: "kom.slobodan@gmail.com",
         to: "k.slobodan@yahoo.com",

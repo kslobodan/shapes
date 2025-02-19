@@ -187,7 +187,8 @@
     "text": "Message...",
     "textMobile": "Message",
     "buttonSend": "SEND",
-    "buttonCancel": "CANCEL"
+    "buttonCancel": "CANCEL",
+    "emailTitle": "New message from MAJABO"
   },
   "emailSent": {
     "title": "Mail successfully sent.",

@@ -181,7 +181,8 @@
     "text": "Poruka...",
     "textMobile": "Poruka",
     "buttonSend": "POŠALJI",
-    "buttonCancel": "ODUSTANI"
+    "buttonCancel": "ODUSTANI",
+    "emailTitle": "Nova poruka sa MAJABO"
   },
   "emailSent": {
     "title": "E-mail je uspešno poslat.",
