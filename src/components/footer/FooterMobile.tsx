@@ -2,6 +2,7 @@ import React, { CSSProperties, ChangeEvent, useRef, useState } from "react";
 import styles from "./FooterMobile.module.scss";
 import Logo from "./Logo";
 import { useTranslation } from "react-i18next";
+import useSendEmail from "./useSendEmail";
 
 const textAreaMaxLength = 1000;
 
@@ -16,6 +17,7 @@ export const FooterMobile = () => {
   const [text, setText] = useState("");
   const [emailFormVisible, setEmailFormVisible] = useState(false);
   const [popupVisible, setPopupVisible] = useState<boolean>(false);
+  const { sendEmail, data, error } = useSendEmail();
 
   const sendbuttonEnabled =
     name.length > 0 && email.length > 0 && text.length > 0;
@@ -54,6 +56,9 @@ export const FooterMobile = () => {
   };
 
   const handleSendEmail = () => {
+    console.log("before fatch");
+    sendEmail(email, translate("email.emailTitle"), text);
+    console.log("after fatch: ", data);
     setEmailFormVisible(false);
     setPopupVisible(true);
     if (useRefPopup.current) useRefPopup.current.focus();
